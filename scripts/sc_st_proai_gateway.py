@@ -1,0 +1,3026 @@
+#!/usr/bin/env python3
+"""
+Bio-Rank Gateway v13.0
+全自动化生信排行榜门户系统
+
+功能:
+1. 数据抓取与评分
+2. 安装命令识别
+3. 预览图抓取
+4. 勋章URL生成
+5. 新进榜通知
+"""
+
+import requests
+import time
+import sqlite3
+import base64
+import json
+import math
+import re
+import os
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from typing import Optional, Tuple, List, Dict
+from collections import defaultdict
+
+# ============================================================
+# 配置
+# ============================================================
+
+GITHUB_API_BASE = "https://api.github.com"
+GITHUB_TOKEN: Optional[str] = os.environ.get("GITHUB_TOKEN")
+SCRIPT_DIR = Path(__file__).parent
+PROJECT_DIR = SCRIPT_DIR.parent
+DB_PATH = PROJECT_DIR / "data" / "bio_toolbox.db"
+DATA_DIR = PROJECT_DIR / "data"
+PUBMED_CACHE_PATH = DATA_DIR / "pubmed_cache.json"
+
+# NCBI Entrez API 配置
+NCBI_ENTREZ_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+NCBI_RATE_LIMIT_DELAY = 0.4  # 避免超出 NCBI 频率限制 (3 requests/second)
+
+# 确保目录存在
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+# 关键词字典
+KEYWORDS = {
+    "Single-cell": [
+        "scRNA-seq",
+        "single-cell",
+        "10x Genomics",
+        "Cell Ranger",
+        "Cellbender",
+        "spatial transcriptomics",
+        "UMAP",
+        "trajectory",
+        "cell clustering",
+        "droplet",
+        "scverse",
+        "anndata",
+        "SoupX",
+        "DoubletFinder",
+        "Scrublet",
+        "Harmony",
+        "BBKNN",
+        "SCTransform",
+        "Monocle3",
+        "PAGA",
+        "CellTypist",
+        "scANVI",
+    ],
+    "Spatial-omics": [
+        "spatial transcriptomics",
+        "spatial omics",
+        "Visium",
+        "MERFISH",
+        "seqFISH",
+        "Slide-seq",
+        "STARmap",
+        "10x Visium",
+        "spatial gene expression",
+        "squidpy",
+        "stlearn",
+        "cell2location",
+        "RCTD",
+        "spatial deconvolution",
+        "spatialDE",
+        "image-based transcriptomics",
+        "Giotto",
+        "Giotto Suite",
+        "STUtility",
+        "GraphST",
+        "StereoCell",
+        "Xenium",
+        "CosMx",
+        "DBiT-seq",
+        "HDST",
+        "Pixel-seq",
+        "SPATA",
+        "BayesSpace",
+        "SpaGCN",
+    ],
+    "Multi-omics": [
+        "multi-omics",
+        "multiomics",
+        "omics integration",
+        "data integration",
+        "MOFA",
+        "multi-modal omics",
+        "pan-omics",
+        "cross-omics",
+        "integrative omics",
+        "joint embedding",
+        "MCIA",
+        "multi-view",
+        "multimodal biology",
+        "MultiMAP",
+        "Seurat v5",
+        "LIGER",
+        "Harmony",
+        "scVI",
+        "totalVI",
+        "Cobolt",
+        "bindSC",
+        "Pamona",
+    ],
+    "ProteinAI": [
+        "protein structure prediction",
+        "AlphaFold",
+        "AlphaFold2",
+        "AlphaFold3",
+        "ESM",
+        "ESM-1b",
+        "ESM-2",
+        "ESMFold",
+        "protein language model",
+        "protein design",
+        "molecule generation",
+        "protein folding",
+        "RoseTTAFold",
+        "OpenFold",
+        "ColabFold",
+        "Boltz-2",
+        "OmegaFold",
+        "de novo protein design",
+        "binder design",
+        "generative protein model",
+        "diffusion model protein",
+        "fold generation",
+        "protein foundation model",
+        "protein LM",
+        "protein transformer",
+        "Chai-1",
+        "ProstT5",
+        "ProtTrans",
+        "ProteinBERT",
+        "Ankh",
+        "TAPE",
+        "protein self-supervised learning",
+    ],
+    "AI-Pathology": [
+        "computational pathology",
+        "digital pathology",
+        "histopathology AI",
+        "whole slide imaging",
+        "WSI analysis",
+        "pathology foundation model",
+        "UNI",
+        "Virchow",
+        "CONCH",
+        "CLAM",
+        "Prov-GigaPath",
+        "GigaPath",
+        "H-Optimus",
+        "Hibou",
+        "Phikon",
+        "CATE",
+        "LitePath",
+        "PathoDuet",
+        "PLIP",
+        "PRISM",
+        "TANGLE",
+        "weakly supervised learning",
+        "multiple instance learning",
+        "MIL",
+        "slide-level classification",
+        "tumor detection",
+        "cancer subtyping",
+        "biomarker prediction",
+        "prognostic modeling",
+        "histomorphological analysis",
+        "tissue segmentation",
+        "pathology image analysis",
+        "digital slide",
+        "pathology AI",
+        "computational histology",
+        "histopathology",
+        "pathology segmentation",
+        "tumor segmentation",
+        "nuclei detection",
+        "cell detection in pathology",
+        "medical image analysis pathology",
+        "gigapixel pathology",
+        "histopathological analysis",
+        "pathology vision-language model",
+        "pathology VLM",
+        "histopathology foundation model",
+    ],
+}
+
+# Pipeline 检测关键词
+PIPELINE_KEYWORDS = [
+    "nextflow",
+    "snakemake",
+    "cwl",
+    "wdl",
+    "workflow",
+    "pipeline",
+    "nf-core",
+]
+
+# 细分领域标签映射
+UTILITY_LABELS = {
+    "Alignment": ["bwa", "bowtie", "star", "hisat", "minimap", "align"],
+    "Variant Calling": [
+        "gatk",
+        "variant",
+        "snp",
+        "vcf",
+        "bcftools",
+        "freebayes",
+        "deepvariant",
+    ],
+    "Differential Expression": ["deseq", "edger", "limma", "differential", "pydeseq"],
+    "Clustering": ["cluster", "leiden", "louvain", "umap", "tsne", "pca"],
+    "Cell Annotation": ["celltypist", "scgate", "annotation", "marker", "cell type"],
+    "Trajectory": ["trajectory", "pseudotime", "velocity", "monocle", "dynamo"],
+    "Quality Control": ["qc", "fastqc", "multiqc", "quality", "trimming"],
+    "Assembly": ["assembly", "spades", "megahit", "flye", "canu"],
+    "Taxonomic": ["kraken", "metaphlan", "taxonom", "classifier", "16s"],
+    "Visualization": ["plot", "visual", "track", "igv", "genome browser"],
+    "Format Conversion": ["convert", "bam", "sam", "fastq", "format"],
+    "Peak Calling": ["macs", "peak", "chip-seq", "atac-seq", "homer"],
+    "Methylation": ["bismark", "methylat", "bisulfite", "cpg"],
+    "Quantification": ["salmon", "kallisto", "rsem", "count", "tpm", "fpkm"],
+    "Fusion Detection": ["fusion", "arriba", "star-fusion", "fusioncatcher"],
+    "CNV Analysis": ["cnv", "copy number", "infercnv", "numbat"],
+    "Cell Communication": [
+        "ligand",
+        "receptor",
+        "nichenet",
+        "cellchat",
+        "communication",
+    ],
+    "Mass Spectrometry": [
+        "maxquant",
+        "mass spec",
+        "proteowizard",
+        "msconvert",
+        "openms",
+    ],
+    "Metabolite Analysis": [
+        "xcms",
+        "mzmine",
+        "metaboanalyst",
+        "lipidomics",
+        "metabolite",
+    ],
+    "Spatial Analysis": [
+        "spatial",
+        "visium",
+        "merfish",
+        "squidpy",
+        "stlearn",
+        "cell2location",
+        "deconvolution",
+    ],
+    "Omics Integration": [
+        "multi-omics",
+        "multiomics",
+        "integration",
+        "mofa",
+        "mixomics",
+        "snf",
+        "joint embedding",
+    ],
+    "Protein Structure": [
+        "alphafold",
+        "protein structure",
+        "rosettafold",
+        "openfold",
+        "colabfold",
+        "protein folding",
+    ],
+    "Drug Discovery": [
+        "drug discovery",
+        "virtual screening",
+        "molecular generation",
+        "compound",
+        "admet",
+        "retrosynthesis",
+    ],
+    "Biomedical NLP": [
+        "biomedical nlp",
+        "scientific llm",
+        "text mining",
+        "biobert",
+        "pubmedbert",
+        "named entity",
+    ],
+    "Molecular Design": [
+        "de novo design",
+        "protein design",
+        "molecule generation",
+        "generative",
+        "diffusion model",
+    ],
+}
+
+# 排除关键词
+EXCLUDE_KEYWORDS = [
+    "notes",
+    "exercise",
+    "homework",
+    "tutorial",
+    "learning",
+    "course",
+    "awesome-",
+]
+
+# 通用编程项目黑名单关键词（非生信工具）
+NON_BIO_BLACKLIST = [
+    "wasmedge",
+    "dapr",
+    "espectre",
+    "nanobrowser",
+    "runtime",
+    "orchestration",
+    "kubernetes",
+    "k8s",
+    "service mesh",
+    "microservice",
+    "serverless",
+    "cloud native",
+    "devops",
+    "web framework",
+    "frontend",
+    "backend",
+    "react",
+    "vue",
+    "angular",
+    "game engine",
+    "blockchain",
+    "cryptocurrency",
+    "machine learning platform",
+    "deep learning framework",
+    "chatbot",
+    "llm",
+    "large language model",
+    "browser automation",
+    "web scraping",
+    "web agent",
+    "browser agent",
+]
+
+# 强制排除的仓库（精确匹配 full_name，不区分大小写）
+FORCE_EXCLUDE_REPOS = [
+    # 浏览器自动化/AI Agent工具
+    "nicepkg/espectre",
+    "nicepkg/nanobrowser",
+    "nicepkg/vmail",
+    "nicepkg/gpt-runner",
+    "nicepkg/aide",
+    "nicepkg/nice-mcp",
+    "nicepkg/browser-use",
+    "nicepkg/browser-ai",
+    "nicepkg/browser-agent",
+    "nicepkg/web-agent",
+    "nicepkg/ai-agent",
+    "nicepkg/llm-agent",
+    "nicepkg/mcp-agent",
+    "nicepkg/coder-agent",
+    "nicepkg/qoder",
+    "nicepkg/qoder-agent",
+    "nicepkg/llm-browser",
+    "nicepkg/ai-browser",
+    "nicepkg/browser-automation",
+    "nicepkg/web-automation",
+    "nicepkg/agentic-browser",
+    "nicepkg/ai-web-agent",
+    "nicepkg/agent-browser",
+    "nicepkg/automation-browser",
+    "nicepkg/agentic-web",
+    "nicepkg/automation-agent",
+    "nicepkg/agent-automation",
+    "nicepkg/llm-automation",
+    # 其他非生信工具
+    "nicepkg/mcp",
+    "nicepkg/ts",
+    "nicepkg/go",
+    "nicepkg/rust",
+    "orama/orama",
+    "WasmEdge/WasmEdge",
+    "dapr/dapr",
+]
+
+# ============================================================
+# 权重评分机制：Bio-Score / Tech-Score
+# ============================================================
+
+# 正向词 (Bio-Score): 每命中一个 +10 分
+BIO_SCORE_TERMS = {
+    # 高权重 (15分) - 极高特异性的生信术语
+    "alignment": 15,
+    "vcf": 15,
+    "fastq": 15,
+    "variant calling": 15,
+    "haplotype": 15,
+    "pangenome": 15,
+    "phylogenetic": 15,
+    "bioconda": 15,
+    "metagenomics": 15,
+    "scRNA-seq": 12,
+    "single-cell": 12,
+    "wgs": 15,
+    "wes": 15,
+    "chip-seq": 15,
+    "atac-seq": 15,
+    "proteomics": 15,
+    "metabolomics": 15,
+    "lipidomics": 15,
+    "mass-spectrometry": 15,
+    "mass spectrometry": 15,
+    "maxquant": 15,
+    "proteowizard": 15,
+    "peptide": 12,
+    "xcms": 15,
+    "mzidentml": 15,
+    "tmt": 12,
+    "dia": 10,
+    "dda": 10,
+    # Spatial Omics 高权重
+    "spatial transcriptomics": 15,
+    "visium": 15,
+    "merfish": 15,
+    "seqfish": 15,
+    "slide-seq": 15,
+    "squidpy": 12,
+    "stlearn": 12,
+    "cell2location": 12,
+    "spatial omics": 12,
+    "spatial deconvolution": 12,
+    # Multi-omics 高权重
+    "multi-omics": 15,
+    "multiomics": 15,
+    "omics integration": 15,
+    "mofa": 12,
+    "mixomics": 12,
+    "integrative omics": 12,
+    # ProteinAI 高权重
+    "alphafold": 15,
+    "protein structure prediction": 15,
+    "protein folding": 15,
+    "rosettafold": 15,
+    "openfold": 15,
+    "colabfold": 15,
+    "protein language model": 15,
+    "esm": 12,
+    "protein design": 12,
+    "drug discovery": 12,
+    "virtual screening": 12,
+    "molecular generation": 12,
+    "de novo design": 12,
+    "retrosynthesis": 12,
+    "admet": 12,
+    # 中权重 (10分) - 常见生信词汇
+    "bioinformatics": 10,
+    "genomics": 10,
+    "transcriptomics": 10,
+    "epigenetics": 10,
+    "sequencing": 10,
+    "genome": 10,
+    "gene expression": 10,
+    "rna-seq": 10,
+    "dna": 10,
+    "rna": 10,
+    "ngs": 10,
+    "bisulfite": 10,
+    "methylation": 10,
+    "microbiome": 10,
+    "biomarker": 10,
+    "omics": 10,
+    "bam": 10,
+    "spatial": 8,
+    "multi-modal": 8,
+    "scientific llm": 10,
+    "biomedical nlp": 10,
+    "biomedical foundation model": 10,
+    "protein identification": 10,
+    "label-free quantification": 10,
+    "lc-ms": 10,
+    "gc-ms": 10,
+    "tandem mass": 10,
+    "metabolite": 10,
+    "metabolic profiling": 10,
+    # 低权重 (5分) - 可能与生信相关但不够特异
+    "protein": 5,
+    "cell": 5,
+    "assembly": 5,
+    "annotation": 5,
+    "pipeline": 5,
+    "workflow": 5,
+    "analysis": 3,
+    "taxonomy": 5,
+}
+
+# 负向词 (Tech-Score): 每命中一个扣分
+TECH_SCORE_TERMS = {
+    # 高扣分 (15分) - 明确的非生信指标
+    "full-text search": 15,
+    "full text search": 15,
+    "vector database": 15,
+    "vector db": 15,
+    "rag": 15,
+    "retrieval augmented": 15,
+    "search engine": 15,
+    "serverless": 15,
+    "edge-network": 15,
+    "edge network": 15,
+    "wasm": 15,
+    "webassembly": 15,
+    "frontend-framework": 15,
+    "frontend framework": 15,
+    "game-engine": 15,
+    "game engine": 15,
+    "blockchain": 15,
+    "cryptocurrency": 15,
+    "llm": 15,
+    "large language model": 15,
+    "chatbot": 15,
+    # 注意: BioAI 类 (scientific LLM, protein LM) 在 Bio-Score 中有高正向权重，
+    # 即使命中 llm 扣分也会被 Bio-Score 正向词抵消
+    # 中扣分 (10分)
+    "cloud-native": 10,
+    "cloud native": 10,
+    "kubernetes": 10,
+    "k8s": 10,
+    "docker swarm": 10,
+    "microservice": 10,
+    "service mesh": 10,
+    "load balancing": 10,
+    "api gateway": 10,
+    "web framework": 10,
+    "react": 10,
+    "vue": 10,
+    "angular": 10,
+    "machine learning platform": 10,
+    "deep learning framework": 10,
+    "iot": 10,
+    "mqtt": 10,
+    # 低扣分 (5分) - 通用但不决定性
+    "runtime": 5,
+    "deployment": 5,
+    "monitoring": 5,
+    "proxy": 5,
+    "sidecar": 5,
+    "grpc": 5,
+    "container": 5,
+    "orchestration": 5,
+}
+
+# Bio-Score 通过阈值
+BIO_SCORE_THRESHOLD = 10
+
+# 组学核心词（用于 IT 词汇强制排除的最终校验）
+OMICS_CORE_TERMS = [
+    "genomics",
+    "transcriptomics",
+    "proteomics",
+    "metabolomics",
+    "metagenomics",
+    "epigenetics",
+    "bioinformatics",
+    "sequencing",
+    "genome",
+    "gene",
+    "rna",
+    "dna",
+    "protein",
+    "peptide",
+    "metabolite",
+    "mass-spectrometry",
+    "single-cell",
+    "ngs",
+    "omics",
+    "phylogenetic",
+    "microbiome",
+    "variant",
+    "alignment",
+    "wgs",
+    "scrna-seq",
+    "vcf",
+    "fastq",
+    "bam",
+    "chip-seq",
+    "atac-seq",
+    "maxquant",
+    "xcms",
+    "proteowizard",
+    "lc-ms",
+    "gc-ms",
+    "tmt",
+    "dia",
+    "dda",
+    "mzidentml",
+    "lipidomics",
+    "spatial transcriptomics",
+    "visium",
+    "merfish",
+    "squidpy",
+    "spatial omics",
+    "multi-omics",
+    "multiomics",
+    "omics integration",
+    "mofa",
+    "mixomics",
+    "alphafold",
+    "protein structure prediction",
+    "protein folding",
+    "rosettafold",
+    "openfold",
+    "colabfold",
+    "protein language model",
+    "esm",
+    "drug discovery",
+    "virtual screening",
+    "molecular generation",
+    "de novo design",
+    "scientific llm",
+    "biomedical nlp",
+    "biomedical foundation model",
+]
+
+# 生信安全词（包含这些词的项目不会被黑名单排除）
+BIO_SAFELIST = [
+    "bioinformatics",
+    "genomics",
+    "transcriptomics",
+    "proteomics",
+    "metabolomics",
+    "metagenomics",
+    "epigenetics",
+    "sequencing",
+    "alignment",
+    "variant",
+    "gene",
+    "genome",
+    "rna",
+    "dna",
+    "protein",
+    "cell",
+    "single-cell",
+    "ngs",
+    "chip-seq",
+    "atac-seq",
+    "methylation",
+    "expression",
+    "phylogenetic",
+    "taxonomy",
+    "microbiome",
+    "omics",
+    "biomarker",
+    "scRNA",
+    "spatial transcriptomics",
+    "chromatin",
+    "mass-spectrometry",
+    "maxquant",
+    "proteowizard",
+    "peptide",
+    "metabolomics",
+    "lipidomics",
+    "xcms",
+    "metabolite",
+]
+
+# 通用流程引擎仓库 -> 标记为 "Workflow Engine"，不占据具体分析工具榜首
+WORKFLOW_ENGINE_REPOS = [
+    "snakemake/snakemake",
+    "nextflow-io/nextflow",
+    "common-workflow-language/cwltool",
+    "broadinstitute/cromwell",
+    "DataBiosphere/toil",
+]
+
+# Pipeline 组织白名单
+PIPELINE_ORG_WHITELIST = [
+    "nf-core",
+    "snakemake-workflows",
+    "nextflow-io",
+    "bcbio",
+    "snakepipes",
+    "bioconda",
+    "qbic-pipelines",
+    "hoelzer-lab",
+]
+
+# 强制归类白名单/黑名单
+FORCE_PIPELINE_REPOS = [
+    "yongxinliu/easymetagenome",
+    "shujiahuang/ilus",
+    "metagenome-atlas/atlas",
+    "ebi-gene-expression-group/scxa-tertiary-workflow",
+    "sequana/sequana",
+    "maxplanck-ie/snakepipes",
+]
+
+FORCE_UTILITY_REPOS = [
+    "lh3/bwa",
+    "broadinstitute/gatk",
+    "scverse/pydeseq2",
+    "saeyslab/nichenetr",
+    "aertslab/pyscenic",
+    "pachterlab/kallisto",
+    "alexdobin/star",
+    "thelovelab/deseq2",
+    "gpertea/stringtie",
+    "bwa-mem2/bwa-mem2",
+    "deeptools/deeptools",
+    "trinityrnaseq/trinityrnaseq",
+    "pachterlab/gget",
+    "broadinstitute/infercnv",
+    "marbl/mash",
+    "ecogenomics/checkm",
+]
+
+# 端到端流程关键词
+END_TO_END_KEYWORDS = [
+    "end-to-end",
+    "from raw data",
+    "one-stop",
+    "complete analysis",
+    "fastq to",
+    "raw to results",
+    "from fastq",
+    "automated pipeline",
+    "complete workflow",
+    "full pipeline",
+    "comprehensive pipeline",
+    "turn-key",
+    "all-in-one",
+    "ready-to-use pipeline",
+]
+
+# Pipeline 语义关键词
+PIPELINE_SEMANTIC_KEYWORDS = [
+    "pipeline",
+    "workflow",
+    "automated",
+    "ngs pipeline",
+    "analysis pipeline",
+    "processing pipeline",
+    "bioinformatics pipeline",
+]
+
+# R/Python 库特征
+LIBRARY_INDICATORS = [
+    "setup.py",
+    "setup.cfg",
+    "pyproject.toml",
+    "description",
+    "r package",
+    "python package",
+    "cran",
+    "bioconductor package",
+    "pip install",
+    "install.packages",
+]
+
+
+# ============================================================
+# 工具函数
+# ============================================================
+
+
+def log(msg: str):
+    print(msg, flush=True)
+
+
+def get_headers() -> dict:
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    if GITHUB_TOKEN:
+        headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
+    return headers
+
+
+def is_excluded(repo: dict) -> bool:
+    description = (repo.get("description") or "").lower()
+    name = repo.get("name", "").lower()
+    for kw in EXCLUDE_KEYWORDS:
+        if kw in description or kw in name:
+            return True
+    return False
+
+
+def calculate_bio_tech_scores(repo: dict) -> tuple:
+    """计算项目的 Bio-Score（正向分）和 Tech-Score（负向分）"""
+    description = (repo.get("description") or "").lower()
+    raw_topics = repo.get("topics", [])
+    if isinstance(raw_topics, str):
+        try:
+            raw_topics = json.loads(raw_topics)
+        except (json.JSONDecodeError, TypeError):
+            raw_topics = []
+    topics = [t.lower() for t in raw_topics]
+    full_name = (repo.get("full_name") or "").lower()
+    full_text = f"{description} {' '.join(topics)} {full_name}"
+
+    bio_score = 0
+    for term, weight in BIO_SCORE_TERMS.items():
+        if term.lower() in full_text:
+            bio_score += weight
+
+    tech_score = 0
+    for term, weight in TECH_SCORE_TERMS.items():
+        if term.lower() in full_text:
+            tech_score += weight
+
+    return bio_score, tech_score
+
+
+def is_non_bio_project(repo: dict) -> bool:
+    """基于权重评分机制检测是否为非生信项目
+
+    判定标准：
+    0. 强制排除列表中的仓库直接排除
+    1. Bio-Score > Tech-Score 且 Bio-Score >= BIO_SCORE_THRESHOLD 时通过
+    2. 含大量 IT 词汇但完全无组学核心词 -> 强制排除
+    3. topics 含 search/database/engine 且无生物学标签 -> 直接剔除
+    """
+    full_name = (repo.get("full_name") or "").lower()
+
+    # 规则 0：强制排除列表
+    force_exclude_lower = [r.lower() for r in FORCE_EXCLUDE_REPOS]
+    if full_name in force_exclude_lower:
+        return True
+
+    # 检查仓库名是否包含黑名单关键词
+    repo_name = full_name.split("/")[-1] if "/" in full_name else full_name
+    for blacklist_term in NON_BIO_BLACKLIST:
+        if blacklist_term in repo_name:
+            return True
+
+    description = (repo.get("description") or "").lower()
+    raw_topics = repo.get("topics", [])
+    if isinstance(raw_topics, str):
+        try:
+            raw_topics = json.loads(raw_topics)
+        except (json.JSONDecodeError, TypeError):
+            raw_topics = []
+    topics = [t.lower() for t in raw_topics]
+    full_text = f"{description} {' '.join(topics)} {full_name}"
+
+    # 规则 1：权重评分
+    bio_score, tech_score = calculate_bio_tech_scores(repo)
+
+    # 如果 Bio-Score 足够高且超过 Tech-Score，直接通过
+    if bio_score >= BIO_SCORE_THRESHOLD and bio_score > tech_score:
+        return False
+
+    # 规则 2：topics 含 search/database/engine 且无任何生物学标签 -> 直接剔除
+    non_bio_topic_markers = {
+        "search",
+        "database",
+        "engine",
+        "search-engine",
+        "vector-database",
+        "full-text-search",
+        "web",
+        "cloud",
+        "devops",
+        "rag",
+    }
+    has_non_bio_topics = bool(set(topics) & non_bio_topic_markers)
+    has_omics = any(term in full_text for term in OMICS_CORE_TERMS)
+    if has_non_bio_topics and not has_omics:
+        return True
+
+    # 规则 3：Tech-Score 远超 Bio-Score -> 排除
+    if tech_score > 0 and bio_score < BIO_SCORE_THRESHOLD:
+        return True
+
+    # 规则 4：完全没有任何生信信号且有 Tech 信号 -> 排除
+    if bio_score == 0 and tech_score > 0:
+        return True
+
+    return False
+
+
+def is_workflow_engine(repo: dict) -> bool:
+    """检测是否为通用流程引擎（非具体分析工具）"""
+    full_name = repo.get("full_name", "").lower()
+    return full_name in [r.lower() for r in WORKFLOW_ENGINE_REPOS]
+
+
+# ============================================================
+# 数据库操作
+# ============================================================
+
+
+def init_database(reset: bool = False):
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    if reset:
+        cursor.execute("DROP TABLE IF EXISTS snapshots")
+        cursor.execute("DROP TABLE IF EXISTS repositories")
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS repositories (
+            id INTEGER PRIMARY KEY,
+            full_name TEXT UNIQUE NOT NULL,
+            url TEXT,
+            description TEXT,
+            language TEXT,
+            license TEXT,
+            topics TEXT,
+            created_at TEXT,
+            first_seen TEXT DEFAULT CURRENT_TIMESTAMP,
+            category TEXT,
+            project_type TEXT,
+            has_paper INTEGER DEFAULT 0,
+            has_docker INTEGER DEFAULT 0,
+            has_conda_env INTEGER DEFAULT 0,
+            sub_label TEXT,
+            tech_stack TEXT,
+            install_commands TEXT,
+            preview_images TEXT,
+            badge_url TEXT
+        )
+    """)
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS snapshots (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            repo_id INTEGER NOT NULL,
+            stars INTEGER,
+            forks INTEGER,
+            watchers INTEGER,
+            open_issues INTEGER,
+            pushed_at TEXT,
+            fetched_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (repo_id) REFERENCES repositories(id)
+        )
+    """)
+
+    cursor.execute(
+        "CREATE INDEX IF NOT EXISTS idx_repo_category ON repositories(category)"
+    )
+    cursor.execute(
+        "CREATE INDEX IF NOT EXISTS idx_repo_type ON repositories(project_type)"
+    )
+
+    conn.commit()
+    conn.close()
+    log(f"[DB] Initialized: {DB_PATH}")
+
+
+def save_repo_with_snapshot(
+    repo: dict,
+    category: str,
+    project_type: str,
+    has_paper: bool,
+    has_docker: bool,
+    has_conda_env: bool,
+    sub_label: str,
+    install_commands: list = None,
+    preview_images: list = None,
+    badge_url: str = "",
+) -> int:
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    full_name = repo.get("full_name")
+    topics = json.dumps(repo.get("topics", []))
+    license_info = repo.get("license") or {}
+    license_name = (
+        license_info.get("name", "") if isinstance(license_info, dict) else ""
+    )
+
+    # 处理 repo 改名/转移: 同一 id 可能以新 full_name 出现，需先清理旧记录
+    cursor.execute(
+        "DELETE FROM repositories WHERE id = ? AND full_name != ?",
+        (repo.get("id"), full_name),
+    )
+
+    cursor.execute(
+        """
+        INSERT INTO repositories (id, full_name, url, description, language, license, topics, 
+                                  created_at, category, project_type, has_paper, has_docker, 
+                                  has_conda_env, sub_label, install_commands, preview_images, badge_url)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT(id) DO UPDATE SET
+            full_name = excluded.full_name,
+            url = excluded.url,
+            description = excluded.description,
+            language = excluded.language,
+            topics = excluded.topics,
+            category = excluded.category,
+            project_type = excluded.project_type,
+            has_paper = excluded.has_paper,
+            has_docker = excluded.has_docker,
+            has_conda_env = excluded.has_conda_env,
+            sub_label = excluded.sub_label,
+            install_commands = excluded.install_commands,
+            preview_images = excluded.preview_images,
+            badge_url = excluded.badge_url
+    """,
+        (
+            repo.get("id"),
+            full_name,
+            repo.get("html_url"),
+            repo.get("description"),
+            repo.get("language"),
+            license_name,
+            topics,
+            repo.get("created_at"),
+            category,
+            project_type,
+            1 if has_paper else 0,
+            1 if has_docker else 0,
+            1 if has_conda_env else 0,
+            sub_label,
+            json.dumps(install_commands or []),
+            json.dumps(preview_images or []),
+            badge_url,
+        ),
+    )
+
+    cursor.execute("SELECT id FROM repositories WHERE full_name = ?", (full_name,))
+    repo_id = cursor.fetchone()[0]
+
+    cursor.execute(
+        """
+        INSERT INTO snapshots (repo_id, stars, forks, watchers, open_issues, pushed_at)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """,
+        (
+            repo_id,
+            repo.get("stargazers_count", 0),
+            repo.get("forks_count", 0),
+            repo.get("watchers_count", 0),
+            repo.get("open_issues_count", 0),
+            repo.get("pushed_at"),
+        ),
+    )
+
+    conn.commit()
+    conn.close()
+    return repo_id
+
+
+def get_weekly_star_growth(repo_id: int) -> int:
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        SELECT stars FROM snapshots WHERE repo_id = ? ORDER BY fetched_at DESC LIMIT 2
+    """,
+        (repo_id,),
+    )
+    rows = cursor.fetchall()
+    conn.close()
+    if len(rows) >= 2:
+        return max(0, rows[0][0] - rows[1][0])
+    return 0
+
+
+def get_all_repos_for_ranking() -> list:
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT 
+            r.id, r.full_name, r.url, r.description, r.category, 
+            r.project_type, r.has_paper, r.has_docker, r.has_conda_env,
+            r.sub_label, r.topics, r.license, r.tech_stack,
+            r.install_commands, r.preview_images, r.badge_url,
+            s.stars, s.forks, s.open_issues, s.pushed_at
+        FROM repositories r
+        JOIN (
+            SELECT repo_id, stars, forks, open_issues, pushed_at,
+                   ROW_NUMBER() OVER (PARTITION BY repo_id ORDER BY fetched_at DESC) as rn
+            FROM snapshots
+        ) s ON r.id = s.repo_id AND s.rn = 1
+    """)
+
+    results = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+    return results
+
+
+# ============================================================
+# GitHub API
+# ============================================================
+
+
+def search_with_pagination(query: str, min_results: int = 50) -> list:
+    url = f"{GITHUB_API_BASE}/search/repositories"
+    all_items = []
+    page = 1
+    per_page = 100
+
+    while len(all_items) < min_results and page <= 5:
+        params = {
+            "q": query,
+            "sort": "stars",
+            "order": "desc",
+            "per_page": per_page,
+            "page": page,
+        }
+        try:
+            response = requests.get(
+                url, headers=get_headers(), params=params, timeout=30
+            )
+            remaining = response.headers.get("X-RateLimit-Remaining", "?")
+
+            if response.status_code == 403:
+                log(f"    [Rate Limited] Waiting...")
+                time.sleep(60)
+                continue
+
+            response.raise_for_status()
+            items = response.json().get("items", [])
+            if not items:
+                break
+
+            all_items.extend(items)
+            log(
+                f"    [Page {page}] Got {len(items)} items (Total: {len(all_items)}, API: {remaining})"
+            )
+
+            if len(items) < per_page:
+                break
+            page += 1
+            time.sleep(2)
+        except requests.exceptions.RequestException as e:
+            log(f"    [Error] {e}")
+            break
+
+    return all_items
+
+
+def get_readme_content(owner: str, repo_name: str) -> str:
+    url = f"{GITHUB_API_BASE}/repos/{owner}/{repo_name}/readme"
+    try:
+        response = requests.get(url, headers=get_headers(), timeout=10)
+        if response.status_code == 200:
+            content = response.json().get("content", "")
+            return base64.b64decode(content).decode("utf-8", errors="ignore")
+    except Exception:
+        pass
+    return ""
+
+
+# ============================================================
+# 数据增强: 安装命令/预览图/勋章
+# ============================================================
+
+
+def extract_install_commands(readme_content: str) -> List[Dict[str, str]]:
+    """从README中提取安装命令"""
+    commands = []
+    patterns = [
+        (r"conda install\s+[\w\-\.]+(?:\s+[\w\-\.=<>]+)*", "conda"),
+        (r"pip install\s+[\w\-\.]+(?:\[[\w,]+\])?", "pip"),
+        (r"docker pull\s+[\w\-\./:]+", "docker"),
+        (r"git clone\s+https?://[\w\-\./:]+", "git"),
+        (r"mamba install\s+[\w\-\.]+(?:\s+[\w\-\.=<>]+)*", "mamba"),
+        (r"brew install\s+[\w\-\.]+", "brew"),
+    ]
+
+    for pattern, cmd_type in patterns:
+        matches = re.findall(pattern, readme_content, re.IGNORECASE)
+        for match in matches[:3]:  # 每种类型最多取3个
+            commands.append({"type": cmd_type, "command": match.strip()})
+
+    return commands[:5]  # 最多返回5个命令
+
+
+def extract_preview_images(readme_content: str, repo_url: str) -> List[str]:
+    """从README中提取预览图和Logo"""
+    images = []
+    logo_images = []  # Logo图片优先级最高
+
+    # 从repo_url提取owner和repo名
+    # https://github.com/owner/repo -> owner/repo
+    repo_full_name = ""
+    if "github.com" in repo_url:
+        parts = (
+            repo_url.replace("https://github.com/", "")
+            .replace("http://github.com/", "")
+            .split("/")
+        )
+        if len(parts) >= 2:
+            repo_full_name = f"{parts[0]}/{parts[1]}"
+
+    def convert_to_raw_url(url: str) -> str:
+        """将GitHub相对路径或blob路径转换为raw URL"""
+        url = url.strip()
+
+        # 已经是完整URL
+        if url.startswith("http://") or url.startswith("https://"):
+            # 转换blob URL为raw URL
+            if "github.com" in url and "/blob/" in url:
+                url = url.replace("github.com", "raw.githubusercontent.com").replace(
+                    "/blob/", "/"
+                )
+            return url
+
+        # GitHub绝对路径格式: /owner/repo/raw/branch/path 或 /owner/repo/blob/branch/path
+        if url.startswith("/") and "/raw/" in url:
+            return f"https://raw.githubusercontent.com{url.replace('/raw/', '/', 1)}"
+
+        if url.startswith("/") and "/blob/" in url:
+            # /owner/repo/blob/master/path -> https://raw.githubusercontent.com/owner/repo/master/path
+            url = url.replace("/blob/", "/", 1)
+            return f"https://raw.githubusercontent.com{url}"
+
+        # 相对路径格式: ./assets/logo.png 或 assets/logo.png
+        if repo_full_name:
+            clean_path = url.lstrip("./")
+            # 尝试多个分支
+            return f"https://raw.githubusercontent.com/{repo_full_name}/master/{clean_path}"
+
+        return url
+
+    # Logo关键词 - 最高优先级
+    logo_keywords = ["logo", "banner", "header", "brand"]
+
+    # 优先关键词
+    priority_keywords = [
+        "workflow",
+        "report",
+        "plot",
+        "result",
+        "output",
+        "diagram",
+        "overview",
+        "pipeline",
+        "screenshot",
+        "example",
+        "figure",
+        "dag",
+    ]
+
+    # 排除的徽章关键词
+    badge_keywords = [
+        "badge",
+        "shields.io",
+        "travis",
+        "codecov",
+        "circleci",
+        "coveralls",
+        "github.io/badge",
+        "img.shields",
+        "badgen.net",
+        "fury.io",
+    ]
+
+    # 1. 提取<picture>元素中的图片 (nf-core风格)
+    picture_pattern = r'<picture[^>]*>.*?<img[^>]+src=["\']([^"\']+)["\'].*?</picture>'
+    for url in re.findall(picture_pattern, readme_content, re.DOTALL | re.IGNORECASE):
+        url_lower = url.lower()
+        if any(badge in url_lower for badge in badge_keywords):
+            continue
+
+        full_url = convert_to_raw_url(url)
+        is_logo = any(kw in url_lower for kw in logo_keywords)
+
+        if is_logo:
+            if full_url not in logo_images:
+                logo_images.append(full_url)
+        elif full_url not in images:
+            images.append(full_url)
+
+    # 2. 提取<source>标签中的图片
+    source_pattern = r'<source[^>]+srcset=["\']([^"\']+)["\']'
+    for url in re.findall(source_pattern, readme_content, re.IGNORECASE):
+        url_lower = url.lower()
+        if any(badge in url_lower for badge in badge_keywords):
+            continue
+
+        full_url = convert_to_raw_url(url)
+        is_logo = any(kw in url_lower for kw in logo_keywords)
+
+        if is_logo:
+            if full_url not in logo_images:
+                logo_images.append(full_url)
+
+    # 3. 提取HTML <img>标签 (包括GitHub风格的相对路径)
+    html_pattern = r'<img[^>]+src=["\']([^"\']+)["\']'
+    for url in re.findall(html_pattern, readme_content, re.IGNORECASE):
+        url_lower = url.lower()
+        if any(badge in url_lower for badge in badge_keywords):
+            continue
+
+        full_url = convert_to_raw_url(url)
+        is_logo = any(kw in url_lower for kw in logo_keywords)
+        is_priority = any(kw in url_lower for kw in priority_keywords)
+
+        if is_logo:
+            if full_url not in logo_images:
+                logo_images.append(full_url)
+        elif is_priority:
+            if full_url not in images:
+                images.insert(0, full_url)
+        else:
+            if full_url not in images:
+                images.append(full_url)
+
+    # 4. 提取<a>标签中href指向的图片 (MpGAP风格)
+    a_img_pattern = r'<a[^>]+href=["\']([^"\']+\.(?:png|jpg|jpeg|gif|svg|webp))["\']'
+    for url in re.findall(a_img_pattern, readme_content, re.IGNORECASE):
+        url_lower = url.lower()
+        if any(badge in url_lower for badge in badge_keywords):
+            continue
+
+        full_url = convert_to_raw_url(url)
+        is_logo = any(kw in url_lower for kw in logo_keywords)
+
+        if is_logo:
+            if full_url not in logo_images:
+                logo_images.append(full_url)
+        elif full_url not in images:
+            images.append(full_url)
+
+    # 5. 提取Markdown图片语法
+    md_pattern = r"!\[([^\]]*)\]\(([^)]+)\)"
+    for alt, url in re.findall(md_pattern, readme_content):
+        alt_lower = alt.lower()
+        url_lower = url.lower()
+
+        if any(badge in url_lower for badge in badge_keywords):
+            continue
+
+        full_url = convert_to_raw_url(url)
+        is_logo = any(kw in alt_lower or kw in url_lower for kw in logo_keywords)
+        is_priority = any(
+            kw in alt_lower or kw in url_lower for kw in priority_keywords
+        )
+
+        if is_logo:
+            if full_url not in logo_images:
+                logo_images.append(full_url)
+        elif is_priority:
+            if full_url not in images:
+                images.insert(0, full_url)
+        else:
+            if full_url not in images:
+                images.append(full_url)
+
+    # Logo图片放在最前面，然后是其他图片
+    result = logo_images + images
+
+    # 去重并返回前5张
+    seen = set()
+    unique_result = []
+    for img in result:
+        if img not in seen:
+            seen.add(img)
+            unique_result.append(img)
+
+    return unique_result[:5]
+
+
+def generate_badge_url(full_name: str, stars: int, language: str = "") -> str:
+    """生成Shields.io勋章URL"""
+    # Stars勋章
+    stars_badge = (
+        f"https://img.shields.io/github/stars/{full_name}?style=flat-square&logo=github"
+    )
+    return stars_badge
+
+
+def generate_all_badges(
+    full_name: str,
+    stars: int,
+    language: str = "",
+    has_docker: bool = False,
+    has_conda: bool = False,
+) -> Dict[str, str]:
+    """生成所有勋章URL"""
+    badges = {
+        "stars": f"https://img.shields.io/github/stars/{full_name}?style=flat-square&logo=github",
+        "forks": f"https://img.shields.io/github/forks/{full_name}?style=flat-square&logo=github",
+        "issues": f"https://img.shields.io/github/issues/{full_name}?style=flat-square",
+        "license": f"https://img.shields.io/github/license/{full_name}?style=flat-square",
+        "last_commit": f"https://img.shields.io/github/last-commit/{full_name}?style=flat-square",
+    }
+
+    if language:
+        badges["language"] = (
+            f"https://img.shields.io/github/languages/top/{full_name}?style=flat-square"
+        )
+
+    if has_docker:
+        badges["docker"] = (
+            "https://img.shields.io/badge/docker-available-blue?style=flat-square&logo=docker"
+        )
+
+    if has_conda:
+        badges["conda"] = (
+            "https://img.shields.io/badge/conda-available-green?style=flat-square&logo=anaconda"
+        )
+
+    return badges
+
+
+# ============================================================
+# 分类器
+# ============================================================
+
+
+def detect_project_type(repo: dict, readme_content: str = "") -> str:
+    """分类器: 端到端能力判定 + 白名单/黑名单机制"""
+    description = (repo.get("description") or "").lower()
+    topics = [t.lower() for t in repo.get("topics", [])]
+    name = repo.get("name", "").lower()
+    full_name = repo.get("full_name", "").lower()
+    owner = full_name.split("/")[0] if "/" in full_name else ""
+    readme_lower = readme_content.lower()
+    readme_head = readme_lower[:2000]
+    combined_text = f"{description} {readme_head}"
+
+    # 1. 强制 Utility (黑名单)
+    if full_name in FORCE_UTILITY_REPOS:
+        return "Utility"
+
+    # 2. 强制 Pipeline (白名单)
+    if full_name in FORCE_PIPELINE_REPOS:
+        return "Pipeline"
+
+    # 3. 组织白名单
+    for org in PIPELINE_ORG_WHITELIST:
+        if owner == org or org in full_name:
+            return "Pipeline"
+
+    # 4. 一票否决权: R/Python 库检测
+    library_score = 0
+    for indicator in LIBRARY_INDICATORS:
+        if indicator in readme_lower:
+            library_score += 1
+
+    if library_score >= 2:
+        has_e2e = any(kw in combined_text for kw in END_TO_END_KEYWORDS)
+        if not has_e2e:
+            return "Utility"
+
+    # 5. 端到端关键词检测
+    for kw in END_TO_END_KEYWORDS:
+        if kw in combined_text:
+            return "Pipeline"
+
+    # 6. 语义特征评分
+    pipeline_score = 0
+
+    for kw in ["nextflow", "snakemake"]:
+        if kw in description:
+            pipeline_score += 5
+        if kw in name:
+            pipeline_score += 4
+        if kw in topics:
+            pipeline_score += 4
+        if kw in readme_head:
+            pipeline_score += 2
+
+    config_patterns = ["nextflow.config", "main.nf", "snakefile", ".smk", ".wdl"]
+    for pattern in config_patterns:
+        if pattern in readme_lower:
+            pipeline_score += 3
+
+    for kw in PIPELINE_SEMANTIC_KEYWORDS:
+        if kw in description:
+            pipeline_score += 2
+        if kw in readme_head[:500]:
+            pipeline_score += 1
+
+    pipeline_topics = ["pipeline", "workflow", "nextflow", "snakemake", "cwl", "wdl"]
+    for kw in pipeline_topics:
+        if kw in topics:
+            pipeline_score += 3
+
+    dir_patterns = ["workflows/", "rules/", "modules/", "subworkflows/"]
+    for pattern in dir_patterns:
+        if pattern in readme_lower:
+            pipeline_score += 2
+
+    return "Pipeline" if pipeline_score >= 5 else "Utility"
+
+
+def detect_environment_support(readme_content: str) -> Tuple[bool, bool]:
+    """检测 Docker 和 Conda 环境支持"""
+    readme_lower = readme_content.lower()
+
+    has_docker = any(
+        kw in readme_lower
+        for kw in [
+            "dockerfile",
+            "docker pull",
+            "docker run",
+            "docker-compose",
+            "container",
+            "singularity",
+            "biocontainer",
+        ]
+    )
+
+    has_conda_env = any(
+        kw in readme_lower
+        for kw in [
+            "environment.yml",
+            "environment.yaml",
+            "conda env create",
+            "conda install",
+            "bioconda",
+            "mamba install",
+        ]
+    )
+
+    return has_docker, has_conda_env
+
+
+def detect_has_paper(readme_content: str) -> bool:
+    readme_lower = readme_content.lower()
+    patterns = [
+        r"10\.\d{4,}/",
+        r"pubmed",
+        r"pmid",
+        r"doi\.org",
+        r"citation",
+        r"cite this",
+        r"published in",
+        r"biorxiv",
+        r"arxiv",
+    ]
+    return any(re.search(p, readme_lower) for p in patterns)
+
+
+def detect_sub_label(repo: dict, readme_content: str = "") -> str:
+    """检测 Utility 细分领域标签"""
+    description = (repo.get("description") or "").lower()
+    name = repo.get("name", "").lower()
+    topics = [t.lower() for t in repo.get("topics", [])]
+    readme_lower = readme_content.lower()
+    full_text = f"{description} {name} {' '.join(topics)} {readme_lower[:2000]}"
+
+    for label, keywords in UTILITY_LABELS.items():
+        if any(kw in full_text for kw in keywords):
+            return label
+
+    return "General"
+
+
+def classify_category(repo: dict, search_category: str) -> str:
+    """分类器：带置信度校验，Bio-Score 过低归 'Other'"""
+    description = (repo.get("description") or "").lower()
+    topics = [t.lower() for t in repo.get("topics", [])]
+    name = repo.get("name", "").lower()
+    full_text = f"{description} {name} {' '.join(topics)}"
+
+    # 置信度校验：Bio-Score 过低则归为 Other，不进入排行榜
+    bio_score, tech_score = calculate_bio_tech_scores(repo)
+    if bio_score < BIO_SCORE_THRESHOLD and tech_score > bio_score:
+        return "Other"
+
+    matched_categories = []
+
+    if any(
+        kw in full_text
+        for kw in [
+            "single-cell",
+            "scrna",
+            "10x",
+            "scanpy",
+            "seurat",
+            "cell ranger",
+            "droplet",
+        ]
+    ):
+        matched_categories.append("Single-cell")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "spatial transcriptomics",
+            "spatial omics",
+            "visium",
+            "merfish",
+            "seqfish",
+            "slide-seq",
+            "squidpy",
+            "stlearn",
+            "cell2location",
+            "spatial deconvolution",
+            "spatialDE",
+            "spatial gene expression",
+        ]
+    ):
+        matched_categories.append("Spatial-omics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "metagenom",
+            "16s",
+            "microbiome",
+            "taxonom",
+            "kraken",
+            "metaphlan",
+            "qiime",
+            "mothur",
+            "amplicon",
+        ]
+    ):
+        matched_categories.append("Metagenomics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "atac-seq",
+            "chip-seq",
+            "methylat",
+            "hi-c",
+            "chromatin",
+            "cut&tag",
+            "bisulfite",
+            "epigenom",
+        ]
+    ):
+        matched_categories.append("Epigenetics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "proteomics",
+            "mass-spectrometry",
+            "mass spectrometry",
+            "maxquant",
+            "proteowizard",
+            "peptide",
+            "lc-ms",
+            "tandem mass",
+            "label-free quantification",
+        ]
+    ):
+        matched_categories.append("Proteomics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "metabolomics",
+            "lipidomics",
+            "metabolic-profiling",
+            "metabolic profiling",
+            "xcms",
+            "metabolite",
+            "gc-ms",
+            "nmr metabolomics",
+            "untargeted metabolomics",
+        ]
+    ):
+        matched_categories.append("Metabolomics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "rna-seq",
+            "rnaseq",
+            "transcript",
+            "differential expression",
+            "deseq",
+            "edger",
+            "kallisto",
+            "salmon",
+        ]
+    ):
+        matched_categories.append("Transcriptomics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "multi-omics",
+            "multiomics",
+            "omics integration",
+            "integrative omics",
+            "mofa",
+            "mixomics",
+            "multi-modal omics",
+            "pan-omics",
+            "cross-omics",
+        ]
+    ):
+        matched_categories.append("Multi-omics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "alphafold",
+            "protein structure prediction",
+            "protein folding",
+            "rosettafold",
+            "openfold",
+            "colabfold",
+            "protein language model",
+            "drug discovery",
+            "virtual screening",
+            "molecular generation",
+            "de novo design",
+            "protein design",
+            "scientific llm",
+            "biomedical nlp",
+            "biomedical foundation model",
+            "retrosynthesis",
+            "admet",
+            "compound screening",
+        ]
+    ):
+        matched_categories.append("ProteinAI")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "computational pathology",
+            "digital pathology",
+            "histopathology AI",
+            "whole slide imaging",
+            "WSI analysis",
+            "pathology foundation model",
+            "UNI",
+            "Virchow",
+            "CONCH",
+            "CLAM",
+            "Prov-GigaPath",
+            "GigaPath",
+            "H-Optimus",
+            "Hibou",
+            "Phikon",
+            "CATE",
+            "LitePath",
+            "PathoDuet",
+            "PLIP",
+            "PRISM",
+            "TANGLE",
+            "weakly supervised learning",
+            "multiple instance learning",
+            "MIL",
+            "slide-level classification",
+            "tumor detection",
+            "cancer subtyping",
+            "biomarker prediction",
+            "prognostic modeling",
+            "histomorphological analysis",
+            "tissue segmentation",
+        ]
+    ):
+        matched_categories.append("AI-Pathology")
+
+    if not matched_categories:
+        # 无特定分类匹配时，用 Bio-Score 做最终校验
+        if bio_score >= BIO_SCORE_THRESHOLD:
+            return search_category if search_category in KEYWORDS else "Genomics"
+        else:
+            return "Other"
+
+    return matched_categories[0]
+
+
+def get_multi_categories(repo: dict) -> list:
+    """获取项目的所有匹配类别（一库多标）"""
+    description = (repo.get("description") or "").lower()
+    topics = [t.lower() for t in repo.get("topics", [])]
+    name = repo.get("name", "").lower()
+    full_text = f"{description} {name} {' '.join(topics)}"
+
+    matched_categories = []
+
+    if any(
+        kw in full_text
+        for kw in [
+            "single-cell",
+            "scrna",
+            "10x",
+            "scanpy",
+            "seurat",
+            "cell ranger",
+            "droplet",
+        ]
+    ):
+        matched_categories.append("Single-cell")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "spatial transcriptomics",
+            "spatial omics",
+            "visium",
+            "merfish",
+            "seqfish",
+            "slide-seq",
+            "squidpy",
+            "stlearn",
+            "cell2location",
+            "spatial deconvolution",
+            "spatialDE",
+            "spatial gene expression",
+        ]
+    ):
+        matched_categories.append("Spatial-omics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "metagenom",
+            "16s",
+            "microbiome",
+            "taxonom",
+            "kraken",
+            "metaphlan",
+            "qiime",
+            "mothur",
+            "amplicon",
+        ]
+    ):
+        matched_categories.append("Metagenomics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "atac-seq",
+            "chip-seq",
+            "methylat",
+            "hi-c",
+            "chromatin",
+            "cut&tag",
+            "bisulfite",
+            "epigenom",
+        ]
+    ):
+        matched_categories.append("Epigenetics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "proteomics",
+            "mass-spectrometry",
+            "mass spectrometry",
+            "maxquant",
+            "proteowizard",
+            "peptide",
+            "lc-ms",
+            "tandem mass",
+            "label-free quantification",
+        ]
+    ):
+        matched_categories.append("Proteomics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "metabolomics",
+            "lipidomics",
+            "metabolic-profiling",
+            "metabolic profiling",
+            "xcms",
+            "metabolite",
+            "gc-ms",
+            "nmr metabolomics",
+            "untargeted metabolomics",
+        ]
+    ):
+        matched_categories.append("Metabolomics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "rna-seq",
+            "rnaseq",
+            "transcript",
+            "differential expression",
+            "deseq",
+            "edger",
+            "kallisto",
+            "salmon",
+        ]
+    ):
+        matched_categories.append("Transcriptomics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "multi-omics",
+            "multiomics",
+            "omics integration",
+            "integrative omics",
+            "mofa",
+            "mixomics",
+            "multi-modal omics",
+            "pan-omics",
+            "cross-omics",
+        ]
+    ):
+        matched_categories.append("Multi-omics")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "alphafold",
+            "protein structure prediction",
+            "protein folding",
+            "rosettafold",
+            "openfold",
+            "colabfold",
+            "protein language model",
+            "drug discovery",
+            "virtual screening",
+            "molecular generation",
+            "de novo design",
+            "protein design",
+            "scientific llm",
+            "biomedical nlp",
+            "biomedical foundation model",
+            "retrosynthesis",
+            "admet",
+            "compound screening",
+        ]
+    ):
+        matched_categories.append("ProteinAI")
+
+    if any(
+        kw in full_text
+        for kw in [
+            "computational pathology",
+            "digital pathology",
+            "histopathology AI",
+            "whole slide imaging",
+            "WSI analysis",
+            "pathology foundation model",
+            "UNI",
+            "Virchow",
+            "CONCH",
+            "CLAM",
+            "Prov-GigaPath",
+            "GigaPath",
+            "H-Optimus",
+            "Hibou",
+            "Phikon",
+            "CATE",
+            "LitePath",
+            "PathoDuet",
+            "PLIP",
+            "PRISM",
+            "TANGLE",
+            "weakly supervised learning",
+            "multiple instance learning",
+            "MIL",
+            "slide-level classification",
+            "tumor detection",
+            "cancer subtyping",
+            "biomarker prediction",
+            "prognostic modeling",
+            "histomorphological analysis",
+            "tissue segmentation",
+        ]
+    ):
+        matched_categories.append("AI-Pathology")
+
+    if not matched_categories:
+        return ["Genomics"]
+
+    return matched_categories
+
+
+# ============================================================
+# PubMed 引用量查询
+# ============================================================
+
+
+def _load_pubmed_cache() -> dict:
+    """加载 PubMed 引用量缓存"""
+    if PUBMED_CACHE_PATH.exists():
+        try:
+            with open(PUBMED_CACHE_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError):
+            return {}
+    return {}
+
+
+def _save_pubmed_cache(cache: dict):
+    """保存 PubMed 引用量缓存"""
+    try:
+        with open(PUBMED_CACHE_PATH, "w", encoding="utf-8") as f:
+            json.dump(cache, f, indent=2)
+    except IOError as e:
+        log(f"  [Warning] Failed to save PubMed cache: {e}")
+
+
+def fetch_pubmed_citations(tool_name: str) -> int:
+    """
+    通过 NCBI Entrez API 获取工具的 PubMed 引用量
+    搜索策略: tool_name + [bioinformatics]
+    使用本地 JSON 缓存避免重复请求
+    """
+    # 标准化工具名 (去除 owner/ 前缀，转小写)
+    if "/" in tool_name:
+        tool_name = tool_name.split("/")[-1]
+    cache_key = tool_name.lower()
+
+    # 检查缓存
+    cache = _load_pubmed_cache()
+    if cache_key in cache:
+        cached = cache[cache_key]
+        # 缓存有效期 7 天
+        cached_time = datetime.fromisoformat(cached.get("timestamp", "2000-01-01"))
+        if (datetime.now() - cached_time).days < 7:
+            return cached.get("count", 0)
+
+    # 构建搜索查询
+    search_term = f'"{tool_name}"[Title/Abstract] AND bioinformatics[MeSH Terms]'
+    search_url = f"{NCBI_ENTREZ_BASE}/esearch.fcgi"
+    params = {
+        "db": "pubmed",
+        "term": search_term,
+        "retmode": "json",
+        "retmax": 0,  # 只需要计数
+    }
+
+    try:
+        time.sleep(NCBI_RATE_LIMIT_DELAY)  # 遵守频率限制
+        response = requests.get(search_url, params=params, timeout=10)
+
+        if response.status_code == 200:
+            data = response.json()
+            count = int(data.get("esearchresult", {}).get("count", 0))
+
+            # 更新缓存
+            cache[cache_key] = {"count": count, "timestamp": datetime.now().isoformat()}
+            _save_pubmed_cache(cache)
+
+            return count
+        else:
+            log(f"  [PubMed] API error for {tool_name}: HTTP {response.status_code}")
+            return 0
+    except requests.exceptions.RequestException as e:
+        log(f"  [PubMed] Request failed for {tool_name}: {e}")
+        return 0
+    except (json.JSONDecodeError, KeyError, ValueError) as e:
+        log(f"  [PubMed] Parse error for {tool_name}: {e}")
+        return 0
+
+
+# ============================================================
+# 评分系统
+# ============================================================
+
+# 评分权重配置
+SCORE_WEIGHTS = {"stars": 0.4, "forks": 0.2, "citations": 0.4}
+
+
+def calculate_combined_score(stars: int, forks: int, citations: int) -> float:
+    """
+    综合评分公式 (用户指定):
+    Score = (Stars × 0.4) + (Forks × 0.2) + (Citations × 0.4)
+    """
+    # 使用 log 缩放避免大数值主导
+    star_component = math.log10(stars + 1) * 10 * SCORE_WEIGHTS["stars"]
+    fork_component = math.log10(forks + 1) * 10 * SCORE_WEIGHTS["forks"]
+    citation_component = math.log10(citations + 1) * 10 * SCORE_WEIGHTS["citations"]
+
+    return round(star_component + fork_component + citation_component, 2)
+
+
+def calculate_pipeline_score(
+    stars: int,
+    weekly_growth: int,
+    has_docker: bool,
+    has_conda: bool,
+    pushed_at: str = "",
+    open_issues: int = 0,
+    has_paper: bool = False,
+    forks: int = 0,
+    citations: int = 0,
+) -> dict:
+    """Pipeline 评分公式 (优化版v2-sc-proAI)
+    返回包含总分和各分项的字典
+    """
+    # 基础热度
+    base = 6 * math.log10(stars + 1) if stars > 0 else 0
+
+    # 增长趋势
+    trend = 2.5 * math.log10(weekly_growth + 1) if weekly_growth > 0 else 0
+
+    # 环境支持
+    env = 0
+    if has_docker:
+        env += 6
+    if has_conda:
+        env += 4
+
+    # 论文支持
+    paper = 4 if has_paper else 0
+
+    # 健康因子计算
+    health = 1.0
+    inactive_days = 0
+    if pushed_at:
+        try:
+            pushed_dt = datetime.fromisoformat(pushed_at.replace("Z", "+00:00"))
+            inactive_days = (datetime.now(timezone.utc) - pushed_dt).days
+
+            # 更新频率因子
+            if inactive_days <= 90:
+                recency_factor = 1.00
+            elif inactive_days <= 180:
+                recency_factor = 0.85
+            elif inactive_days <= 365:
+                recency_factor = 0.65
+            else:
+                recency_factor = 0.35
+
+            # Issue健康因子
+            issue_health_factor = 1.0
+            if stars > 0 and open_issues / stars > 0.15:
+                issue_health_factor = 0.9
+
+            health = recency_factor * issue_health_factor
+        except:
+            pass
+
+    # 总分
+    total = (base + trend + env + paper) * health
+
+    return {
+        "score_total": round(total, 2),
+        "score_base": round(base, 2),
+        "score_trend": round(trend, 2),
+        "score_env": round(env, 2),
+        "score_paper": paper,
+        "score_health": round(health, 2),
+        "score_version": "v2-sc-proAI",
+        "inactive_days": inactive_days,
+    }
+
+
+def calculate_utility_score(
+    stars: int,
+    weekly_growth: int,
+    pushed_at: str = "",
+    open_issues: int = 0,
+    has_paper: bool = False,
+    forks: int = 0,
+    citations: int = 0,
+) -> dict:
+    """Utility 评分公式 (优化版v2-sc-proAI)
+    返回包含总分和各分项的字典
+    """
+    # 基础热度
+    base = 7 * math.log10(stars + 1) if stars > 0 else 0
+
+    # 增长趋势
+    trend = 2.5 * math.log10(weekly_growth + 1) if weekly_growth > 0 else 0
+
+    # 论文支持
+    paper = 4 if has_paper else 0
+
+    # 健康因子计算
+    health = 1.0
+    inactive_days = 0
+    if pushed_at:
+        try:
+            pushed_dt = datetime.fromisoformat(pushed_at.replace("Z", "+00:00"))
+            inactive_days = (datetime.now(timezone.utc) - pushed_dt).days
+
+            # 更新频率因子
+            if inactive_days <= 90:
+                recency_factor = 1.00
+            elif inactive_days <= 180:
+                recency_factor = 0.85
+            elif inactive_days <= 365:
+                recency_factor = 0.65
+            else:
+                recency_factor = 0.35
+
+            # Issue健康因子
+            issue_health_factor = 1.0
+            if stars > 0 and open_issues / stars > 0.15:
+                issue_health_factor = 0.9
+
+            health = recency_factor * issue_health_factor
+        except:
+            pass
+
+    # 总分
+    total = (base + trend + paper) * health
+
+    return {
+        "score_total": round(total, 2),
+        "score_base": round(base, 2),
+        "score_trend": round(trend, 2),
+        "score_env": 0,
+        "score_paper": paper,
+        "score_health": round(health, 2),
+        "score_version": "v2-sc-proAI",
+        "inactive_days": inactive_days,
+    }
+
+
+# ============================================================
+# 社区互动模块：勋章与 Issue 通知
+# ============================================================
+
+# 勋章颜色配置
+RANK_BADGE_COLORS = {
+    1: "gold",  # 金色 - 冠军
+    2: "silver",  # 银色 - 亚军
+    3: "bronze",  # 铜色 - 季军
+    4: "blue",  # 蓝色 - 4-10名
+    5: "blue",
+    6: "blue",
+    7: "blue",
+    8: "blue",
+    9: "blue",
+    10: "blue",
+}
+
+WEBSITE_URL = "https://bbplayer2021.github.io/bio-rank-gateway/"
+
+
+def generate_rank_badge(rank: int, category: str, track: str) -> dict:
+    """为Top 10项目生成勋章Markdown片段
+
+    Args:
+        rank: 排名 (1-10)
+        category: 分类名称 (如 Genomics)
+        track: 赛道 (Pipeline/Utility)
+
+    Returns:
+        包含勋章信息的字典
+    """
+    if rank > 10:
+        return {}
+
+    color = RANK_BADGE_COLORS.get(rank, "blue")
+
+    # 使用 shields.io 生成勋章
+    label = f"Bio-Rank {category}"
+    message = f"No.{rank} {track}"
+
+    badge_url = f"https://img.shields.io/badge/{label.replace(' ', '%20').replace('-', '--')}-{message.replace(' ', '%20')}-{color}?style=for-the-badge&logo=github"
+
+    # Markdown 片段
+    markdown_snippet = f"[![Bio-Rank {category} No.{rank}]({badge_url})]({WEBSITE_URL})"
+
+    # HTML 片段
+    html_snippet = f'<a href="{WEBSITE_URL}"><img src="{badge_url}" alt="Bio-Rank {category} No.{rank}"></a>'
+
+    return {
+        "rank": rank,
+        "category": category,
+        "track": track,
+        "color": color,
+        "badge_url": badge_url,
+        "markdown": markdown_snippet,
+        "html": html_snippet,
+    }
+
+
+def generate_thank_you_issue_draft(
+    repo_full_name: str, rank: int, category: str, track: str, score: float, stars: int
+) -> dict:
+    """生成新进榜Top 10项目的感谢信草稿
+
+    此函数仅生成草稿内容，不会自动创建Issue。
+    用于记录和后续手动操作。
+
+    Args:
+        repo_full_name: 仓库全名 (owner/repo)
+        rank: 排名
+        category: 分类
+        track: 赛道
+        score: 评分
+        stars: Star数
+
+    Returns:
+        包含Issue草稿信息的字典
+    """
+    repo_name = (
+        repo_full_name.split("/")[-1] if "/" in repo_full_name else repo_full_name
+    )
+
+    # 勋章信息
+    badge_info = generate_rank_badge(rank, category, track)
+    badge_markdown = badge_info.get("markdown", "")
+
+    # 感谢信标题
+    title = f"🎉 Congratulations! {repo_name} ranked #{rank} in Bio-Rank Gateway ({category} {track}s)"
+
+    # 感谢信正文
+    body = f"""## 🏆 Bio-Rank Gateway Recognition
+
+Hi there! 👋
+
+We're excited to inform you that **{repo_name}** has been ranked **#{rank}** in the **{category} {track}s** category on [Bio-Rank Gateway]({WEBSITE_URL})!
+
+### 📊 Current Stats
+- **Rank**: #{rank} in {category} {track}s
+- **Score**: {score:.1f}
+- **Stars**: {stars:,}
+
+### 🎖️ Add a Badge to Your README
+
+You can proudly display this achievement by adding the following badge to your README:
+
+**Markdown:**
+```markdown
+{badge_markdown}
+```
+
+**Preview:**
+
+{badge_markdown}
+
+### 🔗 What is Bio-Rank Gateway?
+
+Bio-Rank Gateway is an automated weekly ranking system for bioinformatics tools on GitHub. We evaluate tools based on:
+- GitHub stars and growth trends
+- Docker/Conda environment support
+- Academic paper associations
+- PubMed citation counts
+- Community activity
+
+Visit us at: {WEBSITE_URL}
+
+---
+
+*This is an automated notification. Feel free to close this issue if you prefer not to display the badge.*
+
+Thank you for your contribution to the bioinformatics community! 🧬
+"""
+
+    return {
+        "repo": repo_full_name,
+        "rank": rank,
+        "category": category,
+        "track": track,
+        "issue_title": title,
+        "issue_body": body,
+        "badge_info": badge_info,
+        "created_at": datetime.now().isoformat(),
+        "status": "draft",  # draft = 未发送, sent = 已发送
+    }
+
+
+def generate_community_badges(ranking: dict) -> dict:
+    """为所有Top 10项目生成勋章数据
+
+    Args:
+        ranking: 排名数据字典
+
+    Returns:
+        包含所有勋章信息的字典
+    """
+    badges = {}
+
+    for category, data in ranking.items():
+        badges[category] = {"pipelines": [], "utilities": []}
+
+        # Pipeline Top 10 勋章
+        for proj in data.get("top_20_pipelines", [])[:10]:
+            rank = proj.get("rank", 0)
+            if rank <= 10:
+                badge = generate_rank_badge(rank, category, "Pipeline")
+                badge["repo"] = proj.get("full_name", "")
+                badges[category]["pipelines"].append(badge)
+
+        # Utility Top 10 勋章
+        for proj in data.get("top_10_utilities", [])[:10]:
+            rank = proj.get("rank", 0)
+            if rank <= 10:
+                badge = generate_rank_badge(rank, category, "Utility")
+                badge["repo"] = proj.get("full_name", "")
+                badges[category]["utilities"].append(badge)
+
+    return badges
+
+
+def generate_issue_drafts_for_new_entries(new_entries: list, ranking: dict) -> list:
+    """为新进榜Top 10项目生成Issue草稿
+
+    Args:
+        new_entries: 新进榜项目列表
+        ranking: 排名数据
+
+    Returns:
+        Issue草稿列表
+    """
+    drafts = []
+
+    for entry in new_entries:
+        repo_name = entry.get("repo", "")
+        category = entry.get("category", "")
+        track = entry.get("track", "")
+
+        # 查找该项目的详细信息
+        cat_data = ranking.get(category, {})
+        track_key = "top_20_pipelines" if track == "Pipeline" else "top_10_utilities"
+        projects = cat_data.get(track_key, [])
+
+        for proj in projects[:10]:  # 只处理Top 10
+            if proj.get("full_name") == repo_name or proj.get("name") == repo_name:
+                draft = generate_thank_you_issue_draft(
+                    repo_full_name=proj.get("full_name", repo_name),
+                    rank=proj.get("rank", 0),
+                    category=category,
+                    track=track,
+                    score=proj.get("score", 0),
+                    stars=proj.get("stars", 0),
+                )
+                drafts.append(draft)
+                break
+
+    return drafts
+
+
+# ============================================================
+# 深度搜索
+# ============================================================
+
+
+def depth_search(quick_mode: bool = False):
+    log("\n" + "=" * 70)
+    log("[Deep Search] Dual-track collection...")
+    log("Criteria: pushed:>2025-01-01 AND stars:>10")
+    log("=" * 70)
+
+    cutoff_date = "2025-01-01"
+    total_found = 0
+    seen_repos = set()
+
+    keywords_to_search = KEYWORDS
+    if quick_mode:
+        keywords_to_search = {
+            "Single-cell": ["scRNA-seq", "Scanpy", "scverse"],
+            "Spatial-omics": ["Visium", "spatial transcriptomics", "squidpy"],
+            "Multi-omics": ["multi-omics", "omics integration", "multiomics"],
+            "ProteinAI": [
+                "AlphaFold",
+                "protein language model",
+                "ESM",
+                "ColabFold",
+                "RoseTTAFold",
+                "OpenFold",
+            ],
+            "AI-Pathology": [
+                "computational pathology",
+                "digital pathology",
+                "WSI",
+                "UNI",
+                "Virchow",
+                "CONCH",
+                "CLAM",
+            ],
+        }
+
+    category_pipelines_count = defaultdict(int)
+    max_pipelines_per_category = 20
+    min_stars_threshold = 10  # 降低阈值以获取更多项目
+
+    bio_terms = [
+        "bioinformatics",
+        "genomics",
+        "transcriptomics",
+        "metagenomics",
+        "epigenetics",
+        "proteomics",
+        "metabolomics",
+        "sequencing",
+        "alignment",
+        "assembly",
+        "variant",
+        "expression",
+        "analysis",
+        "pipeline",
+        "workflow",
+        "mass-spectrometry",
+        "peptide",
+        "metabolite",
+        "lipidomics",
+        "spatial transcriptomics",
+        "spatial omics",
+        "visium",
+        "merfish",
+        "multi-omics",
+        "multiomics",
+        "omics integration",
+        "alphafold",
+        "protein structure",
+        "drug discovery",
+        "protein language model",
+        "scientific llm",
+        "biomedical nlp",
+        "molecular generation",
+    ]
+
+    for category, keywords in keywords_to_search.items():
+        log(f"\n[Category] {category}")
+        log("-" * 60)
+
+        if category_pipelines_count[category] >= max_pipelines_per_category:
+            log(
+                f"  [Skip] {category} reached {category_pipelines_count[category]} Pipelines"
+            )
+            continue
+
+        for keyword in keywords:
+            query = f"{keyword} pushed:>{cutoff_date} stars:>10"
+            log(f"  Keyword: {keyword}")
+
+            repos = search_with_pagination(
+                query, min_results=50 if not quick_mode else 20
+            )
+
+            for repo in repos:
+                full_name = repo.get("full_name")
+                if full_name in seen_repos:
+                    continue
+                seen_repos.add(full_name)
+
+                if is_excluded(repo):
+                    continue
+
+                # 过滤非生信的通用编程项目
+                if is_non_bio_project(repo):
+                    log(f"    [SKIP] {full_name} (non-bio project)")
+                    continue
+
+                description = (repo.get("description") or "").lower()
+                topics = [t.lower() for t in repo.get("topics", [])]
+
+                has_bio_term = any(
+                    term in description or term in topics for term in bio_terms
+                )
+                if not has_bio_term:
+                    continue
+
+                owner = repo.get("owner", {}).get("login", "")
+                repo_name = repo.get("name", "")
+                readme = get_readme_content(owner, repo_name)
+
+                # 检测是否为通用流程引擎
+                if is_workflow_engine(repo):
+                    final_category = "Workflow Engine"
+                    project_type = "Pipeline"
+                else:
+                    final_category = classify_category(repo, category)
+                    project_type = detect_project_type(repo, readme)
+
+                if (
+                    project_type == "Pipeline"
+                    and category_pipelines_count[final_category]
+                    >= max_pipelines_per_category
+                ):
+                    continue
+
+                has_paper = detect_has_paper(readme)
+                has_docker, has_conda = detect_environment_support(readme)
+                sub_label = (
+                    detect_sub_label(repo, readme) if project_type == "Utility" else ""
+                )
+
+                # 数据增强
+                install_commands = extract_install_commands(readme)
+                preview_images = extract_preview_images(
+                    readme, repo.get("html_url", "")
+                )
+                badge_url = generate_badge_url(
+                    full_name, repo.get("stargazers_count", 0), repo.get("language", "")
+                )
+
+                save_repo_with_snapshot(
+                    repo,
+                    final_category,
+                    project_type,
+                    has_paper,
+                    has_docker,
+                    has_conda,
+                    sub_label,
+                    install_commands,
+                    preview_images,
+                    badge_url,
+                )
+                total_found += 1
+
+                if project_type == "Pipeline":
+                    category_pipelines_count[final_category] += 1
+
+                stars = repo.get("stargazers_count", 0)
+                type_mark = "[P]" if project_type == "Pipeline" else f"[U:{sub_label}]"
+                env_mark = " [D]" if has_docker else ""
+                env_mark += " [C]" if has_conda else ""
+                log(
+                    f"    + {full_name} (*{stars}) {type_mark}{env_mark} -> {final_category}"
+                )
+
+                time.sleep(0.3)
+
+            time.sleep(3)
+
+    log(f"\n[Search Complete] Total: {total_found} repositories")
+    log(f"Pipeline distribution: {category_pipelines_count}")
+    return total_found
+
+
+# ============================================================
+# 生成排行榜报告
+# ============================================================
+
+
+def generate_ranking_report():
+    log("\n" + "=" * 70)
+    log("[Rankings] Generating report...")
+    log("=" * 70)
+
+    repos = get_all_repos_for_ranking()
+
+    # 二次过滤：排除数据库中遗留的非生信项目
+    before_count = len(repos)
+    repos = [r for r in repos if not is_non_bio_project(r)]
+    log(
+        f"  [Filter] Removed {before_count - len(repos)} non-bio projects from database, {len(repos)} remaining"
+    )
+
+    # 计算评分 (含 PubMed 引用量)
+    log("\n  [PubMed] Fetching citation counts...")
+    for i, repo in enumerate(repos):
+        weekly_growth = get_weekly_star_growth(repo["id"])
+        repo["weekly_growth"] = weekly_growth
+
+        # 获取 PubMed 引用量
+        tool_name = (
+            repo["full_name"].split("/")[-1]
+            if "/" in repo["full_name"]
+            else repo["full_name"]
+        )
+        citations = fetch_pubmed_citations(tool_name)
+        repo["pubmed_citations"] = citations
+
+        forks = repo.get("forks", 0)
+
+        if repo["project_type"] == "Pipeline":
+            score_result = calculate_pipeline_score(
+                repo["stars"],
+                weekly_growth,
+                bool(repo["has_docker"]),
+                bool(repo["has_conda_env"]),
+                repo.get("pushed_at", ""),
+                repo.get("open_issues", 0),
+                bool(repo["has_paper"]),
+                forks=forks,
+                citations=citations,
+            )
+            # 把所有分数字段加入repo
+            repo.update(score_result)
+            # 保留原score字段兼容
+            repo["score"] = score_result["score_total"]
+        else:
+            score_result = calculate_utility_score(
+                repo["stars"],
+                weekly_growth,
+                repo.get("pushed_at", ""),
+                repo.get("open_issues", 0),
+                bool(repo["has_paper"]),
+                forks=forks,
+                citations=citations,
+            )
+            # 把所有分数字段加入repo
+            repo.update(score_result)
+            # 保留原score字段兼容
+            repo["score"] = score_result["score_total"]
+
+        if (i + 1) % 50 == 0:
+            log(f"    Processed {i + 1}/{len(repos)} repos...")
+
+    # 按类别和类型分组（包含 Workflow Engine 独立分类）
+    categories = [
+        "Single-cell",
+        "Spatial-omics",
+        "Multi-omics",
+        "ProteinAI",
+        "AI-Pathology",
+    ]
+    ranking = {}
+
+    for cat in categories:
+        cat_repos = []
+        for repo in repos:
+            # 排除 Workflow Engine 项目进入具体组学类别
+            if repo.get("category") == "Workflow Engine":
+                continue
+            repo_categories = get_multi_categories(repo)
+            if cat in repo_categories:
+                cat_repos.append(repo)
+
+        pipelines = sorted(
+            [r for r in cat_repos if r["project_type"] == "Pipeline"],
+            key=lambda x: x["score"],
+            reverse=True,
+        )[:20]
+        utilities = sorted(
+            [r for r in cat_repos if r["project_type"] == "Utility"],
+            key=lambda x: x["score"],
+            reverse=True,
+        )[:10]
+
+        ranking[cat] = {
+            "total_count": len(cat_repos),
+            "pipeline_count": len(
+                [r for r in cat_repos if r["project_type"] == "Pipeline"]
+            ),
+            "utility_count": len(
+                [r for r in cat_repos if r["project_type"] == "Utility"]
+            ),
+            "top_20_pipelines": [
+                _format_repo(r, i + 1) for i, r in enumerate(pipelines)
+            ],
+            "top_10_utilities": [
+                _format_repo(r, i + 1) for i, r in enumerate(utilities)
+            ],
+        }
+
+        log(f"\n[{cat}]")
+        log(f"  --- Top 20 Pipelines ---")
+        for i, r in enumerate(pipelines[:5], 1):
+            env = "[D]" if r["has_docker"] else ""
+            env += "[C]" if r["has_conda_env"] else ""
+            log(
+                f"    {i:2}. {r['full_name']} (S={r['score']:.1f}, *{r['stars']}) {env}"
+            )
+
+        log(f"  --- Top 10 Utilities ---")
+        for i, r in enumerate(utilities[:5], 1):
+            label = f"[{r['sub_label']}]" if r.get("sub_label") else ""
+            log(
+                f"    {i:2}. {r['full_name']} (S={r['score']:.1f}, *{r['stars']}) {label}"
+            )
+
+    # 生成红黑榜
+    red_black_lists = _generate_red_black_lists(repos)
+
+    # 检测新进榜项目
+    new_entries = _detect_new_entries(ranking)
+
+    # 生成社区勋章数据
+    community_badges = generate_community_badges(ranking)
+    log(f"\n[Community] Generated badges for Top 10 projects in each category")
+
+    # 生成新进榜Issue草稿（仅准备，不执行发送）
+    issue_drafts = generate_issue_drafts_for_new_entries(new_entries, ranking)
+    if issue_drafts:
+        log(
+            f"[Community] Generated {len(issue_drafts)} issue drafts for new Top 10 entries"
+        )
+
+    report = {
+        "generated_at": datetime.now().isoformat(),
+        "version": "14.0",
+        "scoring_formulas": {
+            "pipeline": "S = 5 * log10(Stars) + Weekly_Growth * 2 + Env_Bonus(15) + Zombie_Penalty(0.5)",
+            "utility": "S = 8 * log10(Stars) + Weekly_Growth * 2 + Zombie_Penalty(0.5)",
+        },
+        "total_repositories": len(repos),
+        "categories": ranking,
+        "red_black_lists": red_black_lists,
+        "new_entries": new_entries,
+        "community": {"badges": community_badges, "issue_drafts": issue_drafts},
+        "summary": {
+            "total_pipelines": len(
+                [r for r in repos if r["project_type"] == "Pipeline"]
+            ),
+            "total_utilities": len(
+                [r for r in repos if r["project_type"] == "Utility"]
+            ),
+            "with_docker": len([r for r in repos if r["has_docker"]]),
+            "with_conda": len([r for r in repos if r["has_conda_env"]]),
+            "paper_linked": len([r for r in repos if r["has_paper"]]),
+        },
+    }
+
+    # 保存 JSON
+    output_path = DATA_DIR / "ranking_report.json"
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(report, f, ensure_ascii=False, indent=2)
+    log(f"\nJSON Report: {output_path}")
+
+    # 保存历史记录用于新进榜检测
+    _save_ranking_history(ranking)
+
+    # 输出新进榜通知
+    if new_entries:
+        _print_new_entry_notifications(new_entries)
+
+    return report
+
+
+def _generate_red_black_lists(repos):
+    """生成红黑榜"""
+    growth_repos = [(r, r["weekly_growth"]) for r in repos if r["weekly_growth"] > 0]
+    red_list = sorted(growth_repos, key=lambda x: x[1], reverse=True)[:5]
+
+    six_months_ago = datetime.now(timezone.utc) - timedelta(days=180)
+    black_list_candidates = []
+    for repo in repos:
+        try:
+            pushed_dt = datetime.fromisoformat(repo["pushed_at"].replace("Z", "+00:00"))
+            if (
+                repo["stars"] > 0
+                and (repo["open_issues"] / repo["stars"]) > 0.15
+                and pushed_dt < six_months_ago
+            ):
+                days_inactive = (datetime.now(timezone.utc) - pushed_dt).days
+                black_list_candidates.append(
+                    (repo, repo["open_issues"], days_inactive, repo["stars"])
+                )
+        except:
+            continue
+
+    black_list = sorted(black_list_candidates, key=lambda x: (-(x[1] / x[3]), -x[2]))[
+        :5
+    ]
+
+    return {
+        "fastest_growth": [{"repo": r[0], "growth": r[1]} for r in red_list],
+        "maintenance_warning": [
+            {"repo": r[0], "issues": r[1], "inactive_days": r[2], "stars": r[3]}
+            for r in black_list
+        ],
+    }
+
+
+def _format_repo(r: dict, rank: int) -> dict:
+    full_name = r["full_name"]
+    short_name = full_name.split("/")[-1] if "/" in full_name else full_name
+    return {
+        "rank": rank,
+        "full_name": full_name,
+        "short_name": short_name,
+        "name": full_name,
+        "url": r["url"],
+        "description": r["description"] or "",
+        "stars": r["stars"],
+        "forks": r.get("forks", 0),
+        "pubmed_citations": r.get("pubmed_citations", 0),
+        "weekly_growth": r["weekly_growth"],
+        "score": r["score"],
+        "has_paper": bool(r["has_paper"]),
+        "has_docker": bool(r["has_docker"]),
+        "has_conda": bool(r["has_conda_env"]),
+        "sub_label": r.get("sub_label", ""),
+        "topics": json.loads(r["topics"]) if r["topics"] else [],
+        "license": r.get("license", "Unknown"),
+        "open_issues": r.get("open_issues", 0),
+        "pushed_at": r.get("pushed_at", ""),
+        "tech_stack": json.loads(r["tech_stack"]) if r.get("tech_stack") else [],
+        "install_commands": json.loads(r["install_commands"])
+        if r.get("install_commands")
+        else [],
+        "preview_images": json.loads(r["preview_images"])
+        if r.get("preview_images")
+        else [],
+        "badges": generate_all_badges(
+            full_name,
+            r["stars"],
+            r.get("language", ""),
+            bool(r["has_docker"]),
+            bool(r["has_conda_env"]),
+        ),
+    }
+
+
+def _save_ranking_history(ranking: dict):
+    """保存排名历史用于新进榜检测"""
+    history_path = DATA_DIR / "ranking_history.json"
+
+    current_top3 = {}
+    for cat, data in ranking.items():
+        current_top3[cat] = {
+            "pipelines": [p["name"] for p in data["top_20_pipelines"][:3]],
+            "utilities": [u["name"] for u in data["top_10_utilities"][:3]],
+        }
+
+    history = {"timestamp": datetime.now().isoformat(), "top3": current_top3}
+
+    # 加载历史并追加
+    all_history = []
+    if history_path.exists():
+        try:
+            with open(history_path, "r", encoding="utf-8") as f:
+                all_history = json.load(f)
+        except:
+            all_history = []
+
+    all_history.append(history)
+
+    # 只保留最近10次记录
+    all_history = all_history[-10:]
+
+    with open(history_path, "w", encoding="utf-8") as f:
+        json.dump(all_history, f, ensure_ascii=False, indent=2)
+
+
+def _detect_new_entries(ranking: dict) -> List[Dict]:
+    """检测新进榜项目"""
+    history_path = DATA_DIR / "ranking_history.json"
+
+    if not history_path.exists():
+        return []
+
+    try:
+        with open(history_path, "r", encoding="utf-8") as f:
+            all_history = json.load(f)
+    except:
+        return []
+
+    if len(all_history) < 1:
+        return []
+
+    # 获取上次的Top3
+    last_record = all_history[-1]
+    last_top3 = last_record.get("top3", {})
+
+    new_entries = []
+
+    for cat, data in ranking.items():
+        current_pipelines = [p["name"] for p in data["top_20_pipelines"][:3]]
+        current_utilities = [u["name"] for u in data["top_10_utilities"][:3]]
+
+        last_pipelines = last_top3.get(cat, {}).get("pipelines", [])
+        last_utilities = last_top3.get(cat, {}).get("utilities", [])
+
+        # 检测新进榜的Pipeline
+        for name in current_pipelines:
+            if name not in last_pipelines:
+                repo_data = next(
+                    (p for p in data["top_20_pipelines"] if p["name"] == name), None
+                )
+                if repo_data:
+                    new_entries.append(
+                        {"category": cat, "type": "Pipeline", "repo": repo_data}
+                    )
+
+        # 检测新进榜的Utility
+        for name in current_utilities:
+            if name not in last_utilities:
+                repo_data = next(
+                    (u for u in data["top_10_utilities"] if u["name"] == name), None
+                )
+                if repo_data:
+                    new_entries.append(
+                        {"category": cat, "type": "Utility", "repo": repo_data}
+                    )
+
+    return new_entries
+
+
+def _print_new_entry_notifications(new_entries: List[Dict]):
+    """输出新进榜通知"""
+    log("\n" + "=" * 70)
+    log("[NEW ENTRIES] The following projects entered Top 3 this week:")
+    log("=" * 70)
+
+    for entry in new_entries:
+        repo = entry["repo"]
+        log(f"\n  Category: {entry['category']}")
+        log(f"  Type: {entry['type']}")
+        log(f"  Name: {repo['name']}")
+        log(f"  Stars: {repo['stars']} | Score: {repo['score']:.1f}")
+        log(f"  URL: {repo['url']}")
+
+        # 生成推荐发送的Issue勋章代码
+        log(f"\n  [Recommended Badge Markdown]:")
+        log(
+            f"  Congratulations! Your project **{repo['name']}** has entered the Bio-Rank Gateway Top 3!"
+        )
+        log(
+            f"  ![Bio-Rank Badge](https://img.shields.io/badge/Bio--Rank-Top%203%20{entry['category']}-brightgreen)"
+        )
+        log("-" * 50)
+
+
+# ============================================================
+# 主函数
+# ============================================================
+
+
+def main():
+    log("=" * 70)
+    log("Bio-Rank Gateway v13.0")
+    log("=" * 70)
+
+    init_database()
+
+    # 执行深度搜索
+    depth_search(quick_mode=False)
+
+    # 生成排行榜
+    generate_ranking_report()
+
+    log("\n[Complete] Bio-Rank Gateway update finished.")
+
+
+if __name__ == "__main__":
+    main()

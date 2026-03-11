@@ -1,0 +1,37 @@
+# Development files
+PRD.md
+STITCH_UI_PROMPT.md
+modify_categories.py
+README_CN.md
+requirements-omics.txt
+docs/index-original.html
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
+.env
+.venv
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data cache
+*.db
+*.db-shm
+*.db-wal
+data/*.db
+data/pubmed_cache.json
+
+# Reports we don't need
+docs/reports/
+docs/data/biorxiv_history.json
+docs/data/omics_index.json

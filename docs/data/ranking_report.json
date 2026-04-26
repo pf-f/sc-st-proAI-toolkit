@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-19T01:34:15.234476",
+  "generated_at": "2026-04-26T01:40:12.950339",
   "version": "14.0",
   "scoring_formulas": {
     "pipeline": "S = 5 * log10(Stars) + Weekly_Growth * 2 + Env_Bonus(15) + Zombie_Penalty(0.5)",
     "utility": "S = 8 * log10(Stars) + Weekly_Growth * 2 + Zombie_Penalty(0.5)"
   },
-  "total_repositories": 565,
+  "total_repositories": 570,
   "categories": {
     "Single-cell": {
       "total_count": 116,
@@ -19,11 +19,11 @@
           "name": "scverse/pertpy",
           "url": "https://github.com/scverse/pertpy",
           "description": "Single-cell perturbation analysis",
-          "stars": 307,
-          "forks": 55,
+          "stars": 308,
+          "forks": 56,
           "pubmed_citations": 1,
           "weekly_growth": 0,
-          "score": 22.93,
+          "score": 22.94,
           "has_paper": true,
           "has_docker": false,
           "has_conda": true,
@@ -34,8 +34,8 @@
             "single-cell"
           ],
           "license": "MIT License",
-          "open_issues": 38,
-          "pushed_at": "2026-04-13T17:46:53Z",
+          "open_issues": 37,
+          "pushed_at": "2026-04-22T08:36:02Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -71,11 +71,11 @@
           "name": "nf-core/scrnaseq",
           "url": "https://github.com/nf-core/scrnaseq",
           "description": "Single-cell RNA-Seq pipeline for barcode-based protocols such as 10x, DropSeq or SmartSeq, offering a variety of aligners and empty-droplet detection",
-          "stars": 321,
-          "forks": 215,
-          "pubmed_citations": 1356,
+          "stars": 323,
+          "forks": 214,
+          "pubmed_citations": 1361,
           "weekly_growth": 0,
-          "score": 22.54,
+          "score": 22.56,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
@@ -121,11 +121,11 @@
           "name": "nf-core/spatialvi",
           "url": "https://github.com/nf-core/spatialvi",
           "description": "Pipeline for processing spatially-resolved gene counts with spatial coordinates and image data. Designed for 10x Genomics Visium transcriptomics.",
-          "stars": 72,
+          "stars": 74,
           "forks": 35,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 21.18,
+          "score": 21.25,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
@@ -174,11 +174,11 @@
           "name": "zhanghao-njmu/SCP",
           "url": "https://github.com/zhanghao-njmu/SCP",
           "description": "An end-to-end Single-Cell Pipeline designed to facilitate comprehensive analysis and exploration of single-cell data.",
-          "stars": 636,
+          "stars": 642,
           "forks": 124,
           "pubmed_citations": 114,
           "weekly_growth": 0,
-          "score": 20.82,
+          "score": 20.85,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -283,7 +283,7 @@
           "url": "https://github.com/nf-core/scnanoseq",
           "description": "Single-cell/nuclei pipeline for data derived from Oxford Nanopore and 10X Genomics",
           "stars": 52,
-          "forks": 20,
+          "forks": 21,
           "pubmed_citations": 1,
           "weekly_growth": 0,
           "score": 18.31,
@@ -305,8 +305,8 @@
             "workflow"
           ],
           "license": "MIT License",
-          "open_issues": 19,
-          "pushed_at": "2026-03-13T19:52:03Z",
+          "open_issues": 18,
+          "pushed_at": "2026-04-22T15:50:14Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -330,19 +330,19 @@
           "name": "mengxu98/scop",
           "url": "https://github.com/mengxu98/scop",
           "description": "An end-to-end Single-Cell Omics analysis Pipeline designed to facilitate comprehensive analysis and exploration of single-cell omics data.",
-          "stars": 213,
-          "forks": 22,
+          "stars": 225,
+          "forks": 27,
           "pubmed_citations": 238,
           "weekly_growth": 0,
-          "score": 17.98,
+          "score": 18.12,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
           "sub_label": "",
           "topics": [],
           "license": "GNU General Public License v3.0",
-          "open_issues": 5,
-          "pushed_at": "2026-04-06T11:52:26Z",
+          "open_issues": 4,
+          "pushed_at": "2026-04-25T23:45:56Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -367,11 +367,11 @@
           "name": "scverse/SnapATAC2",
           "url": "https://github.com/scverse/SnapATAC2",
           "description": "Single-cell epigenomics analysis tools",
-          "stars": 314,
+          "stars": 315,
           "forks": 39,
           "pubmed_citations": 1,
           "weekly_growth": 0,
-          "score": 17.09,
+          "score": 17.1,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -380,7 +380,7 @@
             "single-cell-genomics"
           ],
           "license": "MIT License",
-          "open_issues": 65,
+          "open_issues": 67,
           "pushed_at": "2026-03-13T09:03:14Z",
           "tech_stack": [],
           "install_commands": [],
@@ -402,7 +402,7 @@
           "name": "chanzuckerberg/cellxgene",
           "url": "https://github.com/chanzuckerberg/cellxgene",
           "description": "An interactive explorer for single-cell transcriptomics data",
-          "stars": 762,
+          "stars": 764,
           "forks": 150,
           "pubmed_citations": 4,
           "weekly_growth": 0,
@@ -419,8 +419,8 @@
             "visualization"
           ],
           "license": "MIT License",
-          "open_issues": 137,
-          "pushed_at": "2026-04-17T02:21:01Z",
+          "open_issues": 135,
+          "pushed_at": "2026-04-24T02:21:25Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -699,11 +699,11 @@
           "name": "scverse/scvi-tools",
           "url": "https://github.com/scverse/scvi-tools",
           "description": "Deep probabilistic analysis of single-cell and spatial omics data",
-          "stars": 1602,
-          "forks": 446,
+          "stars": 1607,
+          "forks": 447,
           "pubmed_citations": 3,
           "weekly_growth": 0,
-          "score": 26.43,
+          "score": 26.44,
           "has_paper": true,
           "has_docker": false,
           "has_conda": true,
@@ -721,8 +721,8 @@
             "variational-bayes"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 28,
-          "pushed_at": "2026-04-16T13:13:26Z",
+          "open_issues": 25,
+          "pushed_at": "2026-04-24T08:28:35Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -754,11 +754,11 @@
           "name": "scverse/scanpy",
           "url": "https://github.com/scverse/scanpy",
           "description": "Single-cell analysis in Python. Scales to >100M cells.",
-          "stars": 2423,
-          "forks": 736,
+          "stars": 2430,
+          "forks": 741,
           "pubmed_citations": 18,
           "weekly_growth": 0,
-          "score": 24.92,
+          "score": 24.93,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -775,8 +775,8 @@
             "visualize-data"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 563,
-          "pushed_at": "2026-04-17T14:26:45Z",
+          "open_issues": 562,
+          "pushed_at": "2026-04-25T12:40:43Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -798,7 +798,7 @@
           "url": "https://github.com/aristoteleo/dynamo-release",
           "description": "Inclusive model of expression dynamics with conventional or metabolic labeling based scRNA-seq / multiomics, vector field reconstruction and differential geometry analyses",
           "stars": 490,
-          "forks": 61,
+          "forks": 60,
           "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 22.84,
@@ -825,8 +825,8 @@
             "vector-field"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 15,
-          "pushed_at": "2026-03-17T23:01:09Z",
+          "open_issues": 14,
+          "pushed_at": "2026-04-23T11:19:56Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -848,7 +848,7 @@
           "name": "gao-lab/GLUE",
           "url": "https://github.com/gao-lab/GLUE",
           "description": "Graph-linked unified embedding for single-cell multi-omics data integration",
-          "stars": 463,
+          "stars": 464,
           "forks": 69,
           "pubmed_citations": 79,
           "weekly_growth": 0,
@@ -900,11 +900,11 @@
           "name": "scverse/cellrank",
           "url": "https://github.com/scverse/cellrank",
           "description": "CellRank: dynamics from multi-view single-cell data",
-          "stars": 440,
+          "stars": 442,
           "forks": 57,
           "pubmed_citations": 2,
           "weekly_growth": 0,
-          "score": 22.51,
+          "score": 22.52,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -925,8 +925,8 @@
             "trajectory-generation"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 23,
-          "pushed_at": "2026-04-06T18:00:16Z",
+          "open_issues": 24,
+          "pushed_at": "2026-04-24T21:04:06Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -969,7 +969,7 @@
           ],
           "license": "Creative Commons Attribution 4.0 International",
           "open_issues": 1,
-          "pushed_at": "2026-04-04T16:45:11Z",
+          "pushed_at": "2026-04-19T13:45:01Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [],
@@ -988,11 +988,11 @@
           "name": "stuart-lab/signac",
           "url": "https://github.com/stuart-lab/signac",
           "description": "R toolkit for the analysis of single-cell chromatin data",
-          "stars": 413,
+          "stars": 414,
           "forks": 103,
           "pubmed_citations": 2,
           "weekly_growth": 0,
-          "score": 22.32,
+          "score": 22.33,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1003,8 +1003,8 @@
             "single-cell"
           ],
           "license": "Other",
-          "open_issues": 14,
-          "pushed_at": "2026-04-16T07:18:38Z",
+          "open_issues": 15,
+          "pushed_at": "2026-04-20T02:52:49Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -1025,11 +1025,11 @@
           "name": "scverse/rapids-singlecell",
           "url": "https://github.com/scverse/rapids-singlecell",
           "description": "rapids-singlecell: GPU-accelerated framework for scRNA analysis",
-          "stars": 355,
-          "forks": 44,
+          "stars": 358,
+          "forks": 43,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 21.86,
+          "score": 21.89,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1042,8 +1042,8 @@
             "single-cell"
           ],
           "license": "MIT License",
-          "open_issues": 21,
-          "pushed_at": "2026-04-15T19:49:46Z",
+          "open_issues": 25,
+          "pushed_at": "2026-04-25T21:18:09Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -1064,11 +1064,11 @@
           "name": "scRNA-tools/scRNA-tools",
           "url": "https://github.com/scRNA-tools/scRNA-tools",
           "description": "Table of software for the analysis of single-cell RNA-seq data.",
-          "stars": 341,
+          "stars": 342,
           "forks": 83,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 21.74,
+          "score": 21.75,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1084,7 +1084,7 @@
           ],
           "license": "MIT License",
           "open_issues": 6,
-          "pushed_at": "2026-04-18T05:44:51Z",
+          "pushed_at": "2026-04-25T05:50:06Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -1105,11 +1105,11 @@
           "name": "samuel-marsh/scCustomize",
           "url": "https://github.com/samuel-marsh/scCustomize",
           "description": "R package with collection of functions created and/or curated to aid in the visualization and analysis of single-cell data using R.",
-          "stars": 296,
+          "stars": 297,
           "forks": 32,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 21.31,
+          "score": 21.32,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1154,11 +1154,11 @@
           "name": "p-gueguen/Spatial_transcriptomics_tools",
           "url": "https://github.com/p-gueguen/Spatial_transcriptomics_tools",
           "description": "List of Spatial Transcriptomics related Tools organized per category",
-          "stars": 139,
-          "forks": 22,
+          "stars": 145,
+          "forks": 23,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 22.88,
+          "score": 22.99,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
@@ -1190,11 +1190,11 @@
           "name": "nf-core/spatialvi",
           "url": "https://github.com/nf-core/spatialvi",
           "description": "Pipeline for processing spatially-resolved gene counts with spatial coordinates and image data. Designed for 10x Genomics Visium transcriptomics.",
-          "stars": 72,
+          "stars": 74,
           "forks": 35,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 21.18,
+          "score": 21.25,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
@@ -1294,11 +1294,11 @@
           "name": "LiuLab-Bioelectronics-Harvard/STAgent",
           "url": "https://github.com/LiuLab-Bioelectronics-Harvard/STAgent",
           "description": "STAgent is a multimodal LLM-based AI agent that enables deep research about spatial transcriptomics data",
-          "stars": 50,
+          "stars": 51,
           "forks": 13,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 18.25,
+          "score": 18.3,
           "has_paper": true,
           "has_docker": false,
           "has_conda": true,
@@ -1338,11 +1338,11 @@
           "name": "JaneliaSciComp/multifish",
           "url": "https://github.com/JaneliaSciComp/multifish",
           "description": "EASI-FISH analysis pipeline for spatial transcriptomics",
-          "stars": 35,
+          "stars": 36,
           "forks": 13,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 17.4,
+          "score": 17.47,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
@@ -1377,11 +1377,11 @@
           "name": "jfnavarro/st_pipeline",
           "url": "https://github.com/jfnavarro/st_pipeline",
           "description": "ST Pipeline contains the tools and scripts needed to process and analyze the raw files generated with the Spatial Transcriptomics method in FASTQ format.",
-          "stars": 91,
+          "stars": 92,
           "forks": 52,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 15.78,
+          "score": 15.81,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1435,7 +1435,7 @@
           ],
           "license": "MIT License",
           "open_issues": 3,
-          "pushed_at": "2026-04-16T07:53:22Z",
+          "pushed_at": "2026-04-23T12:14:14Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -1459,11 +1459,11 @@
           "name": "Sanofi-Public/enact-pipeline",
           "url": "https://github.com/Sanofi-Public/enact-pipeline",
           "description": "Repository for ENACT pipeline for end-to-end analysis of Visium HD data",
-          "stars": 77,
+          "stars": 78,
           "forks": 18,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 15.35,
+          "score": 15.39,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1502,11 +1502,11 @@
           "name": "M4i-Imaging-Mass-Spectrometry/thyra",
           "url": "https://github.com/M4i-Imaging-Mass-Spectrometry/thyra",
           "description": "A modern Python library for converting Mass Spectrometry Imaging (MSI) data into standardized SpatialData/Zarr format, enabling seamless integration with spatial omics analysis workflows.",
-          "stars": 20,
+          "stars": 21,
           "forks": 1,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 11.93,
+          "score": 12.05,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1603,11 +1603,11 @@
           "name": "scverse/scvi-tools",
           "url": "https://github.com/scverse/scvi-tools",
           "description": "Deep probabilistic analysis of single-cell and spatial omics data",
-          "stars": 1602,
-          "forks": 446,
+          "stars": 1607,
+          "forks": 447,
           "pubmed_citations": 3,
           "weekly_growth": 0,
-          "score": 26.43,
+          "score": 26.44,
           "has_paper": true,
           "has_docker": false,
           "has_conda": true,
@@ -1625,8 +1625,8 @@
             "variational-bayes"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 28,
-          "pushed_at": "2026-04-16T13:13:26Z",
+          "open_issues": 25,
+          "pushed_at": "2026-04-24T08:28:35Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -1658,11 +1658,11 @@
           "name": "mahmoodlab/HEST",
           "url": "https://github.com/mahmoodlab/HEST",
           "description": "Integrating histology and spatial transcriptomics - NeurIPS 2024",
-          "stars": 391,
-          "forks": 46,
+          "stars": 395,
+          "forks": 48,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 22.15,
+          "score": 22.18,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1673,7 +1673,7 @@
             "spatial-transcriptomics"
           ],
           "license": "Other",
-          "open_issues": 19,
+          "open_issues": 21,
           "pushed_at": "2026-04-16T07:48:46Z",
           "tech_stack": [],
           "install_commands": [
@@ -1708,11 +1708,11 @@
           "name": "aristoteleo/spateo-release",
           "url": "https://github.com/aristoteleo/spateo-release",
           "description": "Spatiotemporal modeling of spatial transcriptomics ",
-          "stars": 335,
-          "forks": 44,
+          "stars": 336,
+          "forks": 43,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 21.68,
+          "score": 21.69,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1724,7 +1724,7 @@
             "spatiotemporal"
           ],
           "license": "BSD 2-Clause \"Simplified\" License",
-          "open_issues": 16,
+          "open_issues": 15,
           "pushed_at": "2026-02-25T23:25:40Z",
           "tech_stack": [],
           "install_commands": [
@@ -1757,7 +1757,7 @@
           "url": "https://github.com/prism-oncology/sopa",
           "description": "Technology-invariant pipeline for spatial omics analysis that scales to millions of cells (Xenium / Visium HD / MERSCOPE / CosMx / PhenoCycler / MACSima / etc)",
           "stars": 275,
-          "forks": 48,
+          "forks": 49,
           "pubmed_citations": 3,
           "weekly_growth": 0,
           "score": 21.09,
@@ -1774,8 +1774,8 @@
             "spatialdata"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 30,
-          "pushed_at": "2026-04-17T13:07:12Z",
+          "open_issues": 31,
+          "pushed_at": "2026-04-23T09:06:19Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -1801,51 +1801,16 @@
         },
         {
           "rank": 5,
-          "full_name": "dmcable/spacexr",
-          "short_name": "spacexr",
-          "name": "dmcable/spacexr",
-          "url": "https://github.com/dmcable/spacexr",
-          "description": "Spatial-eXpression-R: Cell type identification (including cell type mixtures) and cell type-specific differential expression for spatial transcriptomics",
-          "stars": 449,
-          "forks": 93,
-          "pubmed_citations": 0,
-          "weekly_growth": 0,
-          "score": 20.32,
-          "has_paper": true,
-          "has_docker": false,
-          "has_conda": false,
-          "sub_label": "Alignment",
-          "topics": [
-            "cell-type-identification",
-            "differential-expression",
-            "spatial-transcriptomics"
-          ],
-          "license": "GNU General Public License v3.0",
-          "open_issues": 72,
-          "pushed_at": "2026-01-22T15:04:34Z",
-          "tech_stack": [],
-          "install_commands": [],
-          "preview_images": [],
-          "badges": {
-            "stars": "https://img.shields.io/github/stars/dmcable/spacexr?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/dmcable/spacexr?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/dmcable/spacexr?style=flat-square",
-            "license": "https://img.shields.io/github/license/dmcable/spacexr?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/dmcable/spacexr?style=flat-square"
-          }
-        },
-        {
-          "rank": 6,
           "full_name": "BayraktarLab/cell2location",
           "short_name": "cell2location",
           "name": "BayraktarLab/cell2location",
           "url": "https://github.com/BayraktarLab/cell2location",
           "description": "Comprehensive mapping of tissue cell architecture via integrated single cell and spatial transcriptomics (cell2location model)",
-          "stars": 428,
-          "forks": 72,
+          "stars": 429,
+          "forks": 73,
           "pubmed_citations": 6,
           "weekly_growth": 0,
-          "score": 20.18,
+          "score": 20.19,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
@@ -1879,17 +1844,17 @@
           }
         },
         {
-          "rank": 7,
+          "rank": 6,
           "full_name": "JianYang-Lab/gsMap",
           "short_name": "gsMap",
           "name": "JianYang-Lab/gsMap",
           "url": "https://github.com/JianYang-Lab/gsMap",
           "description": "Integrating GWAS and spatial transcriptomics for spatially resolved mapping of cells associated with human complex traits.",
-          "stars": 203,
+          "stars": 204,
           "forks": 16,
           "pubmed_citations": 4,
           "weekly_growth": 0,
-          "score": 20.17,
+          "score": 20.18,
           "has_paper": true,
           "has_docker": false,
           "has_conda": true,
@@ -1941,11 +1906,11 @@
           }
         },
         {
-          "rank": 8,
-          "full_name": "drieslab/Giotto",
+          "rank": 7,
+          "full_name": "giotto-suite/Giotto",
           "short_name": "Giotto",
-          "name": "drieslab/Giotto",
-          "url": "https://github.com/drieslab/Giotto",
+          "name": "giotto-suite/Giotto",
+          "url": "https://github.com/giotto-suite/Giotto",
           "description": "Spatial omics analysis toolbox",
           "stars": 372,
           "forks": 107,
@@ -1958,30 +1923,30 @@
           "sub_label": "Alignment",
           "topics": [],
           "license": "Other",
-          "open_issues": 136,
-          "pushed_at": "2026-04-07T19:21:58Z",
+          "open_issues": 137,
+          "pushed_at": "2026-04-24T17:29:35Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
-            "https://raw.githubusercontent.com/drieslab/Giotto/master/man/figures/GiottoLogo.png",
-            "https://raw.githubusercontent.com/drieslab/Giotto/master/inst/images/general_figs/overview_datasets.png"
+            "https://raw.githubusercontent.com/giotto-suite/Giotto/master/man/figures/GiottoLogo.png",
+            "https://raw.githubusercontent.com/giotto-suite/Giotto/master/inst/images/general_figs/overview_datasets.png"
           ],
           "badges": {
-            "stars": "https://img.shields.io/github/stars/drieslab/Giotto?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/drieslab/Giotto?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/drieslab/Giotto?style=flat-square",
-            "license": "https://img.shields.io/github/license/drieslab/Giotto?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/drieslab/Giotto?style=flat-square"
+            "stars": "https://img.shields.io/github/stars/giotto-suite/Giotto?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/giotto-suite/Giotto?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/giotto-suite/Giotto?style=flat-square",
+            "license": "https://img.shields.io/github/license/giotto-suite/Giotto?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/giotto-suite/Giotto?style=flat-square"
           }
         },
         {
-          "rank": 9,
+          "rank": 8,
           "full_name": "scverse/spatialdata",
           "short_name": "spatialdata",
           "name": "scverse/spatialdata",
           "url": "https://github.com/scverse/spatialdata",
           "description": "An open and interoperable data framework for spatial omics data",
-          "stars": 362,
+          "stars": 363,
           "forks": 87,
           "pubmed_citations": 5,
           "weekly_growth": 0,
@@ -1992,8 +1957,8 @@
           "sub_label": "Alignment",
           "topics": [],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 273,
-          "pushed_at": "2026-04-13T17:47:10Z",
+          "open_issues": 274,
+          "pushed_at": "2026-04-20T17:43:05Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -2016,17 +1981,17 @@
           }
         },
         {
-          "rank": 10,
+          "rank": 9,
           "full_name": "prism-oncology/novae",
           "short_name": "novae",
           "name": "prism-oncology/novae",
           "url": "https://github.com/prism-oncology/novae",
           "description": "Graph-based foundation model for spatial transcriptomics data. Zero-shot spatial domain inference, batch-effect correction, and many other features.",
-          "stars": 127,
+          "stars": 128,
           "forks": 12,
           "pubmed_citations": 2,
           "weekly_growth": 0,
-          "score": 18.75,
+          "score": 18.77,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2039,8 +2004,8 @@
             "spatial-transcriptomics"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 4,
-          "pushed_at": "2026-04-17T15:30:11Z",
+          "open_issues": 7,
+          "pushed_at": "2026-04-24T13:50:18Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -2059,13 +2024,52 @@
             "license": "https://img.shields.io/github/license/prism-oncology/novae?style=flat-square",
             "last_commit": "https://img.shields.io/github/last-commit/prism-oncology/novae?style=flat-square"
           }
+        },
+        {
+          "rank": 10,
+          "full_name": "lmweber/OSTA",
+          "short_name": "OSTA",
+          "name": "lmweber/OSTA",
+          "url": "https://github.com/lmweber/OSTA",
+          "description": "\"Orchestrating Spatial Transcriptomics Analysis with Bioconductor\" (OSTA) online book",
+          "stars": 110,
+          "forks": 43,
+          "pubmed_citations": 3,
+          "weekly_growth": 0,
+          "score": 18.32,
+          "has_paper": true,
+          "has_docker": true,
+          "has_conda": false,
+          "sub_label": "Alignment",
+          "topics": [
+            "analysis-workflows",
+            "bioconductor",
+            "spatial-transcriptomics",
+            "spatially-resolved-transcriptomics"
+          ],
+          "license": "",
+          "open_issues": 3,
+          "pushed_at": "2026-03-11T23:51:29Z",
+          "tech_stack": [],
+          "install_commands": [],
+          "preview_images": [
+            "https://raw.githubusercontent.com/lmweber/OSTA/master/inst/images/carousel/02_OSTA.png"
+          ],
+          "badges": {
+            "stars": "https://img.shields.io/github/stars/lmweber/OSTA?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/lmweber/OSTA?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/lmweber/OSTA?style=flat-square",
+            "license": "https://img.shields.io/github/license/lmweber/OSTA?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/lmweber/OSTA?style=flat-square",
+            "docker": "https://img.shields.io/badge/docker-available-blue?style=flat-square&logo=docker"
+          }
         }
       ]
     },
     "Multi-omics": {
-      "total_count": 50,
+      "total_count": 51,
       "pipeline_count": 5,
-      "utility_count": 45,
+      "utility_count": 46,
       "top_20_pipelines": [
         {
           "rank": 1,
@@ -2074,11 +2078,11 @@
           "name": "epigen/MrBiomics",
           "url": "https://github.com/epigen/MrBiomics",
           "description": "MrBiomics: Composable modules and recipes automate bioinformatics for multi-omics analyses",
-          "stars": 167,
+          "stars": 168,
           "forks": 3,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 24.62,
+          "score": 24.63,
           "has_paper": true,
           "has_docker": true,
           "has_conda": true,
@@ -2133,11 +2137,11 @@
           "name": "Lotfollahi-lab/nichecompass",
           "url": "https://github.com/Lotfollahi-lab/nichecompass",
           "description": "End-to-end analysis of spatial multi-omics data",
-          "stars": 110,
+          "stars": 111,
           "forks": 19,
           "pubmed_citations": 1,
           "weekly_growth": 0,
-          "score": 16.27,
+          "score": 16.3,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2171,11 +2175,11 @@
           "name": "jan-forest/autoencodix",
           "url": "https://github.com/jan-forest/autoencodix",
           "description": "Framework for multi-omics data integration by autoencoders",
-          "stars": 31,
+          "stars": 32,
           "forks": 3,
           "pubmed_citations": 1,
           "weekly_growth": 0,
-          "score": 11.73,
+          "score": 10.03,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2305,7 +2309,7 @@
           "url": "https://github.com/aristoteleo/dynamo-release",
           "description": "Inclusive model of expression dynamics with conventional or metabolic labeling based scRNA-seq / multiomics, vector field reconstruction and differential geometry analyses",
           "stars": 490,
-          "forks": 61,
+          "forks": 60,
           "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 22.84,
@@ -2332,8 +2336,8 @@
             "vector-field"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 15,
-          "pushed_at": "2026-03-17T23:01:09Z",
+          "open_issues": 14,
+          "pushed_at": "2026-04-23T11:19:56Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -2355,7 +2359,7 @@
           "name": "gao-lab/GLUE",
           "url": "https://github.com/gao-lab/GLUE",
           "description": "Graph-linked unified embedding for single-cell multi-omics data integration",
-          "stars": 463,
+          "stars": 464,
           "forks": 69,
           "pubmed_citations": 79,
           "weekly_growth": 0,
@@ -2407,11 +2411,11 @@
           "name": "TianGzlab/OmicsClaw",
           "url": "https://github.com/TianGzlab/OmicsClaw",
           "description": "Conversational & memory-enabled AI research partner for multi-omics analysis. From biological idea to full research paper.",
-          "stars": 120,
+          "stars": 127,
           "forks": 23,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 18.58,
+          "score": 18.75,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2480,7 +2484,7 @@
           "topics": [],
           "license": "",
           "open_issues": 1,
-          "pushed_at": "2026-02-09T10:33:05Z",
+          "pushed_at": "2026-04-22T11:37:38Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -2488,7 +2492,7 @@
             "https://raw.githubusercontent.com/Asa12138/MetaNet/master/man/figures/fig3-1.jpeg",
             "https://raw.githubusercontent.com/Asa12138/MetaNet/master/man/figures/fig3.jpeg",
             "https://raw.githubusercontent.com/Asa12138/MetaNet/master/man/figures/fig2.jpeg",
-            "https://raw.githubusercontent.com/Asa12138/MetaNet/master/man/figures/fig1.jpeg"
+            "https://raw.githubusercontent.com/Asa12138/MetaNet/master/man/figures/README-unnamed-chunk-4-1.png"
           ],
           "badges": {
             "stars": "https://img.shields.io/github/stars/Asa12138/MetaNet?style=flat-square&logo=github",
@@ -2500,6 +2504,56 @@
         },
         {
           "rank": 5,
+          "full_name": "fanglu0411/sgs",
+          "short_name": "sgs",
+          "name": "fanglu0411/sgs",
+          "url": "https://github.com/fanglu0411/sgs",
+          "description": "SGS, is a user-friendly, collaborative and versatile browser for visualizing single-cell and spatial multiomics data.",
+          "stars": 100,
+          "forks": 17,
+          "pubmed_citations": 75,
+          "weekly_growth": 0,
+          "score": 18.03,
+          "has_paper": true,
+          "has_docker": true,
+          "has_conda": false,
+          "sub_label": "Alignment",
+          "topics": [
+            "anndata",
+            "genome-browser",
+            "mudata",
+            "multimodal",
+            "scatac",
+            "sceqtl",
+            "schic",
+            "scmethylc",
+            "scrna",
+            "sgs",
+            "single-cell",
+            "spatial-omics",
+            "visualization",
+            "zarr"
+          ],
+          "license": "",
+          "open_issues": 2,
+          "pushed_at": "2026-04-21T07:59:30Z",
+          "tech_stack": [],
+          "install_commands": [],
+          "preview_images": [
+            "https://sgs.bioinfotoolkits.net/document/assets/home-yu_khT_p.png",
+            "https://sgs.bioinfotoolkits.net/document/assets/3_1-BCYWuabz.png"
+          ],
+          "badges": {
+            "stars": "https://img.shields.io/github/stars/fanglu0411/sgs?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/fanglu0411/sgs?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/fanglu0411/sgs?style=flat-square",
+            "license": "https://img.shields.io/github/license/fanglu0411/sgs?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/fanglu0411/sgs?style=flat-square",
+            "docker": "https://img.shields.io/badge/docker-available-blue?style=flat-square&logo=docker"
+          }
+        },
+        {
+          "rank": 6,
           "full_name": "SolvingLab/OmixBench",
           "short_name": "OmixBench",
           "name": "SolvingLab/OmixBench",
@@ -2533,13 +2587,13 @@
           }
         },
         {
-          "rank": 6,
+          "rank": 7,
           "full_name": "bioFAM/MOFA2",
           "short_name": "MOFA2",
           "name": "bioFAM/MOFA2",
           "url": "https://github.com/bioFAM/MOFA2",
           "description": "Multi-Omics Factor Analysis",
-          "stars": 395,
+          "stars": 396,
           "forks": 65,
           "pubmed_citations": 1,
           "weekly_growth": 0,
@@ -2554,7 +2608,7 @@
             "multi-omics"
           ],
           "license": "GNU Lesser General Public License v3.0",
-          "open_issues": 68,
+          "open_issues": 67,
           "pushed_at": "2026-02-23T10:30:29Z",
           "tech_stack": [],
           "install_commands": [],
@@ -2568,17 +2622,17 @@
           }
         },
         {
-          "rank": 7,
+          "rank": 8,
           "full_name": "liubingdong/EasyMultiProfiler",
           "short_name": "EasyMultiProfiler",
           "name": "liubingdong/EasyMultiProfiler",
           "url": "https://github.com/liubingdong/EasyMultiProfiler",
           "description": "The EasyMultiProfiler package aims to offer a user-friendly and efficient multi-omics data analysis tool on the R platform. It facilitates various essential tasks related to microbiome, genome, and metabolite downstream analysis, providing a seamless workflow from start to finish.",
-          "stars": 48,
+          "stars": 49,
           "forks": 11,
           "pubmed_citations": 1,
           "weekly_growth": 0,
-          "score": 15.83,
+          "score": 15.89,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2602,7 +2656,7 @@
           }
         },
         {
-          "rank": 8,
+          "rank": 9,
           "full_name": "rargelaguet/mouse_organogenesis_10x_multiome_publication",
           "short_name": "mouse_organogenesis_10x_multiome_publication",
           "name": "rargelaguet/mouse_organogenesis_10x_multiome_publication",
@@ -2636,7 +2690,7 @@
           }
         },
         {
-          "rank": 9,
+          "rank": 10,
           "full_name": "interactivereport/xOmicsShiny",
           "short_name": "xOmicsShiny",
           "name": "interactivereport/xOmicsShiny",
@@ -2667,80 +2721,85 @@
             "license": "https://img.shields.io/github/license/interactivereport/xOmicsShiny?style=flat-square",
             "last_commit": "https://img.shields.io/github/last-commit/interactivereport/xOmicsShiny?style=flat-square"
           }
-        },
-        {
-          "rank": 10,
-          "full_name": "KEAML-JLU/SpatialEx",
-          "short_name": "SpatialEx",
-          "name": "KEAML-JLU/SpatialEx",
-          "url": "https://github.com/KEAML-JLU/SpatialEx",
-          "description": "The source code for \"High-Parameter Spatial Multi-Omics through Histology-Anchored Integration\"",
-          "stars": 33,
-          "forks": 5,
-          "pubmed_citations": 1,
-          "weekly_growth": 0,
-          "score": 14.72,
-          "has_paper": true,
-          "has_docker": false,
-          "has_conda": false,
-          "sub_label": "Format Conversion",
-          "topics": [],
-          "license": "MIT License",
-          "open_issues": 3,
-          "pushed_at": "2026-04-17T03:24:46Z",
-          "tech_stack": [],
-          "install_commands": [
-            {
-              "type": "pip",
-              "command": "pip install SpatialEx"
-            },
-            {
-              "type": "pip",
-              "command": "pip install -r"
-            },
-            {
-              "type": "pip",
-              "command": "pip install anndata"
-            }
-          ],
-          "preview_images": [
-            "https://raw.githubusercontent.com/KEAML-JLU/SpatialEx/main/figure.jpg"
-          ],
-          "badges": {
-            "stars": "https://img.shields.io/github/stars/KEAML-JLU/SpatialEx?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/KEAML-JLU/SpatialEx?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/KEAML-JLU/SpatialEx?style=flat-square",
-            "license": "https://img.shields.io/github/license/KEAML-JLU/SpatialEx?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/KEAML-JLU/SpatialEx?style=flat-square"
-          }
         }
       ]
     },
     "ProteinAI": {
-      "total_count": 111,
-      "pipeline_count": 7,
-      "utility_count": 104,
+      "total_count": 113,
+      "pipeline_count": 8,
+      "utility_count": 105,
       "top_20_pipelines": [
         {
           "rank": 1,
+          "full_name": "ChrisHayduk/minAlphaFold2",
+          "short_name": "minAlphaFold2",
+          "name": "ChrisHayduk/minAlphaFold2",
+          "url": "https://github.com/ChrisHayduk/minAlphaFold2",
+          "description": "A minimal PyTorch re-implementation of AlphaFold2's model & training",
+          "stars": 598,
+          "forks": 70,
+          "pubmed_citations": 0,
+          "weekly_growth": 0,
+          "score": 26.66,
+          "has_paper": true,
+          "has_docker": true,
+          "has_conda": false,
+          "sub_label": "",
+          "topics": [],
+          "license": "MIT License",
+          "open_issues": 1,
+          "pushed_at": "2026-04-24T02:48:41Z",
+          "tech_stack": [],
+          "install_commands": [
+            {
+              "type": "pip",
+              "command": "pip install -e"
+            },
+            {
+              "type": "pip",
+              "command": "pip install -e"
+            },
+            {
+              "type": "pip",
+              "command": "pip install -e"
+            },
+            {
+              "type": "git",
+              "command": "git clone https://github.com/ChrisHayduk/minAlphaFold2"
+            }
+          ],
+          "preview_images": [
+            "https://raw.githubusercontent.com/ChrisHayduk/minAlphaFold2/master/assets/minAlphaFold2.png"
+          ],
+          "badges": {
+            "stars": "https://img.shields.io/github/stars/ChrisHayduk/minAlphaFold2?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/ChrisHayduk/minAlphaFold2?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/ChrisHayduk/minAlphaFold2?style=flat-square",
+            "license": "https://img.shields.io/github/license/ChrisHayduk/minAlphaFold2?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/ChrisHayduk/minAlphaFold2?style=flat-square",
+            "docker": "https://img.shields.io/badge/docker-available-blue?style=flat-square&logo=docker"
+          }
+        },
+        {
+          "rank": 2,
           "full_name": "RomeroLab/alphafast",
           "short_name": "alphafast",
           "name": "RomeroLab/alphafast",
           "url": "https://github.com/RomeroLab/alphafast",
           "description": "AlphaFast: ultra-high-throughput AlphaFold3 inference with MMSeqs2-GPU",
-          "stars": 125,
+          "stars": 137,
           "forks": 13,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 22.6,
+          "score": 22.84,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
           "sub_label": "",
           "topics": [],
           "license": "Other",
-          "open_issues": 3,
-          "pushed_at": "2026-04-11T15:25:23Z",
+          "open_issues": 2,
+          "pushed_at": "2026-04-20T03:32:04Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -2765,17 +2824,17 @@
           }
         },
         {
-          "rank": 2,
+          "rank": 3,
           "full_name": "PapenfussLab/proteindj",
           "short_name": "proteindj",
           "name": "PapenfussLab/proteindj",
           "url": "https://github.com/PapenfussLab/proteindj",
           "description": "Official repository for the ProteinDJ protein design pipeline",
-          "stars": 111,
+          "stars": 113,
           "forks": 21,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 22.3,
+          "score": 22.34,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
@@ -2813,7 +2872,7 @@
           }
         },
         {
-          "rank": 3,
+          "rank": 4,
           "full_name": "gchojnowski/gapTrick",
           "short_name": "gapTrick",
           "name": "gchojnowski/gapTrick",
@@ -2864,17 +2923,17 @@
           }
         },
         {
-          "rank": 4,
+          "rank": 5,
           "full_name": "soedinglab/PMGen",
           "short_name": "PMGen",
           "name": "soedinglab/PMGen",
           "url": "https://github.com/soedinglab/PMGen",
           "description": "peptide-MHC modeling, binding prediction, and protein design.",
-          "stars": 24,
+          "stars": 25,
           "forks": 4,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 12.39,
+          "score": 12.49,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2882,7 +2941,7 @@
           "topics": [],
           "license": "Apache License 2.0",
           "open_issues": 1,
-          "pushed_at": "2026-04-16T14:20:31Z",
+          "pushed_at": "2026-04-24T12:15:09Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -2902,7 +2961,7 @@
           }
         },
         {
-          "rank": 5,
+          "rank": 6,
           "full_name": "wells-wood-research/de-stress",
           "short_name": "de-stress",
           "name": "wells-wood-research/de-stress",
@@ -2942,7 +3001,7 @@
           }
         },
         {
-          "rank": 6,
+          "rank": 7,
           "full_name": "IBM/AFDistill",
           "short_name": "AFDistill",
           "name": "IBM/AFDistill",
@@ -2976,17 +3035,17 @@
           }
         },
         {
-          "rank": 7,
+          "rank": 8,
           "full_name": "psipred/DMPfold2",
           "short_name": "DMPfold2",
           "name": "psipred/DMPfold2",
           "url": "https://github.com/psipred/DMPfold2",
           "description": "Fast and accurate protein structure prediction",
-          "stars": 57,
-          "forks": 14,
+          "stars": 58,
+          "forks": 15,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 5.1,
+          "score": 5.12,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -3029,19 +3088,19 @@
           "name": "google-deepmind/alphafold",
           "url": "https://github.com/google-deepmind/alphafold",
           "description": "Open source code for AlphaFold 2.",
-          "stars": 14493,
-          "forks": 2603,
-          "pubmed_citations": 377,
+          "stars": 14533,
+          "forks": 2604,
+          "pubmed_citations": 379,
           "weekly_growth": 0,
-          "score": 33.13,
+          "score": 33.14,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
           "sub_label": "Format Conversion",
           "topics": [],
           "license": "Apache License 2.0",
-          "open_issues": 302,
-          "pushed_at": "2026-04-07T08:10:12Z",
+          "open_issues": 303,
+          "pushed_at": "2026-04-22T17:58:21Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -3069,19 +3128,19 @@
           "name": "google-deepmind/alphafold3",
           "url": "https://github.com/google-deepmind/alphafold3",
           "description": "AlphaFold 3 inference pipeline.",
-          "stars": 7853,
-          "forks": 1183,
-          "pubmed_citations": 78,
+          "stars": 7900,
+          "forks": 1190,
+          "pubmed_citations": 80,
           "weekly_growth": 0,
-          "score": 31.27,
+          "score": 31.28,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
           "sub_label": "Format Conversion",
           "topics": [],
           "license": "Other",
-          "open_issues": 16,
-          "pushed_at": "2026-04-15T14:43:40Z",
+          "open_issues": 14,
+          "pushed_at": "2026-04-23T14:38:34Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -3103,11 +3162,11 @@
           "name": "sokrypton/ColabFold",
           "url": "https://github.com/sokrypton/ColabFold",
           "description": "Making Protein folding accessible to all!",
-          "stars": 2727,
-          "forks": 714,
+          "stars": 2736,
+          "forks": 715,
           "pubmed_citations": 13,
           "weekly_growth": 0,
-          "score": 28.05,
+          "score": 28.06,
           "has_paper": true,
           "has_docker": true,
           "has_conda": true,
@@ -3119,7 +3178,7 @@
             "structure-prediction"
           ],
           "license": "MIT License",
-          "open_issues": 394,
+          "open_issues": 393,
           "pushed_at": "2026-03-17T06:52:32Z",
           "tech_stack": [],
           "install_commands": [
@@ -3160,11 +3219,11 @@
           "name": "aqlaboratory/openfold",
           "url": "https://github.com/aqlaboratory/openfold",
           "description": "Trainable, memory-efficient, and GPU-friendly PyTorch reproduction of AlphaFold 2",
-          "stars": 3336,
-          "forks": 668,
+          "stars": 3346,
+          "forks": 671,
           "pubmed_citations": 5,
           "weekly_growth": 0,
-          "score": 24.36,
+          "score": 24.37,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -3197,8 +3256,8 @@
           "name": "kyegomez/Open-AF3",
           "url": "https://github.com/kyegomez/Open-AF3",
           "description": "Implementation of Alpha Fold 3 from the paper: \"Accurate structure prediction of biomolecular interactions with AlphaFold3\" in PyTorch",
-          "stars": 804,
-          "forks": 103,
+          "stars": 805,
+          "forks": 104,
           "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 24.34,
@@ -3217,8 +3276,8 @@
             "ml"
           ],
           "license": "MIT License",
-          "open_issues": 3,
-          "pushed_at": "2026-04-17T13:59:54Z",
+          "open_issues": 4,
+          "pushed_at": "2026-04-20T07:39:15Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -3242,11 +3301,11 @@
           "name": "aqlaboratory/openfold-3",
           "url": "https://github.com/aqlaboratory/openfold-3",
           "description": "A fully open source biomolecular structure prediction model based on AlphaFold3",
-          "stars": 695,
-          "forks": 103,
+          "stars": 701,
+          "forks": 105,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 23.9,
+          "score": 23.92,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -3254,7 +3313,7 @@
           "topics": [],
           "license": "Apache License 2.0",
           "open_issues": 45,
-          "pushed_at": "2026-04-16T14:13:49Z",
+          "pushed_at": "2026-04-24T15:29:13Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -3281,11 +3340,11 @@
           "name": "westlake-repl/SaProt",
           "url": "https://github.com/westlake-repl/SaProt",
           "description": "Saprot: Protein Language Model with Structural Alphabet (AA+3Di)",
-          "stars": 586,
+          "stars": 591,
           "forks": 69,
           "pubmed_citations": 7,
           "weekly_growth": 0,
-          "score": 23.38,
+          "score": 23.41,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -3379,40 +3438,42 @@
         },
         {
           "rank": 9,
-          "full_name": "ChrisHayduk/minAlphaFold2",
-          "short_name": "minAlphaFold2",
-          "name": "ChrisHayduk/minAlphaFold2",
-          "url": "https://github.com/ChrisHayduk/minAlphaFold2",
-          "description": "A minimal PyTorch re-implementation of AlphaFold2's model & training",
-          "stars": 484,
-          "forks": 57,
+          "full_name": "patrickbryant1/EvoBind",
+          "short_name": "EvoBind",
+          "name": "patrickbryant1/EvoBind",
+          "url": "https://github.com/patrickbryant1/EvoBind",
+          "description": "In silico directed evolution of peptide binders with AlphaFold",
+          "stars": 266,
+          "forks": 58,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 22.8,
+          "score": 20.99,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
           "sub_label": "Alignment",
           "topics": [],
-          "license": "MIT License",
+          "license": "",
           "open_issues": 1,
-          "pushed_at": "2026-03-19T22:47:21Z",
+          "pushed_at": "2026-04-24T09:31:19Z",
           "tech_stack": [],
           "install_commands": [
             {
-              "type": "pip",
-              "command": "pip install torch"
+              "type": "git",
+              "command": "git clone https://github.com/patrickbryant1/EvoBind.git"
             }
           ],
           "preview_images": [
-            "https://raw.githubusercontent.com/ChrisHayduk/minAlphaFold2/master/assets/af2_img.png"
+            "https://raw.githubusercontent.com/patrickbryant1/EvoBind/master/EB_logo.png",
+            "https://raw.githubusercontent.com/patrickbryant1/EvoBind/master/linear.gif",
+            "https://raw.githubusercontent.com/patrickbryant1/EvoBind/master/cyclic.gif"
           ],
           "badges": {
-            "stars": "https://img.shields.io/github/stars/ChrisHayduk/minAlphaFold2?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/ChrisHayduk/minAlphaFold2?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/ChrisHayduk/minAlphaFold2?style=flat-square",
-            "license": "https://img.shields.io/github/license/ChrisHayduk/minAlphaFold2?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/ChrisHayduk/minAlphaFold2?style=flat-square"
+            "stars": "https://img.shields.io/github/stars/patrickbryant1/EvoBind?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/patrickbryant1/EvoBind?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/patrickbryant1/EvoBind?style=flat-square",
+            "license": "https://img.shields.io/github/license/patrickbryant1/EvoBind?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/patrickbryant1/EvoBind?style=flat-square"
           }
         },
         {
@@ -3422,11 +3483,11 @@
           "name": "westlake-repl/ProTrek",
           "url": "https://github.com/westlake-repl/ProTrek",
           "description": "ProTrek: illuminating the Protein Universe through Trimodal Protein Language Model",
-          "stars": 203,
+          "stars": 204,
           "forks": 24,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 20.17,
+          "score": 20.18,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -3474,11 +3535,11 @@
           "name": "histolab/histolab",
           "url": "https://github.com/histolab/histolab",
           "description": "Library for Digital Pathology Image Processing",
-          "stars": 452,
+          "stars": 453,
           "forks": 66,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 18.59,
+          "score": 18.6,
           "has_paper": false,
           "has_docker": false,
           "has_conda": true,
@@ -3497,8 +3558,8 @@
             "wsi"
           ],
           "license": "Apache License 2.0",
-          "open_issues": 47,
-          "pushed_at": "2026-04-18T21:25:35Z",
+          "open_issues": 38,
+          "pushed_at": "2026-04-21T09:35:15Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -3533,11 +3594,11 @@
           "name": "EIDOSLAB/torchstain",
           "url": "https://github.com/EIDOSLAB/torchstain",
           "description": "Stain normalization tools for histological analysis and computational pathology",
-          "stars": 179,
+          "stars": 180,
           "forks": 30,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 16.82,
+          "score": 16.83,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -3576,49 +3637,16 @@
         },
         {
           "rank": 3,
-          "full_name": "XiaojianDing/TCBB-SIMKF",
-          "short_name": "TCBB-SIMKF",
-          "name": "XiaojianDing/TCBB-SIMKF",
-          "url": "https://github.com/XiaojianDing/TCBB-SIMKF",
-          "description": "Code of \"Survival-Informed Multi-Omics Kernel Fusion for Cancer Subtyping\"",
-          "stars": 134,
-          "forks": 1,
-          "pubmed_citations": 0,
-          "weekly_growth": 0,
-          "score": 12.68,
-          "has_paper": false,
-          "has_docker": false,
-          "has_conda": false,
-          "sub_label": "Fusion Detection",
-          "topics": [],
-          "license": "",
-          "open_issues": 0,
-          "pushed_at": "2025-10-20T07:52:10Z",
-          "tech_stack": [],
-          "install_commands": [],
-          "preview_images": [
-            "https://raw.githubusercontent.com/XiaojianDing/TCBB-SIMKF/master/flowchart/flowchart.png"
-          ],
-          "badges": {
-            "stars": "https://img.shields.io/github/stars/XiaojianDing/TCBB-SIMKF?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/XiaojianDing/TCBB-SIMKF?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/XiaojianDing/TCBB-SIMKF?style=flat-square",
-            "license": "https://img.shields.io/github/license/XiaojianDing/TCBB-SIMKF?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/XiaojianDing/TCBB-SIMKF?style=flat-square"
-          }
-        },
-        {
-          "rank": 4,
           "full_name": "AtlasAnalyticsLab/MOOZY",
           "short_name": "MOOZY",
           "name": "AtlasAnalyticsLab/MOOZY",
           "url": "https://github.com/AtlasAnalyticsLab/MOOZY",
           "description": "A patient-first foundation model for computational pathology. Two-stage training (self-supervised slide encoding + supervised case-level alignment) on 77K+ public whole-slide images across 333 clinical tasks.",
-          "stars": 13,
+          "stars": 14,
           "forks": 0,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 12.02,
+          "score": 12.23,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -3671,17 +3699,17 @@
           }
         },
         {
-          "rank": 5,
+          "rank": 4,
           "full_name": "ZhidongYang/FuseCPath",
           "short_name": "FuseCPath",
           "name": "ZhidongYang/FuseCPath",
           "url": "https://github.com/ZhidongYang/FuseCPath",
           "description": "Official implementation of the paper: Fusion of Multi-scale Heterogeneous Pathology Foundation Models for Whole Slide Image Analysis.",
-          "stars": 20,
+          "stars": 21,
           "forks": 0,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 11.27,
+          "score": 11.39,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -3704,7 +3732,7 @@
           }
         },
         {
-          "rank": 6,
+          "rank": 5,
           "full_name": "liupei101/VLSA",
           "short_name": "VLSA",
           "name": "liupei101/VLSA",
@@ -3749,17 +3777,17 @@
           }
         },
         {
-          "rank": 7,
+          "rank": 6,
           "full_name": "WonderLandxD/PIANO",
           "short_name": "PIANO",
           "name": "WonderLandxD/PIANO",
           "url": "https://github.com/WonderLandxD/PIANO",
           "description": "An easy-to-use PyTorch library for Pathology Image ANalysis Orchestrator (PIANO), including generating patches from whole slide images, using pathology foundation models to create features, and so on.",
-          "stars": 41,
+          "stars": 42,
           "forks": 3,
           "pubmed_citations": 7,
           "weekly_growth": 0,
-          "score": 9.99,
+          "score": 10.03,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -3790,6 +3818,39 @@
             "issues": "https://img.shields.io/github/issues/WonderLandxD/PIANO?style=flat-square",
             "license": "https://img.shields.io/github/license/WonderLandxD/PIANO?style=flat-square",
             "last_commit": "https://img.shields.io/github/last-commit/WonderLandxD/PIANO?style=flat-square"
+          }
+        },
+        {
+          "rank": 7,
+          "full_name": "XiaojianDing/TCBB-SIMKF",
+          "short_name": "TCBB-SIMKF",
+          "name": "XiaojianDing/TCBB-SIMKF",
+          "url": "https://github.com/XiaojianDing/TCBB-SIMKF",
+          "description": "Code of \"Survival-Informed Multi-Omics Kernel Fusion for Cancer Subtyping\"",
+          "stars": 134,
+          "forks": 1,
+          "pubmed_citations": 0,
+          "weekly_growth": 0,
+          "score": 9.69,
+          "has_paper": false,
+          "has_docker": false,
+          "has_conda": false,
+          "sub_label": "Fusion Detection",
+          "topics": [],
+          "license": "",
+          "open_issues": 0,
+          "pushed_at": "2025-10-20T07:52:10Z",
+          "tech_stack": [],
+          "install_commands": [],
+          "preview_images": [
+            "https://raw.githubusercontent.com/XiaojianDing/TCBB-SIMKF/master/flowchart/flowchart.png"
+          ],
+          "badges": {
+            "stars": "https://img.shields.io/github/stars/XiaojianDing/TCBB-SIMKF?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/XiaojianDing/TCBB-SIMKF?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/XiaojianDing/TCBB-SIMKF?style=flat-square",
+            "license": "https://img.shields.io/github/license/XiaojianDing/TCBB-SIMKF?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/XiaojianDing/TCBB-SIMKF?style=flat-square"
           }
         },
         {
@@ -3948,11 +4009,11 @@
           "score_paper": 4,
           "score_health": 0.59,
           "score_version": "v2-sc-proAI",
-          "inactive_days": 254,
+          "inactive_days": 261,
           "score": 7.03
         },
         "issues": 34,
-        "inactive_days": 254,
+        "inactive_days": 261,
         "stars": 13
       },
       {
@@ -3986,11 +4047,11 @@
           "score_paper": 0,
           "score_health": 0.59,
           "score_version": "v2-sc-proAI",
-          "inactive_days": 184,
+          "inactive_days": 191,
           "score": 5.14
         },
         "issues": 21,
-        "inactive_days": 184,
+        "inactive_days": 191,
         "stars": 17
       },
       {
@@ -4024,11 +4085,11 @@
           "score_paper": 4,
           "score_health": 0.59,
           "score_version": "v2-sc-proAI",
-          "inactive_days": 197,
+          "inactive_days": 204,
           "score": 7.67
         },
         "issues": 17,
-        "inactive_days": 197,
+        "inactive_days": 204,
         "stars": 19
       },
       {
@@ -4062,11 +4123,11 @@
           "score_paper": 4,
           "score_health": 0.59,
           "score_version": "v2-sc-proAI",
-          "inactive_days": 319,
+          "inactive_days": 326,
           "score": 9.76
         },
         "issues": 9,
-        "inactive_days": 319,
+        "inactive_days": 326,
         "stars": 12
       },
       {
@@ -4100,16 +4161,139 @@
           "score_paper": 4,
           "score_health": 0.32,
           "score_version": "v2-sc-proAI",
-          "inactive_days": 410,
+          "inactive_days": 417,
           "score": 5.99
         },
         "issues": 18,
-        "inactive_days": 410,
+        "inactive_days": 417,
         "stars": 31
       }
     ]
   },
-  "new_entries": [],
+  "new_entries": [
+    {
+      "category": "ProteinAI",
+      "type": "Pipeline",
+      "repo": {
+        "rank": 1,
+        "full_name": "ChrisHayduk/minAlphaFold2",
+        "short_name": "minAlphaFold2",
+        "name": "ChrisHayduk/minAlphaFold2",
+        "url": "https://github.com/ChrisHayduk/minAlphaFold2",
+        "description": "A minimal PyTorch re-implementation of AlphaFold2's model & training",
+        "stars": 598,
+        "forks": 70,
+        "pubmed_citations": 0,
+        "weekly_growth": 0,
+        "score": 26.66,
+        "has_paper": true,
+        "has_docker": true,
+        "has_conda": false,
+        "sub_label": "",
+        "topics": [],
+        "license": "MIT License",
+        "open_issues": 1,
+        "pushed_at": "2026-04-24T02:48:41Z",
+        "tech_stack": [],
+        "install_commands": [
+          {
+            "type": "pip",
+            "command": "pip install -e"
+          },
+          {
+            "type": "pip",
+            "command": "pip install -e"
+          },
+          {
+            "type": "pip",
+            "command": "pip install -e"
+          },
+          {
+            "type": "git",
+            "command": "git clone https://github.com/ChrisHayduk/minAlphaFold2"
+          }
+        ],
+        "preview_images": [
+          "https://raw.githubusercontent.com/ChrisHayduk/minAlphaFold2/master/assets/minAlphaFold2.png"
+        ],
+        "badges": {
+          "stars": "https://img.shields.io/github/stars/ChrisHayduk/minAlphaFold2?style=flat-square&logo=github",
+          "forks": "https://img.shields.io/github/forks/ChrisHayduk/minAlphaFold2?style=flat-square&logo=github",
+          "issues": "https://img.shields.io/github/issues/ChrisHayduk/minAlphaFold2?style=flat-square",
+          "license": "https://img.shields.io/github/license/ChrisHayduk/minAlphaFold2?style=flat-square",
+          "last_commit": "https://img.shields.io/github/last-commit/ChrisHayduk/minAlphaFold2?style=flat-square",
+          "docker": "https://img.shields.io/badge/docker-available-blue?style=flat-square&logo=docker"
+        }
+      }
+    },
+    {
+      "category": "AI-Pathology",
+      "type": "Utility",
+      "repo": {
+        "rank": 3,
+        "full_name": "AtlasAnalyticsLab/MOOZY",
+        "short_name": "MOOZY",
+        "name": "AtlasAnalyticsLab/MOOZY",
+        "url": "https://github.com/AtlasAnalyticsLab/MOOZY",
+        "description": "A patient-first foundation model for computational pathology. Two-stage training (self-supervised slide encoding + supervised case-level alignment) on 77K+ public whole-slide images across 333 clinical tasks.",
+        "stars": 14,
+        "forks": 0,
+        "pubmed_citations": 0,
+        "weekly_growth": 0,
+        "score": 12.23,
+        "has_paper": true,
+        "has_docker": false,
+        "has_conda": false,
+        "sub_label": "Alignment",
+        "topics": [
+          "computational-pathology",
+          "digital-pathology",
+          "foundation-model",
+          "histopathology",
+          "medical-imaging",
+          "moozy",
+          "multiple-instance-learning",
+          "pathology-foundation-model",
+          "patient-encoder",
+          "patient-representation",
+          "self-supervised-learning",
+          "slide-encoder",
+          "slide-representation-learning",
+          "survival-prediction",
+          "whole-slide-image",
+          "wsi-foundation-model"
+        ],
+        "license": "Other",
+        "open_issues": 0,
+        "pushed_at": "2026-04-13T03:09:18Z",
+        "tech_stack": [],
+        "install_commands": [
+          {
+            "type": "pip",
+            "command": "pip install moozy"
+          },
+          {
+            "type": "pip",
+            "command": "pip install moozy"
+          },
+          {
+            "type": "pip",
+            "command": "pip install moozy"
+          }
+        ],
+        "preview_images": [
+          "https://raw.githubusercontent.com/AtlasAnalyticsLab/MOOZY/main/assets/paper_figures/data_scale_overview.png"
+        ],
+        "badges": {
+          "stars": "https://img.shields.io/github/stars/AtlasAnalyticsLab/MOOZY?style=flat-square&logo=github",
+          "forks": "https://img.shields.io/github/forks/AtlasAnalyticsLab/MOOZY?style=flat-square&logo=github",
+          "issues": "https://img.shields.io/github/issues/AtlasAnalyticsLab/MOOZY?style=flat-square",
+          "license": "https://img.shields.io/github/license/AtlasAnalyticsLab/MOOZY?style=flat-square",
+          "last_commit": "https://img.shields.io/github/last-commit/AtlasAnalyticsLab/MOOZY?style=flat-square"
+        }
+      }
+    }
+  ],
   "community": {
     "badges": {
       "Single-cell": {
@@ -4470,7 +4654,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Spatial-omics No.5](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.5\"></a>",
-            "repo": "dmcable/spacexr"
+            "repo": "BayraktarLab/cell2location"
           },
           {
             "rank": 6,
@@ -4480,7 +4664,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Spatial-omics No.6](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.6\"></a>",
-            "repo": "BayraktarLab/cell2location"
+            "repo": "JianYang-Lab/gsMap"
           },
           {
             "rank": 7,
@@ -4490,7 +4674,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Spatial-omics No.7](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.7\"></a>",
-            "repo": "JianYang-Lab/gsMap"
+            "repo": "giotto-suite/Giotto"
           },
           {
             "rank": 8,
@@ -4500,7 +4684,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Spatial-omics No.8](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.8\"></a>",
-            "repo": "drieslab/Giotto"
+            "repo": "scverse/spatialdata"
           },
           {
             "rank": 9,
@@ -4510,7 +4694,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Spatial-omics No.9](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.9\"></a>",
-            "repo": "scverse/spatialdata"
+            "repo": "prism-oncology/novae"
           },
           {
             "rank": 10,
@@ -4520,7 +4704,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Spatial-omics No.10](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.10\"></a>",
-            "repo": "prism-oncology/novae"
+            "repo": "lmweber/OSTA"
           }
         ]
       },
@@ -4626,7 +4810,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.5](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.5\"></a>",
-            "repo": "SolvingLab/OmixBench"
+            "repo": "fanglu0411/sgs"
           },
           {
             "rank": 6,
@@ -4636,7 +4820,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.6](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.6\"></a>",
-            "repo": "bioFAM/MOFA2"
+            "repo": "SolvingLab/OmixBench"
           },
           {
             "rank": 7,
@@ -4646,7 +4830,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.7%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.7](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.7\"></a>",
-            "repo": "liubingdong/EasyMultiProfiler"
+            "repo": "bioFAM/MOFA2"
           },
           {
             "rank": 8,
@@ -4656,7 +4840,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.8%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.8](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.8\"></a>",
-            "repo": "rargelaguet/mouse_organogenesis_10x_multiome_publication"
+            "repo": "liubingdong/EasyMultiProfiler"
           },
           {
             "rank": 9,
@@ -4666,7 +4850,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.9%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.9](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.9\"></a>",
-            "repo": "interactivereport/xOmicsShiny"
+            "repo": "rargelaguet/mouse_organogenesis_10x_multiome_publication"
           },
           {
             "rank": 10,
@@ -4676,7 +4860,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.10%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.10](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.10\"></a>",
-            "repo": "KEAML-JLU/SpatialEx"
+            "repo": "interactivereport/xOmicsShiny"
           }
         ]
       },
@@ -4690,7 +4874,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Pipeline-gold?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank ProteinAI No.1](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Pipeline-gold?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Pipeline-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.1\"></a>",
-            "repo": "RomeroLab/alphafast"
+            "repo": "ChrisHayduk/minAlphaFold2"
           },
           {
             "rank": 2,
@@ -4700,7 +4884,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Pipeline-silver?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank ProteinAI No.2](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Pipeline-silver?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Pipeline-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.2\"></a>",
-            "repo": "PapenfussLab/proteindj"
+            "repo": "RomeroLab/alphafast"
           },
           {
             "rank": 3,
@@ -4710,7 +4894,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Pipeline-bronze?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank ProteinAI No.3](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Pipeline-bronze?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Pipeline-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.3\"></a>",
-            "repo": "gchojnowski/gapTrick"
+            "repo": "PapenfussLab/proteindj"
           },
           {
             "rank": 4,
@@ -4720,7 +4904,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Pipeline-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank ProteinAI No.4](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.4\"></a>",
-            "repo": "soedinglab/PMGen"
+            "repo": "gchojnowski/gapTrick"
           },
           {
             "rank": 5,
@@ -4730,7 +4914,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Pipeline-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank ProteinAI No.5](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.5\"></a>",
-            "repo": "wells-wood-research/de-stress"
+            "repo": "soedinglab/PMGen"
           },
           {
             "rank": 6,
@@ -4740,7 +4924,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Pipeline-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank ProteinAI No.6](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.6\"></a>",
-            "repo": "IBM/AFDistill"
+            "repo": "wells-wood-research/de-stress"
           },
           {
             "rank": 7,
@@ -4750,6 +4934,16 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Pipeline-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank ProteinAI No.7](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.7\"></a>",
+            "repo": "IBM/AFDistill"
+          },
+          {
+            "rank": 8,
+            "category": "ProteinAI",
+            "track": "Pipeline",
+            "color": "blue",
+            "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.8%20Pipeline-blue?style=for-the-badge&logo=github",
+            "markdown": "[![Bio-Rank ProteinAI No.8](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.8%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
+            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.8%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.8\"></a>",
             "repo": "psipred/DMPfold2"
           }
         ],
@@ -4842,7 +5036,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.9%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank ProteinAI No.9](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.9\"></a>",
-            "repo": "ChrisHayduk/minAlphaFold2"
+            "repo": "patrickbryant1/EvoBind"
           },
           {
             "rank": 10,
@@ -4887,7 +5081,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.3%20Utility-bronze?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank AI-Pathology No.3](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.3\"></a>",
-            "repo": "XiaojianDing/TCBB-SIMKF"
+            "repo": "AtlasAnalyticsLab/MOOZY"
           },
           {
             "rank": 4,
@@ -4897,7 +5091,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.4%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank AI-Pathology No.4](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.4\"></a>",
-            "repo": "AtlasAnalyticsLab/MOOZY"
+            "repo": "ZhidongYang/FuseCPath"
           },
           {
             "rank": 5,
@@ -4907,7 +5101,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.5%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank AI-Pathology No.5](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.5\"></a>",
-            "repo": "ZhidongYang/FuseCPath"
+            "repo": "liupei101/VLSA"
           },
           {
             "rank": 6,
@@ -4917,7 +5111,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.6%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank AI-Pathology No.6](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.6\"></a>",
-            "repo": "liupei101/VLSA"
+            "repo": "WonderLandxD/PIANO"
           },
           {
             "rank": 7,
@@ -4927,7 +5121,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.7%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank AI-Pathology No.7](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
             "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.7\"></a>",
-            "repo": "WonderLandxD/PIANO"
+            "repo": "XiaojianDing/TCBB-SIMKF"
           },
           {
             "rank": 8,
@@ -4965,10 +5159,10 @@
     "issue_drafts": []
   },
   "summary": {
-    "total_pipelines": 55,
-    "total_utilities": 510,
-    "with_docker": 87,
-    "with_conda": 127,
-    "paper_linked": 414
+    "total_pipelines": 56,
+    "total_utilities": 514,
+    "with_docker": 89,
+    "with_conda": 130,
+    "paper_linked": 419
   }
 }

@@ -5,6 +5,19 @@ Discover reliable open-source tools for single-cell analysis, spatial omics, mul
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-blue.svg)
 
+## Live Site
+
+Open the deployed toolkit here:
+
+**https://pf-f.github.io/sc-st-proAI-toolkit/**
+
+## At A Glance
+
+- Static GitHub Pages portal in `docs/`
+- Python crawler and ranking engine in `scripts/`
+- Weekly automated ranking refresh through GitHub Actions
+- Public JSON outputs in `data/` and `docs/data/`
+
 ## What It Does
 
 sc-st-proAI Toolkit is a GitHub Pages portal backed by an automated crawler and ranking engine. It collects public GitHub projects, filters for biology and biomedical AI relevance, classifies projects into focused categories, and presents ranked Pipeline and Utility leaderboards.
@@ -72,7 +85,13 @@ Then open `http://localhost:8000`.
 
 ## Deployment
 
-The repository is configured for GitHub Pages from the `docs/` folder. The weekly GitHub Action refreshes rankings, copies generated JSON into `docs/data/`, commits changed data, and lets GitHub Pages publish the static site.
+The repository is configured for GitHub Pages from the `docs/` folder. The deployed URL is:
+
+```text
+https://pf-f.github.io/sc-st-proAI-toolkit/
+```
+
+The weekly GitHub Action refreshes rankings, copies generated JSON into `docs/data/`, commits changed data, and lets GitHub Pages publish the static site.
 
 To trigger a refresh manually, run the `sc-st-proAI Toolkit Weekly Update` workflow from the GitHub Actions tab.
 

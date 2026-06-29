@@ -30,6 +30,10 @@ from collections import defaultdict
 
 GITHUB_API_BASE = "https://api.github.com"
 GITHUB_TOKEN: Optional[str] = os.environ.get("GITHUB_TOKEN")
+SEARCH_CUTOFF_DATE = os.environ.get("SEARCH_CUTOFF_DATE", "2025-01-01")
+MIN_STARS = int(os.environ.get("MIN_STARS", "10"))
+REQUEST_TIMEOUT = int(os.environ.get("REQUEST_TIMEOUT", "30"))
+SEARCH_MAX_PAGES = int(os.environ.get("SEARCH_MAX_PAGES", "5"))
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_DIR = SCRIPT_DIR.parent
 DB_PATH = PROJECT_DIR / "data" / "bio_toolbox.db"
@@ -683,6 +687,112 @@ BIO_SAFELIST = [
     "metabolite",
 ]
 
+CATEGORY_MATCH_TERMS = {
+    "Single-cell": [
+        "single-cell",
+        "scrna",
+        "10x",
+        "scanpy",
+        "seurat",
+        "cell ranger",
+        "droplet",
+        "single cell",
+    ],
+    "Spatial-omics": [
+        "spatial transcriptomics",
+        "spatial omics",
+        "visium",
+        "merfish",
+        "seqfish",
+        "slide-seq",
+        "squidpy",
+        "stlearn",
+        "cell2location",
+        "spatial deconvolution",
+        "spatialde",
+        "spatial gene expression",
+        "xenium",
+        "cosmx",
+    ],
+    "Multi-omics": [
+        "multi-omics",
+        "multiomics",
+        "omics integration",
+        "integrative omics",
+        "mofa",
+        "mixomics",
+        "multi-modal omics",
+        "multimodal",
+        "pan-omics",
+        "cross-omics",
+    ],
+    "ProteinAI": [
+        "alphafold",
+        "protein structure prediction",
+        "protein folding",
+        "rosettafold",
+        "openfold",
+        "colabfold",
+        "protein language model",
+        "protein lm",
+        "esm",
+        "drug discovery",
+        "virtual screening",
+        "molecular generation",
+        "de novo design",
+        "protein design",
+        "scientific llm",
+        "biomedical nlp",
+        "biomedical foundation model",
+        "retrosynthesis",
+        "admet",
+        "compound screening",
+    ],
+    "AI-Pathology": [
+        "computational pathology",
+        "digital pathology",
+        "histopathology ai",
+        "histopathology",
+        "whole slide imaging",
+        "wsi analysis",
+        "pathology foundation model",
+        "uni",
+        "virchow",
+        "conch",
+        "clam",
+        "prov-gigapath",
+        "gigapath",
+        "h-optimus",
+        "hibou",
+        "phikon",
+        "cate",
+        "litepath",
+        "pathoduet",
+        "plip",
+        "prism",
+        "tangle",
+        "weakly supervised learning",
+        "multiple instance learning",
+        "mil",
+        "slide-level classification",
+        "tumor detection",
+        "cancer subtyping",
+        "biomarker prediction",
+        "prognostic modeling",
+        "histomorphological analysis",
+        "tissue segmentation",
+        "pathology image analysis",
+    ],
+}
+
+DISCOVERY_TERMS = sorted(
+    set(
+        OMICS_CORE_TERMS
+        + BIO_SAFELIST
+        + [term for terms in CATEGORY_MATCH_TERMS.values() for term in terms]
+    )
+)
+
 # 通用流程引擎仓库 -> 标记为 "Workflow Engine"，不占据具体分析工具榜首
 WORKFLOW_ENGINE_REPOS = [
     "snakemake/snakemake",
@@ -796,6 +906,28 @@ def get_headers() -> dict:
     return headers
 
 
+def normalize_topics(raw_topics) -> List[str]:
+    if isinstance(raw_topics, str):
+        try:
+            raw_topics = json.loads(raw_topics)
+        except (json.JSONDecodeError, TypeError):
+            raw_topics = []
+    return [str(t).lower() for t in raw_topics or []]
+
+
+def contains_any(text: str, terms: List[str]) -> bool:
+    text = text.lower()
+    return any(term.lower() in text for term in terms)
+
+
+def repo_evidence_text(repo: dict, readme_content: str = "", readme_chars: int = 6000) -> str:
+    description = repo.get("description") or ""
+    topics = " ".join(normalize_topics(repo.get("topics", [])))
+    name = repo.get("name") or ""
+    full_name = repo.get("full_name") or ""
+    return f"{description} {topics} {name} {full_name} {readme_content[:readme_chars]}".lower()
+
+
 def is_excluded(repo: dict) -> bool:
     description = (repo.get("description") or "").lower()
     name = repo.get("name", "").lower()
@@ -808,13 +940,7 @@ def is_excluded(repo: dict) -> bool:
 def calculate_bio_tech_scores(repo: dict) -> tuple:
     """计算项目的 Bio-Score（正向分）和 Tech-Score（负向分）"""
     description = (repo.get("description") or "").lower()
-    raw_topics = repo.get("topics", [])
-    if isinstance(raw_topics, str):
-        try:
-            raw_topics = json.loads(raw_topics)
-        except (json.JSONDecodeError, TypeError):
-            raw_topics = []
-    topics = [t.lower() for t in raw_topics]
+    topics = normalize_topics(repo.get("topics", []))
     full_name = (repo.get("full_name") or "").lower()
     full_text = f"{description} {' '.join(topics)} {full_name}"
 
@@ -854,13 +980,7 @@ def is_non_bio_project(repo: dict) -> bool:
             return True
 
     description = (repo.get("description") or "").lower()
-    raw_topics = repo.get("topics", [])
-    if isinstance(raw_topics, str):
-        try:
-            raw_topics = json.loads(raw_topics)
-        except (json.JSONDecodeError, TypeError):
-            raw_topics = []
-    topics = [t.lower() for t in raw_topics]
+    topics = normalize_topics(repo.get("topics", []))
     full_text = f"{description} {' '.join(topics)} {full_name}"
 
     # 规则 1：权重评分
@@ -1108,13 +1228,37 @@ def get_all_repos_for_ranking() -> list:
 # ============================================================
 
 
+def build_search_queries(keyword: str, category: str, cutoff_date: str) -> List[str]:
+    """Build complementary GitHub repository-search queries for better coverage."""
+    escaped = keyword.replace('"', "")
+    queries = [
+        f'"{escaped}" in:name,description,readme pushed:>{cutoff_date} stars:>{MIN_STARS}',
+        f'"{escaped}" in:topics pushed:>{cutoff_date} stars:>{MIN_STARS}',
+    ]
+
+    # Add a broader category-specific topic search for concepts with many aliases.
+    topic_aliases = {
+        "Single-cell": ["single-cell", "scrna-seq", "single-cell-analysis"],
+        "Spatial-omics": ["spatial-transcriptomics", "visium", "spatial-omics"],
+        "Multi-omics": ["multi-omics", "multiomics", "omics-integration"],
+        "ProteinAI": ["alphafold", "protein-design", "protein-structure"],
+        "AI-Pathology": ["digital-pathology", "computational-pathology", "histopathology"],
+    }
+    for topic in topic_aliases.get(category, [])[:2]:
+        queries.append(f"topic:{topic} pushed:>{cutoff_date} stars:>{MIN_STARS}")
+
+    # Preserve order while removing duplicates.
+    return list(dict.fromkeys(queries))
+
+
 def search_with_pagination(query: str, min_results: int = 50) -> list:
     url = f"{GITHUB_API_BASE}/search/repositories"
     all_items = []
+    seen_ids = set()
     page = 1
     per_page = 100
 
-    while len(all_items) < min_results and page <= 5:
+    while len(all_items) < min_results and page <= SEARCH_MAX_PAGES:
         params = {
             "q": query,
             "sort": "stars",
@@ -1124,21 +1268,39 @@ def search_with_pagination(query: str, min_results: int = 50) -> list:
         }
         try:
             response = requests.get(
-                url, headers=get_headers(), params=params, timeout=30
+                url, headers=get_headers(), params=params, timeout=REQUEST_TIMEOUT
             )
             remaining = response.headers.get("X-RateLimit-Remaining", "?")
 
-            if response.status_code == 403:
-                log(f"    [Rate Limited] Waiting...")
-                time.sleep(60)
+            if response.status_code in {403, 429}:
+                retry_after = response.headers.get("Retry-After")
+                reset_at = response.headers.get("X-RateLimit-Reset")
+                wait_seconds = 60
+                if retry_after and retry_after.isdigit():
+                    wait_seconds = int(retry_after) + 2
+                elif reset_at and reset_at.isdigit():
+                    wait_seconds = max(5, int(reset_at) - int(time.time()) + 2)
+                log(f"    [Rate Limited] Waiting {wait_seconds}s...")
+                time.sleep(wait_seconds)
                 continue
 
+            if response.status_code == 422:
+                log(f"    [Invalid Query] {query}")
+                break
+
             response.raise_for_status()
-            items = response.json().get("items", [])
+            payload = response.json()
+            items = payload.get("items", [])
             if not items:
                 break
 
-            all_items.extend(items)
+            for item in items:
+                repo_id = item.get("id") or item.get("full_name")
+                if repo_id in seen_ids:
+                    continue
+                seen_ids.add(repo_id)
+                all_items.append(item)
+
             log(
                 f"    [Page {page}] Got {len(items)} items (Total: {len(all_items)}, API: {remaining})"
             )
@@ -1157,7 +1319,7 @@ def search_with_pagination(query: str, min_results: int = 50) -> list:
 def get_readme_content(owner: str, repo_name: str) -> str:
     url = f"{GITHUB_API_BASE}/repos/{owner}/{repo_name}/readme"
     try:
-        response = requests.get(url, headers=get_headers(), timeout=10)
+        response = requests.get(url, headers=get_headers(), timeout=REQUEST_TIMEOUT)
         if response.status_code == 200:
             content = response.json().get("content", "")
             return base64.b64decode(content).decode("utf-8", errors="ignore")
@@ -1191,7 +1353,9 @@ def extract_install_commands(readme_content: str) -> List[Dict[str, str]]:
     return commands[:5]  # 最多返回5个命令
 
 
-def extract_preview_images(readme_content: str, repo_url: str) -> List[str]:
+def extract_preview_images(
+    readme_content: str, repo_url: str, default_branch: str = "main"
+) -> List[str]:
     """从README中提取预览图和Logo"""
     images = []
     logo_images = []  # Logo图片优先级最高
@@ -1232,9 +1396,9 @@ def extract_preview_images(readme_content: str, repo_url: str) -> List[str]:
 
         # 相对路径格式: ./assets/logo.png 或 assets/logo.png
         if repo_full_name:
-            clean_path = url.lstrip("./")
+            clean_path = url.split()[0].lstrip("./")
             # 尝试多个分支
-            return f"https://raw.githubusercontent.com/{repo_full_name}/master/{clean_path}"
+            return f"https://raw.githubusercontent.com/{repo_full_name}/{default_branch}/{clean_path}"
 
         return url
 
@@ -1428,7 +1592,7 @@ def generate_all_badges(
 def detect_project_type(repo: dict, readme_content: str = "") -> str:
     """分类器: 端到端能力判定 + 白名单/黑名单机制"""
     description = (repo.get("description") or "").lower()
-    topics = [t.lower() for t in repo.get("topics", [])]
+    topics = normalize_topics(repo.get("topics", []))
     name = repo.get("name", "").lower()
     full_name = repo.get("full_name", "").lower()
     owner = full_name.split("/")[0] if "/" in full_name else ""
@@ -1554,7 +1718,7 @@ def detect_sub_label(repo: dict, readme_content: str = "") -> str:
     """检测 Utility 细分领域标签"""
     description = (repo.get("description") or "").lower()
     name = repo.get("name", "").lower()
-    topics = [t.lower() for t in repo.get("topics", [])]
+    topics = normalize_topics(repo.get("topics", []))
     readme_lower = readme_content.lower()
     full_text = f"{description} {name} {' '.join(topics)} {readme_lower[:2000]}"
 
@@ -1565,7 +1729,21 @@ def detect_sub_label(repo: dict, readme_content: str = "") -> str:
     return "General"
 
 
-def classify_category(repo: dict, search_category: str) -> str:
+def classify_category(repo: dict, search_category: str, readme_content: str = "") -> str:
+    full_text = repo_evidence_text(repo, readme_content)
+    bio_score, tech_score = calculate_bio_tech_scores(repo)
+    if bio_score < BIO_SCORE_THRESHOLD and tech_score > bio_score:
+        return "Other"
+
+    matched_categories = [
+        category
+        for category, terms in CATEGORY_MATCH_TERMS.items()
+        if contains_any(full_text, terms)
+    ]
+    if matched_categories:
+        return matched_categories[0]
+    return search_category if bio_score >= BIO_SCORE_THRESHOLD and search_category in KEYWORDS else "Other"
+
     """分类器：带置信度校验，Bio-Score 过低归 'Other'"""
     description = (repo.get("description") or "").lower()
     topics = [t.lower() for t in repo.get("topics", [])]
@@ -1780,6 +1958,14 @@ def classify_category(repo: dict, search_category: str) -> str:
 
 
 def get_multi_categories(repo: dict) -> list:
+    full_text = repo_evidence_text(repo)
+    matched_categories = [
+        category
+        for category, terms in CATEGORY_MATCH_TERMS.items()
+        if contains_any(full_text, terms)
+    ]
+    return matched_categories or ["Genomics"]
+
     """获取项目的所有匹配类别（一库多标）"""
     description = (repo.get("description") or "").lower()
     topics = [t.lower() for t in repo.get("topics", [])]
@@ -2237,7 +2423,9 @@ RANK_BADGE_COLORS = {
     10: "blue",
 }
 
-WEBSITE_URL = "https://bbplayer2021.github.io/bio-rank-gateway/"
+WEBSITE_URL = os.environ.get(
+    "WEBSITE_URL", "https://pf-f.github.io/sc-st-proAI-toolkit/"
+)
 
 
 def generate_rank_badge(rank: int, category: str, track: str) -> dict:
@@ -2444,10 +2632,10 @@ def generate_issue_drafts_for_new_entries(new_entries: list, ranking: dict) -> l
 def depth_search(quick_mode: bool = False):
     log("\n" + "=" * 70)
     log("[Deep Search] Dual-track collection...")
-    log("Criteria: pushed:>2025-01-01 AND stars:>10")
+    log(f"Criteria: pushed:>{SEARCH_CUTOFF_DATE} AND stars:>{MIN_STARS}")
     log("=" * 70)
 
-    cutoff_date = "2025-01-01"
+    cutoff_date = SEARCH_CUTOFF_DATE
     total_found = 0
     seen_repos = set()
 
@@ -2527,14 +2715,21 @@ def depth_search(quick_mode: bool = False):
             continue
 
         for keyword in keywords:
-            query = f"{keyword} pushed:>{cutoff_date} stars:>10"
             log(f"  Keyword: {keyword}")
 
-            repos = search_with_pagination(
-                query, min_results=50 if not quick_mode else 20
-            )
+            repos = []
+            for query in build_search_queries(keyword, category, cutoff_date):
+                repos.extend(
+                    search_with_pagination(
+                        query, min_results=50 if not quick_mode else 20
+                    )
+                )
 
+            unique_repos = {}
             for repo in repos:
+                unique_repos[repo.get("id") or repo.get("full_name")] = repo
+
+            for repo in unique_repos.values():
                 full_name = repo.get("full_name")
                 if full_name in seen_repos:
                     continue
@@ -2548,25 +2743,24 @@ def depth_search(quick_mode: bool = False):
                     log(f"    [SKIP] {full_name} (non-bio project)")
                     continue
 
-                description = (repo.get("description") or "").lower()
-                topics = [t.lower() for t in repo.get("topics", [])]
-
-                has_bio_term = any(
-                    term in description or term in topics for term in bio_terms
-                )
-                if not has_bio_term:
-                    continue
-
                 owner = repo.get("owner", {}).get("login", "")
                 repo_name = repo.get("name", "")
                 readme = get_readme_content(owner, repo_name)
+
+                evidence_text = repo_evidence_text(repo, readme)
+                has_bio_term = contains_any(evidence_text, DISCOVERY_TERMS)
+                has_category_term = contains_any(
+                    evidence_text, CATEGORY_MATCH_TERMS.get(category, [])
+                )
+                if not (has_bio_term or has_category_term):
+                    continue
 
                 # 检测是否为通用流程引擎
                 if is_workflow_engine(repo):
                     final_category = "Workflow Engine"
                     project_type = "Pipeline"
                 else:
-                    final_category = classify_category(repo, category)
+                    final_category = classify_category(repo, category, readme)
                     project_type = detect_project_type(repo, readme)
 
                 if (
@@ -2585,7 +2779,9 @@ def depth_search(quick_mode: bool = False):
                 # 数据增强
                 install_commands = extract_install_commands(readme)
                 preview_images = extract_preview_images(
-                    readme, repo.get("html_url", "")
+                    readme,
+                    repo.get("html_url", ""),
+                    repo.get("default_branch") or "main",
                 )
                 badge_url = generate_badge_url(
                     full_name, repo.get("stargazers_count", 0), repo.get("language", "")

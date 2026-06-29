@@ -1357,7 +1357,7 @@
           "short_name": "scNotebooks",
           "name": "integrativebioinformatics/scNotebooks",
           "url": "https://github.com/integrativebioinformatics/scNotebooks",
-          "description": "This repository contains scNotebooks, a collection of interactive Jupyter and Google Colab notebooks designed to teach and practice single‑cell  and spatial transcriptomics. The notebooks guide learners through the complete workflow from introductory steps and single‑cell pipelines to diverse analytical approaches, and FAIR and sharing data",
+          "description": "This repository contains scNotebooks, a collection of interactive Jupyter and Google Colab notebooks designed to teach and practice single鈥慶ell  and spatial transcriptomics. The notebooks guide learners through the complete workflow from introductory steps and single鈥慶ell pipelines to diverse analytical approaches, and FAIR and sharing data",
           "stars": 118,
           "forks": 29,
           "pubmed_citations": 0,
@@ -3334,7 +3334,7 @@
           "short_name": "SciAgent-Skills",
           "name": "jaechang-hits/SciAgent-Skills",
           "url": "https://github.com/jaechang-hits/SciAgent-Skills",
-          "description": "197 bioinformatics & life science skills for Claude Code and AI agents — BixBench 92.0% accuracy. RNA-seq, single-cell, drug discovery, proteomics, and more. Powers OmicsHorizon.",
+          "description": "197 bioinformatics & life science skills for Claude Code and AI agents 鈥?BixBench 92.0% accuracy. RNA-seq, single-cell, drug discovery, proteomics, and more. Powers OmicsHorizon.",
           "stars": 216,
           "forks": 21,
           "pubmed_citations": 0,
@@ -4178,8 +4178,8 @@
             "track": "Pipeline",
             "color": "gold",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.1%20Pipeline-gold?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.1](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.1%20Pipeline-gold?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.1%20Pipeline-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.1\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.1](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.1%20Pipeline-gold?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.1%20Pipeline-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.1\"></a>",
             "repo": "scverse/pertpy"
           },
           {
@@ -4188,8 +4188,8 @@
             "track": "Pipeline",
             "color": "silver",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.2%20Pipeline-silver?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.2](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.2%20Pipeline-silver?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.2%20Pipeline-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.2\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.2](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.2%20Pipeline-silver?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.2%20Pipeline-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.2\"></a>",
             "repo": "nf-core/scrnaseq"
           },
           {
@@ -4198,8 +4198,8 @@
             "track": "Pipeline",
             "color": "bronze",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.3%20Pipeline-bronze?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.3](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.3%20Pipeline-bronze?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.3%20Pipeline-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.3\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.3](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.3%20Pipeline-bronze?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.3%20Pipeline-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.3\"></a>",
             "repo": "nf-core/spatialvi"
           },
           {
@@ -4208,8 +4208,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.4%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.4](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.4%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.4%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.4\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.4](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.4%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.4%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.4\"></a>",
             "repo": "TheJacksonLaboratory/STQ"
           },
           {
@@ -4218,8 +4218,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.5%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.5](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.5%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.5%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.5\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.5](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.5%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.5%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.5\"></a>",
             "repo": "nf-core/scnanoseq"
           },
           {
@@ -4228,8 +4228,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.6%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.6](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.6%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.6%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.6\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.6](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.6%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.6%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.6\"></a>",
             "repo": "zhanghao-njmu/SCP"
           },
           {
@@ -4238,8 +4238,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.7](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.7\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.7](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.7\"></a>",
             "repo": "scverse/SnapATAC2"
           },
           {
@@ -4248,8 +4248,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.8](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.8\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.8](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.8\"></a>",
             "repo": "chanzuckerberg/cellxgene"
           },
           {
@@ -4258,8 +4258,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.9%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.9](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.9%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.9%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.9\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.9](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.9%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.9%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.9\"></a>",
             "repo": "epigen/scrnaseq_processing_seurat"
           },
           {
@@ -4268,8 +4268,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.10%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.10](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.10%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.10%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.10\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.10](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.10%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.10%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.10\"></a>",
             "repo": "epigen/genome_tracks"
           }
         ],
@@ -4280,8 +4280,8 @@
             "track": "Utility",
             "color": "gold",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.1%20Utility-gold?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.1](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.1%20Utility-gold?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.1%20Utility-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.1\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.1](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.1%20Utility-gold?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.1%20Utility-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.1\"></a>",
             "repo": "scverse/scvi-tools"
           },
           {
@@ -4290,8 +4290,8 @@
             "track": "Utility",
             "color": "silver",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.2%20Utility-silver?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.2](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.2%20Utility-silver?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.2%20Utility-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.2\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.2](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.2%20Utility-silver?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.2%20Utility-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.2\"></a>",
             "repo": "scverse/scanpy"
           },
           {
@@ -4300,8 +4300,8 @@
             "track": "Utility",
             "color": "bronze",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.3%20Utility-bronze?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.3](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.3\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.3](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.3\"></a>",
             "repo": "aristoteleo/dynamo-release"
           },
           {
@@ -4310,8 +4310,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.4%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.4](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.4\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.4](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.4\"></a>",
             "repo": "scverse/cellrank"
           },
           {
@@ -4320,8 +4320,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.5%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.5](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.5\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.5](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.5\"></a>",
             "repo": "agitter/single-cell-pseudotime"
           },
           {
@@ -4330,8 +4330,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.6%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.6](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.6\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.6](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.6\"></a>",
             "repo": "stuart-lab/signac"
           },
           {
@@ -4340,8 +4340,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.7](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.7\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.7](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.7\"></a>",
             "repo": "scverse/rapids-singlecell"
           },
           {
@@ -4350,8 +4350,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.8](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.8\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.8](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.8\"></a>",
             "repo": "scRNA-tools/scRNA-tools"
           },
           {
@@ -4360,8 +4360,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.9%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.9](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.9\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.9](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.9\"></a>",
             "repo": "samuel-marsh/scCustomize"
           },
           {
@@ -4370,8 +4370,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.10%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Single-cell No.10](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.10\"></a>",
+            "markdown": "[![Bio-Rank Single-cell No.10](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.10\"></a>",
             "repo": "ikeda042/PhenoPixel"
           }
         ]
@@ -4384,8 +4384,8 @@
             "track": "Pipeline",
             "color": "gold",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.1%20Pipeline-gold?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.1](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.1%20Pipeline-gold?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.1%20Pipeline-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.1\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.1](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.1%20Pipeline-gold?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.1%20Pipeline-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.1\"></a>",
             "repo": "p-gueguen/Spatial_transcriptomics_tools"
           },
           {
@@ -4394,8 +4394,8 @@
             "track": "Pipeline",
             "color": "silver",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.2](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.2\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.2](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.2\"></a>",
             "repo": "nf-core/spatialvi"
           },
           {
@@ -4404,8 +4404,8 @@
             "track": "Pipeline",
             "color": "bronze",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.3](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.3\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.3](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.3\"></a>",
             "repo": "LiuLab-Bioelectronics-Harvard/STAgent"
           },
           {
@@ -4414,8 +4414,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.4](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.4\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.4](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.4\"></a>",
             "repo": "TheJacksonLaboratory/STQ"
           },
           {
@@ -4424,8 +4424,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.5](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.5\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.5](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.5\"></a>",
             "repo": "JaneliaSciComp/multifish"
           },
           {
@@ -4434,8 +4434,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.6](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.6\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.6](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.6\"></a>",
             "repo": "GoekeLab/bambu-pipe"
           },
           {
@@ -4444,8 +4444,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.7](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.7\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.7](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.7\"></a>",
             "repo": "integrativebioinformatics/scNotebooks"
           },
           {
@@ -4454,8 +4454,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.8](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.8\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.8](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.8\"></a>",
             "repo": "nf-core/sopa"
           },
           {
@@ -4464,8 +4464,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.9](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.9\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.9](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.9\"></a>",
             "repo": "jfnavarro/st_pipeline"
           },
           {
@@ -4474,8 +4474,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.10](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.10\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.10](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.10\"></a>",
             "repo": "Sanofi-Public/enact-pipeline"
           }
         ],
@@ -4486,8 +4486,8 @@
             "track": "Utility",
             "color": "gold",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.1%20Utility-gold?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.1](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.1%20Utility-gold?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.1%20Utility-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.1\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.1](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.1%20Utility-gold?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.1%20Utility-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.1\"></a>",
             "repo": "scverse/scvi-tools"
           },
           {
@@ -4496,8 +4496,8 @@
             "track": "Utility",
             "color": "silver",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Utility-silver?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.2](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Utility-silver?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Utility-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.2\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.2](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Utility-silver?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Utility-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.2\"></a>",
             "repo": "mahmoodlab/HEST"
           },
           {
@@ -4506,8 +4506,8 @@
             "track": "Utility",
             "color": "bronze",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.3](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.3\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.3](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.3\"></a>",
             "repo": "prism-oncology/sopa"
           },
           {
@@ -4516,8 +4516,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.4](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.4\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.4](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.4\"></a>",
             "repo": "mengxu98/scop"
           },
           {
@@ -4526,8 +4526,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.5](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.5\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.5](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.5\"></a>",
             "repo": "JianYang-Lab/gsMap"
           },
           {
@@ -4536,8 +4536,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.6](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.6\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.6](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.6\"></a>",
             "repo": "BayraktarLab/cell2location"
           },
           {
@@ -4546,8 +4546,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.7](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.7\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.7](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.7\"></a>",
             "repo": "scverse/spatialdata"
           },
           {
@@ -4556,8 +4556,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.8](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.8\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.8](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.8\"></a>",
             "repo": "giotto-suite/Giotto"
           },
           {
@@ -4566,8 +4566,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.9](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.9\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.9](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.9\"></a>",
             "repo": "Teichlab/bin2cell"
           },
           {
@@ -4576,8 +4576,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.10](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.10\"></a>",
+            "markdown": "[![Bio-Rank Spatial-omics No.10](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.10\"></a>",
             "repo": "prism-oncology/novae"
           }
         ]
@@ -4590,8 +4590,8 @@
             "track": "Pipeline",
             "color": "gold",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.1%20Pipeline-gold?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.1](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.1%20Pipeline-gold?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.1%20Pipeline-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.1\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.1](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.1%20Pipeline-gold?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.1%20Pipeline-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.1\"></a>",
             "repo": "epigen/MrBiomics"
           },
           {
@@ -4600,8 +4600,8 @@
             "track": "Pipeline",
             "color": "silver",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.2](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.2\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.2](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.2\"></a>",
             "repo": "Lotfollahi-lab/nichecompass"
           },
           {
@@ -4610,8 +4610,8 @@
             "track": "Pipeline",
             "color": "bronze",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.3](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.3\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.3](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.3\"></a>",
             "repo": "jan-forest/autoencodix"
           },
           {
@@ -4620,8 +4620,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.4](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.4\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.4](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.4\"></a>",
             "repo": "xianglin226/scMDC"
           },
           {
@@ -4630,8 +4630,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.5](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.5\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.5](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.5\"></a>",
             "repo": "LamineTourelab/MOGONET"
           }
         ],
@@ -4642,8 +4642,8 @@
             "track": "Utility",
             "color": "gold",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.1%20Utility-gold?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.1](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.1%20Utility-gold?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.1%20Utility-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.1\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.1](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.1%20Utility-gold?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.1%20Utility-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.1\"></a>",
             "repo": "aristoteleo/dynamo-release"
           },
           {
@@ -4652,8 +4652,8 @@
             "track": "Utility",
             "color": "silver",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Utility-silver?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.2](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Utility-silver?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Utility-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.2\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.2](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Utility-silver?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Utility-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.2\"></a>",
             "repo": "gao-lab/GLUE"
           },
           {
@@ -4662,8 +4662,8 @@
             "track": "Utility",
             "color": "bronze",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.3](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.3\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.3](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.3\"></a>",
             "repo": "TianGzlab/OmicsClaw"
           },
           {
@@ -4672,8 +4672,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.4](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.4\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.4](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.4\"></a>",
             "repo": "Asa12138/MetaNet"
           },
           {
@@ -4682,8 +4682,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.5](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.5\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.5](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.5\"></a>",
             "repo": "fanglu0411/sgs"
           },
           {
@@ -4692,8 +4692,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.6](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.6\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.6](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.6\"></a>",
             "repo": "bioFAM/MOFA2"
           },
           {
@@ -4702,8 +4702,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.7%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.7](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.7\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.7](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.7\"></a>",
             "repo": "liubingdong/EasyMultiProfiler"
           },
           {
@@ -4712,8 +4712,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.8%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.8](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.8\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.8](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.8\"></a>",
             "repo": "KEAML-JLU/SpatialEx"
           },
           {
@@ -4722,8 +4722,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.9%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.9](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.9\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.9](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.9\"></a>",
             "repo": "JackieHanLab/AURORA"
           },
           {
@@ -4732,8 +4732,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.10%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.10](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.10\"></a>",
+            "markdown": "[![Bio-Rank Multi-omics No.10](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.10\"></a>",
             "repo": "himelmallick/Tweedieverse"
           }
         ]
@@ -4746,8 +4746,8 @@
             "track": "Pipeline",
             "color": "gold",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Pipeline-gold?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.1](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Pipeline-gold?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Pipeline-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.1\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.1](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Pipeline-gold?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Pipeline-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.1\"></a>",
             "repo": "ChrisHayduk/minAlphaFold2"
           },
           {
@@ -4756,8 +4756,8 @@
             "track": "Pipeline",
             "color": "silver",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Pipeline-silver?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.2](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Pipeline-silver?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Pipeline-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.2\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.2](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Pipeline-silver?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Pipeline-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.2\"></a>",
             "repo": "RomeroLab/alphafast"
           },
           {
@@ -4766,8 +4766,8 @@
             "track": "Pipeline",
             "color": "bronze",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Pipeline-bronze?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.3](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Pipeline-bronze?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Pipeline-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.3\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.3](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Pipeline-bronze?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Pipeline-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.3\"></a>",
             "repo": "PapenfussLab/proteindj"
           },
           {
@@ -4776,8 +4776,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.4](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.4\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.4](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.4\"></a>",
             "repo": "soedinglab/PMGen"
           },
           {
@@ -4786,8 +4786,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.5](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.5\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.5](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.5\"></a>",
             "repo": "wells-wood-research/de-stress"
           },
           {
@@ -4796,8 +4796,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.6](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.6\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.6](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.6\"></a>",
             "repo": "IBM/AFDistill"
           },
           {
@@ -4806,8 +4806,8 @@
             "track": "Pipeline",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.7](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Pipeline-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.7\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.7](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.7\"></a>",
             "repo": "psipred/DMPfold2"
           }
         ],
@@ -4818,8 +4818,8 @@
             "track": "Utility",
             "color": "gold",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Utility-gold?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.1](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Utility-gold?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Utility-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.1\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.1](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Utility-gold?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.1%20Utility-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.1\"></a>",
             "repo": "google-deepmind/alphafold"
           },
           {
@@ -4828,8 +4828,8 @@
             "track": "Utility",
             "color": "silver",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Utility-silver?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.2](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Utility-silver?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Utility-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.2\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.2](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Utility-silver?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.2%20Utility-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.2\"></a>",
             "repo": "google-deepmind/alphafold3"
           },
           {
@@ -4838,8 +4838,8 @@
             "track": "Utility",
             "color": "bronze",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Utility-bronze?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.3](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.3\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.3](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.3\"></a>",
             "repo": "sokrypton/ColabFold"
           },
           {
@@ -4848,8 +4848,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.4](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.4\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.4](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.4\"></a>",
             "repo": "kyegomez/Open-AF3"
           },
           {
@@ -4858,8 +4858,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.5](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.5\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.5](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.5\"></a>",
             "repo": "aqlaboratory/openfold-3"
           },
           {
@@ -4868,8 +4868,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.6](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.6\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.6](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.6\"></a>",
             "repo": "patrickbryant1/EvoBind"
           },
           {
@@ -4878,8 +4878,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.7](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.7\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.7](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.7\"></a>",
             "repo": "jaechang-hits/SciAgent-Skills"
           },
           {
@@ -4888,8 +4888,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.8%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.8](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.8\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.8](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.8\"></a>",
             "repo": "westlake-repl/ProTrek"
           },
           {
@@ -4898,8 +4898,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.9%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.9](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.9\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.9](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.9\"></a>",
             "repo": "westlake-repl/SaProt"
           },
           {
@@ -4908,8 +4908,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.10%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank ProteinAI No.10](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.10\"></a>",
+            "markdown": "[![Bio-Rank ProteinAI No.10](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.10\"></a>",
             "repo": "bjing2016/alphaflow"
           }
         ]
@@ -4923,8 +4923,8 @@
             "track": "Utility",
             "color": "gold",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.1%20Utility-gold?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank AI-Pathology No.1](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.1%20Utility-gold?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.1%20Utility-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.1\"></a>",
+            "markdown": "[![Bio-Rank AI-Pathology No.1](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.1%20Utility-gold?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.1%20Utility-gold?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.1\"></a>",
             "repo": "histolab/histolab"
           },
           {
@@ -4933,8 +4933,8 @@
             "track": "Utility",
             "color": "silver",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.2%20Utility-silver?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank AI-Pathology No.2](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.2%20Utility-silver?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.2%20Utility-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.2\"></a>",
+            "markdown": "[![Bio-Rank AI-Pathology No.2](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.2%20Utility-silver?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.2%20Utility-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.2\"></a>",
             "repo": "EIDOSLAB/torchstain"
           },
           {
@@ -4943,8 +4943,8 @@
             "track": "Utility",
             "color": "bronze",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.3%20Utility-bronze?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank AI-Pathology No.3](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.3\"></a>",
+            "markdown": "[![Bio-Rank AI-Pathology No.3](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.3\"></a>",
             "repo": "XiaojianDing/TCBB-SIMKF"
           },
           {
@@ -4953,8 +4953,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.4%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank AI-Pathology No.4](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.4\"></a>",
+            "markdown": "[![Bio-Rank AI-Pathology No.4](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.4\"></a>",
             "repo": "WonderLandxD/PIANO"
           },
           {
@@ -4963,8 +4963,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.5%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank AI-Pathology No.5](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.5\"></a>",
+            "markdown": "[![Bio-Rank AI-Pathology No.5](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.5\"></a>",
             "repo": "VVJia/SAM-Swin"
           },
           {
@@ -4973,8 +4973,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.6%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank AI-Pathology No.6](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.6\"></a>",
+            "markdown": "[![Bio-Rank AI-Pathology No.6](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.6\"></a>",
             "repo": "ZhidongYang/FuseCPath"
           },
           {
@@ -4983,8 +4983,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.7%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank AI-Pathology No.7](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.7\"></a>",
+            "markdown": "[![Bio-Rank AI-Pathology No.7](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.7\"></a>",
             "repo": "masih4/DigiPathoImageAnalysis"
           },
           {
@@ -4993,8 +4993,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.8%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank AI-Pathology No.8](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.8\"></a>",
+            "markdown": "[![Bio-Rank AI-Pathology No.8](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.8\"></a>",
             "repo": "liupei101/VLSA"
           },
           {
@@ -5003,8 +5003,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.9%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank AI-Pathology No.9](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.9\"></a>",
+            "markdown": "[![Bio-Rank AI-Pathology No.9](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.9%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.9%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.9\"></a>",
             "repo": "Dootmaan/M2OST"
           },
           {
@@ -5013,8 +5013,8 @@
             "track": "Utility",
             "color": "blue",
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.10%20Utility-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank AI-Pathology No.10](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://bbplayer2021.github.io/bio-rank-gateway/)",
-            "html": "<a href=\"https://bbplayer2021.github.io/bio-rank-gateway/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.10\"></a>",
+            "markdown": "[![Bio-Rank AI-Pathology No.10](https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
+            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20AI--Pathology-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank AI-Pathology No.10\"></a>",
             "repo": "gaetanosettembre/BrainTumor_clf_TDA"
           }
         ]

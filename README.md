@@ -1,129 +1,99 @@
-<p align="center">
-  <h1 align="center">sc-st-proAI Toolkit</h1>
-  <p align="center"><strong>Discover reliable tools for single-cell, spatial-omics, and AI-driven biology</strong></p>
-  <p align="center">
-    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>
-    <img src="https://img.shields.io/badge/Python-3.12%2B-blue.svg" alt="Python 3.12+">
-  </p>
-</p>
+# sc-st-proAI Toolkit
 
-A curated toolkit portal for single-cell transcriptomics, spatial-omics, multi-omics integration, and AI biology applications, deployed on GitHub Pages.
+Discover reliable open-source tools for single-cell analysis, spatial omics, multi-omics integration, protein AI, and AI pathology.
 
-## 🌟 What is sc-st-proAI Toolkit?
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-blue.svg)
 
-In the rapidly evolving field of modern biology, finding reliable and well-maintained tools can be challenging. sc-st-proAI Toolkit provides a focused, data-driven leaderboard for key research areas, helping researchers avoid stagnant projects and find gold-standard solutions.
+## What It Does
 
-- **Focused Categories**: Single-cell, Spatial-omics, Multi-omics, ProteinAI, AI-Pathology
-- **Purely Curated**: Domain-specific keyword matching with custom algorithms
-- **Evidence-based**: Ranking based on popularity, growth, maintenance, and community impact
+sc-st-proAI Toolkit is a GitHub Pages portal backed by an automated crawler and ranking engine. It collects public GitHub projects, filters for biology and biomedical AI relevance, classifies projects into focused categories, and presents ranked Pipeline and Utility leaderboards.
 
-## Features
+The current public site is intended for:
 
-### 1. 📊 Tool Rankings
-- Five specialized categories in modern biology
-- Dual-track (Pipeline / Utility)
-- Score breakdown showing popularity, trend, environment support, paper citations, and project health
-- Project cards with preview images or initial avatars
-
-### 2. 🤖 Automated Pipeline
-- Weekly ranking refresh (scheduled via GitHub Actions)
-- Automatic deployment to GitHub Pages
-
-### 3. 💎 Data Features
-- Install command detection
-- Preview image extraction from README
-- Project metadata and badge generation
-
-### 4. 🎨 Frontend Portal
-- Modern, responsive card design
-- Easy category navigation
-- Pipeline/Utility switching
-- Mobile-friendly interface
-
-## Project Structure
-
-```
-sc-st-proAI-toolkit/
-├── .github/workflows/   # GitHub Actions automation
-│   └── main.yml
-├── scripts/             # Python crawler and ranking engine
-│   └── sc_st_proai_gateway.py      # Core ranking engine
-├── data/                # Data storage
-│   ├── ranking_report.json
-│   └── ranking_history.json
-├── docs/                # GitHub Pages deployment
-│   └── index.html
-└── README.md
-```
-
-## Scoring Formulas
-
-> ### Pipeline Score
-> ```
-> S = (Base + Trend + Env + Paper) × Health
-> ```
-> - **Base**: 6 × log10(Stars + 1)
-> - **Trend**: 2.5 × log10(Weekly Growth + 1)
-> - **Env**: +6 (Docker), +4 (Conda)
-> - **Paper**: +4 if associated publication found
-> - **Health**: Multiplier based on last update and issue health
-
-> ### Utility Score
-> ```
-> S = (Base + Trend + Paper) × Health
-> ```
-> - **Base**: 7 × log10(Stars + 1)
-> - **Trend**: 2.5 × log10(Weekly Growth + 1)
-> - **Paper**: +4 if associated publication found
-> - **Health**: Multiplier based on last update and issue health
-
-## Quick Start
-
-### Local Testing
-
-```bash
-# 1. Clone or download the repository
-cd sc-st-proAI-toolkit
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Generate rankings (optional)
-cd scripts
-python sc_st_proai_gateway.py
-
-# 4. Launch the website locally
-cd ../docs
-python -m http.server 8000
-# Visit http://localhost:8000 in your browser
-```
-
-### Deployment
-
-This project is designed to be deployed via GitHub Pages with automatic weekly updates:
-
-1. Fork or use this repository as a template
-2. Enable GitHub Pages in repository settings
-3. The weekly GitHub Action will automatically update rankings
+- finding maintained workflows and libraries quickly
+- comparing environment support such as Docker and Conda
+- spotting paper-linked and actively updated projects
+- discovering installation commands and README preview images
 
 ## Categories
 
-- **Single-cell**: scRNA-seq analysis tools
-- **Spatial-omics**: Spatial transcriptomics and visualization tools
-- **Multi-omics**: Integration and multi-modal analysis tools
-- **ProteinAI**: Protein structure prediction and design tools
-- **AI-Pathology**: Computational pathology and digital pathology tools
+- Single-cell
+- Spatial-omics
+- Multi-omics
+- ProteinAI
+- AI-Pathology
+
+## Ranking Signals
+
+Pipeline scores consider:
+
+- GitHub stars
+- weekly star growth
+- Docker and Conda support
+- paper or citation evidence
+- repository freshness and issue health
+
+Utility scores use similar signals, with stronger emphasis on project popularity and maintenance.
+
+## Crawler Improvements
+
+The crawler searches across complementary GitHub query styles:
+
+- exact keyword matches in repository name, description, and README
+- topic-based searches for category aliases
+- recent activity and minimum-star thresholds
+
+It then reads README content before final filtering, so projects are not rejected only because their description or topics are sparse. Category matching is centralized to avoid drift between the collector and report generator.
+
+Runtime knobs:
+
+```bash
+SEARCH_CUTOFF_DATE=2025-01-01
+MIN_STARS=10
+SEARCH_MAX_PAGES=5
+REQUEST_TIMEOUT=30
+WEBSITE_URL=https://pf-f.github.io/sc-st-proAI-toolkit/
+```
+
+## Local Development
+
+```bash
+pip install -r requirements.txt
+
+cd scripts
+python sc_st_proai_gateway.py
+
+cd ../docs
+python -m http.server 8000
+```
+
+Then open `http://localhost:8000`.
+
+## Deployment
+
+The repository is configured for GitHub Pages from the `docs/` folder. The weekly GitHub Action refreshes rankings, copies generated JSON into `docs/data/`, commits changed data, and lets GitHub Pages publish the static site.
+
+To trigger a refresh manually, run the `sc-st-proAI Toolkit Weekly Update` workflow from the GitHub Actions tab.
+
+## Project Structure
+
+```text
+sc-st-proAI-toolkit/
+  .github/workflows/main.yml
+  data/
+    ranking_report.json
+    ranking_history.json
+  docs/
+    index.html
+    data/
+      ranking_report.json
+      ranking_history.json
+  scripts/
+    sc_st_proai_gateway.py
+  requirements.txt
+```
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-Thanks to the broader open-source bioinformatics community for developing and maintaining these tools.
-
----
-
-<p align="center">
-  <i>Find reliable tools. Do great biology.</i>
-</p>
+MIT License. See [LICENSE](LICENSE).

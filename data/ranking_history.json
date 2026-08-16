@@ -1,66 +1,5 @@
 [
   {
-    "timestamp": "2026-06-07T02:26:37.803120",
-    "top3": {
-      "Single-cell": {
-        "pipelines": [
-          "scverse/pertpy",
-          "nf-core/scrnaseq",
-          "nf-core/spatialvi"
-        ],
-        "utilities": [
-          "scverse/scvi-tools",
-          "scverse/scanpy",
-          "aristoteleo/dynamo-release"
-        ]
-      },
-      "Spatial-omics": {
-        "pipelines": [
-          "p-gueguen/Spatial_transcriptomics_tools",
-          "nf-core/spatialvi",
-          "LiuLab-Bioelectronics-Harvard/STAgent"
-        ],
-        "utilities": [
-          "scverse/scvi-tools",
-          "mahmoodlab/HEST",
-          "prism-oncology/sopa"
-        ]
-      },
-      "Multi-omics": {
-        "pipelines": [
-          "epigen/MrBiomics",
-          "Lotfollahi-lab/nichecompass",
-          "jan-forest/autoencodix"
-        ],
-        "utilities": [
-          "aristoteleo/dynamo-release",
-          "gao-lab/GLUE",
-          "TianGzlab/OmicsClaw"
-        ]
-      },
-      "ProteinAI": {
-        "pipelines": [
-          "ChrisHayduk/minAlphaFold2",
-          "RomeroLab/alphafast",
-          "PapenfussLab/proteindj"
-        ],
-        "utilities": [
-          "google-deepmind/alphafold",
-          "google-deepmind/alphafold3",
-          "sokrypton/ColabFold"
-        ]
-      },
-      "AI-Pathology": {
-        "pipelines": [],
-        "utilities": [
-          "histolab/histolab",
-          "EIDOSLAB/torchstain",
-          "AtlasAnalyticsLab/MOOZY"
-        ]
-      }
-    }
-  },
-  {
     "timestamp": "2026-06-14T02:29:28.228347",
     "top3": {
       "Single-cell": {
@@ -588,6 +527,71 @@
           "p-gueguen/Spatial_transcriptomics_tools",
           "nf-core/spatialvi",
           "LiuLab-Bioelectronics-Harvard/STAgent"
+        ],
+        "utilities": [
+          "scverse/scvi-tools",
+          "mengxu98/scop",
+          "prism-oncology/sopa"
+        ]
+      },
+      "Multi-omics": {
+        "pipelines": [
+          "epigen/MrBiomics",
+          "LiuLab-Bioelectronics-Harvard/STAgent",
+          "linhanwang/Drive-JEPA"
+        ],
+        "utilities": [
+          "zai-org/GLM-4",
+          "apache/seatunnel",
+          "Mininglamp-AI/Mano-P"
+        ]
+      },
+      "ProteinAI": {
+        "pipelines": [
+          "ChrisHayduk/minAlphaFold2",
+          "PapenfussLab/proteindj",
+          "nf-core/proteinfold"
+        ],
+        "utilities": [
+          "K-Dense-AI/scientific-agent-skills",
+          "webpack/webpack",
+          "evanw/esbuild"
+        ]
+      },
+      "AI-Pathology": {
+        "pipelines": [
+          "CGATOxford/UMI-tools",
+          "p-gueguen/Spatial_transcriptomics_tools",
+          "saezlab/liana-py"
+        ],
+        "utilities": [
+          "lmcinnes/umap",
+          "datajuicer/data-juicer",
+          "microsoft/fara"
+        ]
+      }
+    }
+  },
+  {
+    "timestamp": "2026-08-16T01:40:57.410350",
+    "top3": {
+      "Single-cell": {
+        "pipelines": [
+          "p-gueguen/Spatial_transcriptomics_tools",
+          "scverse/pertpy",
+          "nf-core/scrnaseq"
+        ],
+        "utilities": [
+          "aipoch/medical-research-skills",
+          "scverse/scvi-tools",
+          "theislab/single-cell-best-practices"
+        ]
+      },
+      "Spatial-omics": {
+        "pipelines": [
+          "p-gueguen/Spatial_transcriptomics_tools",
+          "LiuLab-Bioelectronics-Harvard/STAgent",
+          "M4i-Imaging-Mass-Spectrometry/thyra"
         ],
         "utilities": [
           "scverse/scvi-tools",

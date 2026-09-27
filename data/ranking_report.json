@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-09-20T03:05:30.087692",
+  "generated_at": "2026-09-27T03:04:28.273621",
   "version": "14.0",
   "scoring_formulas": {
     "pipeline": "S = 5 * log10(Stars) + Weekly_Growth * 2 + Env_Bonus(15) + Zombie_Penalty(0.5)",
     "utility": "S = 8 * log10(Stars) + Weekly_Growth * 2 + Zombie_Penalty(0.5)"
   },
-  "total_repositories": 2658,
+  "total_repositories": 2644,
   "categories": {
     "Single-cell": {
-      "total_count": 398,
+      "total_count": 400,
       "pipeline_count": 17,
-      "utility_count": 381,
+      "utility_count": 383,
       "top_20_pipelines": [
         {
           "rank": 1,
@@ -19,11 +19,11 @@
           "name": "scverse/pertpy",
           "url": "https://github.com/scverse/pertpy",
           "description": "Single-cell perturbation analysis",
-          "stars": 345,
+          "stars": 346,
           "forks": 67,
-          "pubmed_citations": 1,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 23.23,
+          "score": 23.24,
           "has_paper": true,
           "has_docker": false,
           "has_conda": true,
@@ -44,8 +44,8 @@
             "single-cell"
           ],
           "license": "MIT License",
-          "open_issues": 16,
-          "pushed_at": "2026-09-18T11:49:00Z",
+          "open_issues": 13,
+          "pushed_at": "2026-09-25T08:03:08Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -82,8 +82,8 @@
           "url": "https://github.com/nf-core/scrnaseq",
           "description": "Single-cell RNA-Seq pipeline for barcode-based protocols such as 10x, DropSeq or SmartSeq, offering a variety of aligners and empty-droplet detection",
           "stars": 356,
-          "forks": 229,
-          "pubmed_citations": 1644,
+          "forks": 231,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 22.78,
           "has_paper": true,
@@ -106,8 +106,8 @@
             "workflow"
           ],
           "license": "MIT License",
-          "open_issues": 71,
-          "pushed_at": "2026-09-18T19:47:36Z",
+          "open_issues": 64,
+          "pushed_at": "2026-09-25T14:58:54Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -153,8 +153,8 @@
             "workflow"
           ],
           "license": "MIT License",
-          "open_issues": 26,
-          "pushed_at": "2026-09-17T18:31:10Z",
+          "open_issues": 25,
+          "pushed_at": "2026-09-26T22:28:09Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -178,11 +178,11 @@
           "name": "laminlabs/lamindb",
           "url": "https://github.com/laminlabs/lamindb",
           "description": "Open-source data management for multimodal AI. Query, trace, and govern with a lineage-native, format-agnostic lakehouse for agents and teams. Supports biological formats and registries - by the creators of Scanpy. 🍊YC S22",
-          "stars": 364,
-          "forks": 68,
+          "stars": 368,
+          "forks": 69,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 19.37,
+          "score": 19.4,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -205,8 +205,8 @@
             "traceability"
           ],
           "license": "Apache License 2.0",
-          "open_issues": 42,
-          "pushed_at": "2026-09-18T14:31:28Z",
+          "open_issues": 39,
+          "pushed_at": "2026-09-26T19:21:19Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -244,11 +244,11 @@
           "name": "scverse/liana",
           "url": "https://github.com/scverse/liana",
           "description": "LIANA+: an all-in-one framework for cell-cell communication",
-          "stars": 316,
+          "stars": 318,
           "forks": 37,
-          "pubmed_citations": 6,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 19.01,
+          "score": 19.02,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -264,7 +264,7 @@
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
           "open_issues": 13,
-          "pushed_at": "2026-09-17T21:06:28Z",
+          "pushed_at": "2026-09-24T21:05:15Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -293,7 +293,7 @@
           "description": "Single-cell/nuclei pipeline for data derived from Oxford Nanopore and 10X Genomics",
           "stars": 57,
           "forks": 21,
-          "pubmed_citations": 1,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 18.52,
           "has_paper": true,
@@ -339,11 +339,11 @@
           "name": "NygenAnalytics/CyteType",
           "url": "https://github.com/NygenAnalytics/CyteType",
           "description": "Multi-agent LLM driven cell type annotation for single-cell RNA-Seq data",
-          "stars": 137,
+          "stars": 138,
           "forks": 16,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 16.84,
+          "score": 16.86,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -364,7 +364,7 @@
             "transcriptomics"
           ],
           "license": "Other",
-          "open_issues": 4,
+          "open_issues": 5,
           "pushed_at": "2026-08-11T18:35:35Z",
           "tech_stack": [],
           "install_commands": [
@@ -397,7 +397,7 @@
           "description": "SEACells algorithm for Inference of transcriptional and epigenomic cellular states from single-cell genomics data",
           "stars": 199,
           "forks": 36,
-          "pubmed_citations": 2,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 16.03,
           "has_paper": true,
@@ -433,7 +433,7 @@
           "description": "An interactive explorer for single-cell transcriptomics data",
           "stars": 788,
           "forks": 157,
-          "pubmed_citations": 7,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 15.64,
           "has_paper": false,
@@ -448,8 +448,8 @@
             "visualization"
           ],
           "license": "MIT License",
-          "open_issues": 140,
-          "pushed_at": "2026-09-11T11:21:46Z",
+          "open_issues": 136,
+          "pushed_at": "2026-09-27T01:55:11Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -479,7 +479,7 @@
           "description": "An end-to-end Single-Cell Pipeline designed to facilitate comprehensive analysis and exploration of single-cell data.",
           "stars": 675,
           "forks": 126,
-          "pubmed_citations": 124,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 13.64,
           "has_paper": true,
@@ -554,7 +554,7 @@
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
           "open_issues": 49,
-          "pushed_at": "2026-09-10T14:01:40Z",
+          "pushed_at": "2026-09-24T14:18:20Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -575,11 +575,11 @@
           "name": "jfnavarro/st_pipeline",
           "url": "https://github.com/jfnavarro/st_pipeline",
           "description": "ST Pipeline contains the tools and scripts needed to process and analyze the raw files generated with the Spatial Transcriptomics method in FASTQ format.",
-          "stars": 104,
+          "stars": 105,
           "forks": 53,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 10.48,
+          "score": 10.5,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -662,7 +662,7 @@
           "description": "A user-friendly R pipeline for biomarker discovery in single-cell transcriptomics",
           "stars": 14,
           "forks": 5,
-          "pubmed_citations": 1,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 6.47,
           "has_paper": true,
@@ -702,7 +702,7 @@
           "description": "trajectory inference",
           "stars": 109,
           "forks": 23,
-          "pubmed_citations": 24844,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 6.38,
           "has_paper": true,
@@ -767,7 +767,7 @@
           "description": "A Snakemake workflow and MrBiomics module for easy visualization of genome browser tracks of aligned BAM files (e.g., RNA-seq, ATAC-seq, scRNA-seq, ...) powered by the wrapper gtracks for the package pyGenomeTracks, and IGV-reports.",
           "stars": 57,
           "forks": 1,
-          "pubmed_citations": 9,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 5.1,
           "has_paper": true,
@@ -854,11 +854,11 @@
           "name": "aipoch/medical-research-skills",
           "url": "https://github.com/aipoch/medical-research-skills",
           "description": "Hundreds of agent skills for medical research, including protocol design, data analysis, evidence insights, and academic writing.",
-          "stars": 1894,
-          "forks": 175,
+          "stars": 1925,
+          "forks": 177,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 26.94,
+          "score": 26.99,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -907,9 +907,9 @@
           "name": "scverse/scvi-tools",
           "url": "https://github.com/scverse/scvi-tools",
           "description": "Deep probabilistic analysis of single-cell and spatial omics data",
-          "stars": 1695,
-          "forks": 474,
-          "pubmed_citations": 3,
+          "stars": 1697,
+          "forks": 477,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 26.61,
           "has_paper": true,
@@ -929,8 +929,8 @@
             "variational-bayes"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 30,
-          "pushed_at": "2026-09-14T18:09:54Z",
+          "open_issues": 38,
+          "pushed_at": "2026-09-26T12:09:54Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -962,11 +962,11 @@
           "name": "theislab/single-cell-best-practices",
           "url": "https://github.com/theislab/single-cell-best-practices",
           "description": "https://www.sc-best-practices.org",
-          "stars": 1267,
+          "stars": 1271,
           "forks": 278,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 25.72,
+          "score": 25.73,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -979,7 +979,7 @@
           ],
           "license": "Other",
           "open_issues": 47,
-          "pushed_at": "2026-08-29T18:49:22Z",
+          "pushed_at": "2026-09-26T07:08:49Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -1000,11 +1000,11 @@
           "name": "omicverse/omicverse",
           "url": "https://github.com/omicverse/omicverse",
           "description": "A python library for multi omics included bulk, single cell and spatial RNA-seq analysis.",
-          "stars": 1206,
+          "stars": 1211,
           "forks": 148,
-          "pubmed_citations": 1,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 25.57,
+          "score": 25.58,
           "has_paper": true,
           "has_docker": false,
           "has_conda": true,
@@ -1016,8 +1016,8 @@
             "single-cell"
           ],
           "license": "GNU General Public License v3.0",
-          "open_issues": 14,
-          "pushed_at": "2026-09-19T16:42:11Z",
+          "open_issues": 10,
+          "pushed_at": "2026-09-23T05:34:16Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -1060,11 +1060,11 @@
           "name": "scverse/scanpy",
           "url": "https://github.com/scverse/scanpy",
           "description": "Single-cell analysis in Python. Scales to >100M cells.",
-          "stars": 2562,
-          "forks": 779,
-          "pubmed_citations": 17,
+          "stars": 2572,
+          "forks": 781,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 25.08,
+          "score": 25.09,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1081,8 +1081,8 @@
             "visualize-data"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 539,
-          "pushed_at": "2026-09-17T10:01:09Z",
+          "open_issues": 538,
+          "pushed_at": "2026-09-25T15:55:42Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -1103,11 +1103,11 @@
           "name": "satijalab/seurat",
           "url": "https://github.com/satijalab/seurat",
           "description": "R toolkit for single cell genomics",
-          "stars": 2800,
-          "forks": 998,
-          "pubmed_citations": 120,
+          "stars": 2805,
+          "forks": 997,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 24.13,
+          "score": 24.14,
           "has_paper": false,
           "has_docker": false,
           "has_conda": false,
@@ -1119,8 +1119,8 @@
             "single-cell-rna-seq"
           ],
           "license": "Other",
-          "open_issues": 223,
-          "pushed_at": "2026-09-18T18:37:04Z",
+          "open_issues": 222,
+          "pushed_at": "2026-09-21T14:16:41Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [],
@@ -1134,6 +1134,53 @@
         },
         {
           "rank": 7,
+          "full_name": "saeyslab/nichenetr",
+          "short_name": "nichenetr",
+          "name": "saeyslab/nichenetr",
+          "url": "https://github.com/saeyslab/nichenetr",
+          "description": "NicheNet: predict active ligand-target links between interacting cells",
+          "stars": 680,
+          "forks": 134,
+          "pubmed_citations": 0,
+          "weekly_growth": 0,
+          "score": 23.83,
+          "has_paper": true,
+          "has_docker": false,
+          "has_conda": false,
+          "sub_label": "Alignment",
+          "topics": [
+            "cell-cell-communication",
+            "data-integration",
+            "gene-expression",
+            "intercellular-communication",
+            "ligand-receptor",
+            "ligand-target",
+            "network-inference",
+            "rna-seq",
+            "single-cell-omics",
+            "single-cell-rna-seq"
+          ],
+          "license": "",
+          "open_issues": 26,
+          "pushed_at": "2026-09-25T08:37:54Z",
+          "tech_stack": [],
+          "install_commands": [],
+          "preview_images": [
+            "https://raw.githubusercontent.com/saeyslab/nichenetr/master/vignettes/images/figure1.svg",
+            "https://raw.githubusercontent.com/saeyslab/nichenetr/master/vignettes/images/circos_plot_adapted.jpg",
+            "https://raw.githubusercontent.com/saeyslab/nichenetr/master/vignettes/images/comparison_other_approaches_2.jpg",
+            "https://raw.githubusercontent.com/saeyslab/nichenetr/master/vignettes/images/nichenet_prior_model.png"
+          ],
+          "badges": {
+            "stars": "https://img.shields.io/github/stars/saeyslab/nichenetr?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/saeyslab/nichenetr?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/saeyslab/nichenetr?style=flat-square",
+            "license": "https://img.shields.io/github/license/saeyslab/nichenetr?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/saeyslab/nichenetr?style=flat-square"
+          }
+        },
+        {
+          "rank": 8,
           "full_name": "aristoteleo/dynamo-release",
           "short_name": "dynamo-release",
           "name": "aristoteleo/dynamo-release",
@@ -1184,56 +1231,6 @@
           }
         },
         {
-          "rank": 8,
-          "full_name": "dwyl/learn-elixir",
-          "short_name": "learn-elixir",
-          "name": "dwyl/learn-elixir",
-          "url": "https://github.com/dwyl/learn-elixir",
-          "description": ":droplet: Learn the Elixir programming language to build functional, fast, scalable and maintainable web applications!",
-          "stars": 1703,
-          "forks": 112,
-          "pubmed_citations": 0,
-          "weekly_growth": 0,
-          "score": 22.62,
-          "has_paper": false,
-          "has_docker": true,
-          "has_conda": false,
-          "sub_label": "Alignment",
-          "topics": [
-            "beginner",
-            "beginner-friendly",
-            "elixir",
-            "elixir-lang",
-            "tutorial",
-            "tutorial-code"
-          ],
-          "license": "",
-          "open_issues": 131,
-          "pushed_at": "2026-06-27T16:28:04Z",
-          "tech_stack": [],
-          "install_commands": [
-            {
-              "type": "brew",
-              "command": "brew install elixir"
-            }
-          ],
-          "preview_images": [
-            "https://github.com/user-attachments/assets/0c3bc031-e740-4e9e-a6b4-660e5f5d4b4f",
-            "https://user-images.githubusercontent.com/6793008/212285838-96ff4672-e36a-4a89-8efa-dee53a32a405.png",
-            "https://github.com/user-attachments/assets/baa1be60-5144-4acc-853f-ee37d51f470e \"Learn Elixir\"",
-            "https://cloud.githubusercontent.com/assets/194400/22413420/8a538bc2-e6af-11e6-80fd-209deb887820.png",
-            "https://cloud.githubusercontent.com/assets/12450298/22835012/260b07f4-efaf-11e6-9704-690c6c245c37.png"
-          ],
-          "badges": {
-            "stars": "https://img.shields.io/github/stars/dwyl/learn-elixir?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/dwyl/learn-elixir?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/dwyl/learn-elixir?style=flat-square",
-            "license": "https://img.shields.io/github/license/dwyl/learn-elixir?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/dwyl/learn-elixir?style=flat-square",
-            "docker": "https://img.shields.io/badge/docker-available-blue?style=flat-square&logo=docker"
-          }
-        },
-        {
           "rank": 9,
           "full_name": "scverse/cellrank",
           "short_name": "cellrank",
@@ -1242,7 +1239,7 @@
           "description": "CellRank: dynamics from multi-view single-cell data",
           "stars": 456,
           "forks": 56,
-          "pubmed_citations": 4,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 22.62,
           "has_paper": true,
@@ -1292,11 +1289,11 @@
           "name": "agitter/single-cell-pseudotime",
           "url": "https://github.com/agitter/single-cell-pseudotime",
           "description": "An overview of algorithms for estimating pseudotime in single-cell RNA-seq data",
-          "stars": 445,
+          "stars": 444,
           "forks": 65,
-          "pubmed_citations": 4,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 22.55,
+          "score": 22.54,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1324,9 +1321,9 @@
       ]
     },
     "Spatial-omics": {
-      "total_count": 126,
-      "pipeline_count": 4,
-      "utility_count": 122,
+      "total_count": 125,
+      "pipeline_count": 2,
+      "utility_count": 123,
       "top_20_pipelines": [
         {
           "rank": 1,
@@ -1336,7 +1333,7 @@
           "url": "https://github.com/LiuLab-Bioelectronics-Harvard/STAgent",
           "description": "STAgent is a multimodal LLM-based AI agent that enables deep research about spatial transcriptomics data",
           "stars": 63,
-          "forks": 17,
+          "forks": 16,
           "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 16.01,
@@ -1374,77 +1371,16 @@
         },
         {
           "rank": 2,
-          "full_name": "M4i-Imaging-Mass-Spectrometry/thyra",
-          "short_name": "thyra",
-          "name": "M4i-Imaging-Mass-Spectrometry/thyra",
-          "url": "https://github.com/M4i-Imaging-Mass-Spectrometry/thyra",
-          "description": "A modern Python library for converting Mass Spectrometry Imaging (MSI) data into standardized SpatialData/Zarr format, enabling seamless integration with spatial omics analysis workflows.",
-          "stars": 25,
-          "forks": 1,
-          "pubmed_citations": 0,
-          "weekly_growth": 0,
-          "score": 11.24,
-          "has_paper": true,
-          "has_docker": false,
-          "has_conda": false,
-          "sub_label": "",
-          "topics": [
-            "bioinformatics",
-            "bruker",
-            "data-conversion",
-            "ecuypers-group",
-            "imzml",
-            "m4i-cuypers-group",
-            "mass-spectrometry",
-            "mass-spectrometry-imaging",
-            "msi",
-            "omics-data-integration",
-            "scientific-computing",
-            "spatial-omics",
-            "spatialdata",
-            "zarr"
-          ],
-          "license": "MIT License",
-          "open_issues": 12,
-          "pushed_at": "2026-09-18T13:47:31Z",
-          "tech_stack": [],
-          "install_commands": [
-            {
-              "type": "pip",
-              "command": "pip install thyra"
-            },
-            {
-              "type": "pip",
-              "command": "pip install thyra"
-            },
-            {
-              "type": "git",
-              "command": "git clone https://github.com/M4i-Imaging-Mass-Spectrometry/thyra.git"
-            }
-          ],
-          "preview_images": [
-            "https://raw.githubusercontent.com/M4i-Imaging-Mass-Spectrometry/thyra/main/docs/assets/thyra-logotype.svg"
-          ],
-          "badges": {
-            "stars": "https://img.shields.io/github/stars/M4i-Imaging-Mass-Spectrometry/thyra?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/M4i-Imaging-Mass-Spectrometry/thyra?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/M4i-Imaging-Mass-Spectrometry/thyra?style=flat-square",
-            "license": "https://img.shields.io/github/license/M4i-Imaging-Mass-Spectrometry/thyra?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/M4i-Imaging-Mass-Spectrometry/thyra?style=flat-square"
-          }
-        },
-        {
-          "rank": 3,
           "full_name": "jfnavarro/st_pipeline",
           "short_name": "st_pipeline",
           "name": "jfnavarro/st_pipeline",
           "url": "https://github.com/jfnavarro/st_pipeline",
           "description": "ST Pipeline contains the tools and scripts needed to process and analyze the raw files generated with the Spatial Transcriptomics method in FASTQ format.",
-          "stars": 104,
+          "stars": 105,
           "forks": 53,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 10.48,
+          "score": 10.5,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1468,47 +1404,6 @@
             "license": "https://img.shields.io/github/license/jfnavarro/st_pipeline?style=flat-square",
             "last_commit": "https://img.shields.io/github/last-commit/jfnavarro/st_pipeline?style=flat-square"
           }
-        },
-        {
-          "rank": 4,
-          "full_name": "mckellardw/slide_snake",
-          "short_name": "slide_snake",
-          "name": "mckellardw/slide_snake",
-          "url": "https://github.com/mckellardw/slide_snake",
-          "description": "Snakemake pipeline for the preprocessing, alignment, QC, and quantification of spatial transcriptomics data - both short-read and long-read",
-          "stars": 12,
-          "forks": 7,
-          "pubmed_citations": 0,
-          "weekly_growth": 0,
-          "score": 4.34,
-          "has_paper": false,
-          "has_docker": false,
-          "has_conda": false,
-          "sub_label": "",
-          "topics": [
-            "rna-seq",
-            "spatial-transcriptomics"
-          ],
-          "license": "MIT License",
-          "open_issues": 1,
-          "pushed_at": "2026-03-13T12:04:10Z",
-          "tech_stack": [],
-          "install_commands": [
-            {
-              "type": "git",
-              "command": "git clone https://github.com/mckellardw/slide_snake.git"
-            }
-          ],
-          "preview_images": [
-            "https://raw.githubusercontent.com/mckellardw/slide_snake/main/images/slide_snake_logo.png"
-          ],
-          "badges": {
-            "stars": "https://img.shields.io/github/stars/mckellardw/slide_snake?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/mckellardw/slide_snake?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/mckellardw/slide_snake?style=flat-square",
-            "license": "https://img.shields.io/github/license/mckellardw/slide_snake?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/mckellardw/slide_snake?style=flat-square"
-          }
         }
       ],
       "top_10_utilities": [
@@ -1519,9 +1414,9 @@
           "name": "scverse/scvi-tools",
           "url": "https://github.com/scverse/scvi-tools",
           "description": "Deep probabilistic analysis of single-cell and spatial omics data",
-          "stars": 1695,
-          "forks": 474,
-          "pubmed_citations": 3,
+          "stars": 1697,
+          "forks": 477,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 26.61,
           "has_paper": true,
@@ -1541,8 +1436,8 @@
             "variational-bayes"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 30,
-          "pushed_at": "2026-09-14T18:09:54Z",
+          "open_issues": 38,
+          "pushed_at": "2026-09-26T12:09:54Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -1574,11 +1469,11 @@
           "name": "mengxu98/scop",
           "url": "https://github.com/mengxu98/scop",
           "description": "An R package for single-cell and spatial omics analysis, integration, interpretation, and visualization.",
-          "stars": 303,
-          "forks": 36,
-          "pubmed_citations": 245,
+          "stars": 306,
+          "forks": 38,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 21.38,
+          "score": 21.41,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1586,7 +1481,7 @@
           "topics": [],
           "license": "GNU General Public License v3.0",
           "open_issues": 2,
-          "pushed_at": "2026-09-19T14:05:13Z",
+          "pushed_at": "2026-09-26T16:15:27Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -1613,7 +1508,7 @@
           "description": "Technology-invariant pipeline for spatial omics analysis that scales to millions of cells (Xenium / Visium HD / MERSCOPE / CosMx / PhenoCycler / MACSima / etc.)",
           "stars": 293,
           "forks": 52,
-          "pubmed_citations": 4,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 21.28,
           "has_paper": true,
@@ -1661,9 +1556,9 @@
           "name": "scverse/squidpy",
           "url": "https://github.com/scverse/squidpy",
           "description": "Spatial Single Cell Analysis in Python",
-          "stars": 598,
-          "forks": 121,
-          "pubmed_citations": 4,
+          "stars": 599,
+          "forks": 122,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 21.1,
           "has_paper": true,
@@ -1681,8 +1576,8 @@
             "squidpy"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 106,
-          "pushed_at": "2026-09-18T23:27:50Z",
+          "open_issues": 112,
+          "pushed_at": "2026-09-26T10:29:39Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -1714,11 +1609,11 @@
           "name": "JianYang-Lab/gsMap",
           "url": "https://github.com/JianYang-Lab/gsMap",
           "description": "Integrating GWAS and spatial transcriptomics for spatially resolved mapping of cells associated with human complex traits.",
-          "stars": 220,
+          "stars": 222,
           "forks": 18,
-          "pubmed_citations": 12,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 20.41,
+          "score": 20.44,
           "has_paper": true,
           "has_docker": false,
           "has_conda": true,
@@ -1777,8 +1672,8 @@
           "url": "https://github.com/BayraktarLab/cell2location",
           "description": "Comprehensive mapping of tissue cell architecture via integrated single cell and spatial transcriptomics (cell2location model)",
           "stars": 461,
-          "forks": 76,
-          "pubmed_citations": 8,
+          "forks": 77,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 20.39,
           "has_paper": true,
@@ -1822,7 +1717,7 @@
           "description": "List of Spatial Transcriptomics related Tools organized per category",
           "stars": 200,
           "forks": 36,
-          "pubmed_citations": 3,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 20.12,
           "has_paper": true,
@@ -1856,11 +1751,11 @@
           "name": "scverse/spatialdata",
           "url": "https://github.com/scverse/spatialdata",
           "description": "An open and interoperable data framework for spatial omics data",
-          "stars": 394,
-          "forks": 95,
-          "pubmed_citations": 6,
+          "stars": 396,
+          "forks": 97,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 19.96,
+          "score": 19.97,
           "has_paper": true,
           "has_docker": false,
           "has_conda": true,
@@ -1872,8 +1767,8 @@
             "spatial-data"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 329,
-          "pushed_at": "2026-09-16T14:46:42Z",
+          "open_issues": 333,
+          "pushed_at": "2026-09-24T12:39:16Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -1902,9 +1797,9 @@
           "name": "giotto-suite/Giotto",
           "url": "https://github.com/giotto-suite/Giotto",
           "description": "Spatial omics analysis toolbox",
-          "stars": 388,
-          "forks": 106,
-          "pubmed_citations": 3,
+          "stars": 389,
+          "forks": 107,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 19.92,
           "has_paper": true,
@@ -1914,7 +1809,7 @@
           "topics": [],
           "license": "Other",
           "open_issues": 135,
-          "pushed_at": "2026-09-18T05:13:59Z",
+          "pushed_at": "2026-09-24T02:08:13Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -1936,11 +1831,11 @@
           "name": "prism-oncology/novae",
           "url": "https://github.com/prism-oncology/novae",
           "description": "Graph-based foundation model for spatial transcriptomics data. Zero-shot spatial domain inference, batch-effect correction, and many other features.",
-          "stars": 158,
+          "stars": 162,
           "forks": 15,
-          "pubmed_citations": 2,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 19.41,
+          "score": 19.49,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -1978,8 +1873,8 @@
     },
     "Multi-omics": {
       "total_count": 113,
-      "pipeline_count": 8,
-      "utility_count": 105,
+      "pipeline_count": 7,
+      "utility_count": 106,
       "top_20_pipelines": [
         {
           "rank": 1,
@@ -2047,11 +1942,11 @@
           "name": "laminlabs/lamindb",
           "url": "https://github.com/laminlabs/lamindb",
           "description": "Open-source data management for multimodal AI. Query, trace, and govern with a lineage-native, format-agnostic lakehouse for agents and teams. Supports biological formats and registries - by the creators of Scanpy. 🍊YC S22",
-          "stars": 364,
-          "forks": 68,
+          "stars": 368,
+          "forks": 69,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 19.37,
+          "score": 19.4,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2074,8 +1969,8 @@
             "traceability"
           ],
           "license": "Apache License 2.0",
-          "open_issues": 42,
-          "pushed_at": "2026-09-18T14:31:28Z",
+          "open_issues": 39,
+          "pushed_at": "2026-09-26T19:21:19Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -2113,11 +2008,11 @@
           "name": "Lotfollahi-lab/nichecompass",
           "url": "https://github.com/Lotfollahi-lab/nichecompass",
           "description": "End-to-end analysis of spatial multi-omics data",
-          "stars": 126,
+          "stars": 127,
           "forks": 20,
-          "pubmed_citations": 1,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 16.62,
+          "score": 16.64,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2130,7 +2025,7 @@
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
           "open_issues": 10,
-          "pushed_at": "2026-09-19T00:44:24Z",
+          "pushed_at": "2026-09-20T07:49:23Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -2152,7 +2047,7 @@
           "url": "https://github.com/LiuLab-Bioelectronics-Harvard/STAgent",
           "description": "STAgent is a multimodal LLM-based AI agent that enables deep research about spatial transcriptomics data",
           "stars": 63,
-          "forks": 17,
+          "forks": 16,
           "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 16.01,
@@ -2197,7 +2092,7 @@
           "description": "Pipeline for HiCAR data, a robust and sensitive multi-omic co-assay for simultaneous measurement of transcriptome, chromatin accessibility and cis-regulatory chromatin contacts.",
           "stars": 12,
           "forks": 10,
-          "pubmed_citations": 2,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 15.02,
           "has_paper": true,
@@ -2237,59 +2132,6 @@
         },
         {
           "rank": 6,
-          "full_name": "linhanwang/Drive-JEPA",
-          "short_name": "Drive-JEPA",
-          "name": "linhanwang/Drive-JEPA",
-          "url": "https://github.com/linhanwang/Drive-JEPA",
-          "description": "Repo of \"Drive-JEPA: Video JEPA Meets Multimodal Trajectory Distillation for End-to-End Driving\"",
-          "stars": 194,
-          "forks": 11,
-          "pubmed_citations": 0,
-          "weekly_growth": 0,
-          "score": 14.13,
-          "has_paper": true,
-          "has_docker": false,
-          "has_conda": true,
-          "sub_label": "",
-          "topics": [],
-          "license": "Apache License 2.0",
-          "open_issues": 4,
-          "pushed_at": "2026-03-22T18:57:07Z",
-          "tech_stack": [],
-          "install_commands": [
-            {
-              "type": "conda",
-              "command": "conda install -c"
-            },
-            {
-              "type": "pip",
-              "command": "pip install torch"
-            },
-            {
-              "type": "pip",
-              "command": "pip install -r"
-            },
-            {
-              "type": "pip",
-              "command": "pip install -e"
-            }
-          ],
-          "preview_images": [
-            "https://raw.githubusercontent.com/linhanwang/Drive-JEPA/master/assets/figure_pipeline.png",
-            "https://raw.githubusercontent.com/linhanwang/Drive-JEPA/master/assets/teaser.png",
-            "https://raw.githubusercontent.com/linhanwang/Drive-JEPA/master/assets/more_mtd_demo.png"
-          ],
-          "badges": {
-            "stars": "https://img.shields.io/github/stars/linhanwang/Drive-JEPA?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/linhanwang/Drive-JEPA?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/linhanwang/Drive-JEPA?style=flat-square",
-            "license": "https://img.shields.io/github/license/linhanwang/Drive-JEPA?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/linhanwang/Drive-JEPA?style=flat-square",
-            "conda": "https://img.shields.io/badge/conda-available-green?style=flat-square&logo=anaconda"
-          }
-        },
-        {
-          "rank": 7,
           "full_name": "epigen/scrnaseq_processing_seurat",
           "short_name": "scrnaseq_processing_seurat",
           "name": "epigen/scrnaseq_processing_seurat",
@@ -2338,7 +2180,7 @@
           }
         },
         {
-          "rank": 8,
+          "rank": 7,
           "full_name": "LamineTourelab/MOGONET",
           "short_name": "MOGONET",
           "name": "LamineTourelab/MOGONET",
@@ -2346,7 +2188,7 @@
           "description": "MOGONET (Multi-Omics Graph cOnvolutional NETworks) is multi-omics data integrative analysis framework for classification tasks in biomedical applications.",
           "stars": 18,
           "forks": 2,
-          "pubmed_citations": 4,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 2.69,
           "has_paper": false,
@@ -2401,7 +2243,7 @@
           "name": "zai-org/GLM-4",
           "url": "https://github.com/zai-org/GLM-4",
           "description": "GLM-4 series: Open Multilingual Multimodal Chat LMs | 开源多语言多模态对话模型",
-          "stars": 7072,
+          "stars": 7071,
           "forks": 616,
           "pubmed_citations": 0,
           "weekly_growth": 0,
@@ -2418,7 +2260,7 @@
             "glm4"
           ],
           "license": "Apache License 2.0",
-          "open_issues": 36,
+          "open_issues": 41,
           "pushed_at": "2026-08-05T07:08:46Z",
           "tech_stack": [],
           "install_commands": [
@@ -2448,16 +2290,229 @@
         },
         {
           "rank": 2,
+          "full_name": "apache/seatunnel",
+          "short_name": "seatunnel",
+          "name": "apache/seatunnel",
+          "url": "https://github.com/apache/seatunnel",
+          "description": "SeaTunnel is a multimodal, high-performance, distributed, massive data integration tool.",
+          "stars": 9679,
+          "forks": 2425,
+          "pubmed_citations": 0,
+          "weekly_growth": 0,
+          "score": 27.9,
+          "has_paper": false,
+          "has_docker": false,
+          "has_conda": false,
+          "sub_label": "Alignment",
+          "topics": [
+            "apache",
+            "batch",
+            "cdc",
+            "change-data-capture",
+            "data-ingestion",
+            "data-integration",
+            "elt",
+            "embeddings",
+            "high-performance",
+            "llm",
+            "multimodal",
+            "offline",
+            "real-time",
+            "streaming"
+          ],
+          "license": "Apache License 2.0",
+          "open_issues": 781,
+          "pushed_at": "2026-09-26T11:28:43Z",
+          "tech_stack": [],
+          "install_commands": [],
+          "preview_images": [
+            "https://seatunnel.apache.org/image/logo.png",
+            "https://raw.githubusercontent.com/apache/seatunnel/dev/docs/images/architecture_diagram.png"
+          ],
+          "badges": {
+            "stars": "https://img.shields.io/github/stars/apache/seatunnel?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/apache/seatunnel?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/apache/seatunnel?style=flat-square",
+            "license": "https://img.shields.io/github/license/apache/seatunnel?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/apache/seatunnel?style=flat-square"
+          }
+        },
+        {
+          "rank": 3,
+          "full_name": "jd-opensource/JoyAI-Image",
+          "short_name": "JoyAI-Image",
+          "name": "jd-opensource/JoyAI-Image",
+          "url": "https://github.com/jd-opensource/JoyAI-Image",
+          "description": "JoyAI-Image is the unified multimodal foundation model for image understanding, text-to-image generation, and instruction-guided image editing.",
+          "stars": 2160,
+          "forks": 165,
+          "pubmed_citations": 0,
+          "weekly_growth": 0,
+          "score": 27.34,
+          "has_paper": true,
+          "has_docker": false,
+          "has_conda": false,
+          "sub_label": "Alignment",
+          "topics": [],
+          "license": "Apache License 2.0",
+          "open_issues": 15,
+          "pushed_at": "2026-08-05T02:56:40Z",
+          "tech_stack": [],
+          "install_commands": [
+            {
+              "type": "pip",
+              "command": "pip install -e"
+            },
+            {
+              "type": "pip",
+              "command": "pip install torch"
+            },
+            {
+              "type": "pip",
+              "command": "pip install git"
+            },
+            {
+              "type": "git",
+              "command": "git clone https://github.com/Dao-AILab/flash-attention.git"
+            }
+          ],
+          "preview_images": [],
+          "badges": {
+            "stars": "https://img.shields.io/github/stars/jd-opensource/JoyAI-Image?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/jd-opensource/JoyAI-Image?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/jd-opensource/JoyAI-Image?style=flat-square",
+            "license": "https://img.shields.io/github/license/jd-opensource/JoyAI-Image?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/jd-opensource/JoyAI-Image?style=flat-square"
+          }
+        },
+        {
+          "rank": 4,
+          "full_name": "2U1/Qwen-VL-Series-Finetune",
+          "short_name": "Qwen-VL-Series-Finetune",
+          "name": "2U1/Qwen-VL-Series-Finetune",
+          "url": "https://github.com/2U1/Qwen-VL-Series-Finetune",
+          "description": "An open-source implementaion for fine-tuning Qwen-VL series by Alibaba Cloud.",
+          "stars": 1971,
+          "forks": 225,
+          "pubmed_citations": 0,
+          "weekly_growth": 0,
+          "score": 27.06,
+          "has_paper": true,
+          "has_docker": true,
+          "has_conda": true,
+          "sub_label": "General",
+          "topics": [
+            "multimodal",
+            "qwen2-5-vl",
+            "qwen2-vl",
+            "qwen3-5",
+            "qwen3-vl",
+            "vision-language",
+            "vision-language-model",
+            "vlm"
+          ],
+          "license": "Apache License 2.0",
+          "open_issues": 57,
+          "pushed_at": "2026-09-09T16:55:32Z",
+          "tech_stack": [],
+          "install_commands": [
+            {
+              "type": "pip",
+              "command": "pip install -r"
+            },
+            {
+              "type": "pip",
+              "command": "pip install qwen-vl-utils"
+            },
+            {
+              "type": "pip",
+              "command": "pip install flash-attn"
+            },
+            {
+              "type": "docker",
+              "command": "docker pull john119/vlm"
+            }
+          ],
+          "preview_images": [],
+          "badges": {
+            "stars": "https://img.shields.io/github/stars/2U1/Qwen-VL-Series-Finetune?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/2U1/Qwen-VL-Series-Finetune?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/2U1/Qwen-VL-Series-Finetune?style=flat-square",
+            "license": "https://img.shields.io/github/license/2U1/Qwen-VL-Series-Finetune?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/2U1/Qwen-VL-Series-Finetune?style=flat-square",
+            "docker": "https://img.shields.io/badge/docker-available-blue?style=flat-square&logo=docker",
+            "conda": "https://img.shields.io/badge/conda-available-green?style=flat-square&logo=anaconda"
+          }
+        },
+        {
+          "rank": 5,
+          "full_name": "EvolvingLMMs-Lab/lmms-engine",
+          "short_name": "lmms-engine",
+          "name": "EvolvingLMMs-Lab/lmms-engine",
+          "url": "https://github.com/EvolvingLMMs-Lab/lmms-engine",
+          "description": "A simple, unified multimodal models training engine. Lean, flexible, and built for hacking at scale.",
+          "stars": 826,
+          "forks": 37,
+          "pubmed_citations": 0,
+          "weekly_growth": 0,
+          "score": 24.42,
+          "has_paper": true,
+          "has_docker": true,
+          "has_conda": false,
+          "sub_label": "Alignment",
+          "topics": [
+            "agi",
+            "large-language-models",
+            "multimodal",
+            "unified-multimodal-models",
+            "video-generation"
+          ],
+          "license": "",
+          "open_issues": 11,
+          "pushed_at": "2026-08-06T06:14:56Z",
+          "tech_stack": [],
+          "install_commands": [
+            {
+              "type": "pip",
+              "command": "pip install -e"
+            },
+            {
+              "type": "pip",
+              "command": "pip install -e"
+            },
+            {
+              "type": "pip",
+              "command": "pip install lmms-engine"
+            },
+            {
+              "type": "git",
+              "command": "git clone https://github.com/EvolvingLMMs-Lab/lmms-engine.git"
+            }
+          ],
+          "preview_images": [
+            "https://github.com/user-attachments/assets/3c727b3d-4710-4f92-af95-c8e29dc6ac3e"
+          ],
+          "badges": {
+            "stars": "https://img.shields.io/github/stars/EvolvingLMMs-Lab/lmms-engine?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/EvolvingLMMs-Lab/lmms-engine?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/EvolvingLMMs-Lab/lmms-engine?style=flat-square",
+            "license": "https://img.shields.io/github/license/EvolvingLMMs-Lab/lmms-engine?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/EvolvingLMMs-Lab/lmms-engine?style=flat-square",
+            "docker": "https://img.shields.io/badge/docker-available-blue?style=flat-square&logo=docker"
+          }
+        },
+        {
+          "rank": 6,
           "full_name": "Mininglamp-AI/Mano-P",
           "short_name": "Mano-P",
           "name": "Mininglamp-AI/Mano-P",
           "url": "https://github.com/Mininglamp-AI/Mano-P",
           "description": "Mano-P: Open-source GUI-VLA agent for edge devices. #1 on OSWorld (specialized, 58.2%). Runs locally on Apple M4 Mac mini/MacBook — no data leaves your device.Mano-P 是一个开源 GUI-VLA 项目，支持在 Mac mini/MacBook 上或通过算力棒本地运行推理，实现纯视觉驱动的跨平台 GUI 自动化操作。数据完全本地处理，支持复杂多步骤任务规划与执行。",
-          "stars": 2773,
-          "forks": 272,
+          "stars": 2791,
+          "forks": 271,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 28.1,
+          "score": 23.9,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2519,230 +2574,17 @@
           }
         },
         {
-          "rank": 3,
-          "full_name": "apache/seatunnel",
-          "short_name": "seatunnel",
-          "name": "apache/seatunnel",
-          "url": "https://github.com/apache/seatunnel",
-          "description": "SeaTunnel is a multimodal, high-performance, distributed, massive data integration tool.",
-          "stars": 9656,
-          "forks": 2415,
-          "pubmed_citations": 0,
-          "weekly_growth": 0,
-          "score": 27.89,
-          "has_paper": false,
-          "has_docker": false,
-          "has_conda": false,
-          "sub_label": "Alignment",
-          "topics": [
-            "apache",
-            "batch",
-            "cdc",
-            "change-data-capture",
-            "data-ingestion",
-            "data-integration",
-            "elt",
-            "embeddings",
-            "high-performance",
-            "llm",
-            "multimodal",
-            "offline",
-            "real-time",
-            "streaming"
-          ],
-          "license": "Apache License 2.0",
-          "open_issues": 739,
-          "pushed_at": "2026-09-20T02:15:30Z",
-          "tech_stack": [],
-          "install_commands": [],
-          "preview_images": [
-            "https://seatunnel.apache.org/image/logo.png",
-            "https://raw.githubusercontent.com/apache/seatunnel/dev/docs/images/architecture_diagram.png"
-          ],
-          "badges": {
-            "stars": "https://img.shields.io/github/stars/apache/seatunnel?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/apache/seatunnel?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/apache/seatunnel?style=flat-square",
-            "license": "https://img.shields.io/github/license/apache/seatunnel?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/apache/seatunnel?style=flat-square"
-          }
-        },
-        {
-          "rank": 4,
-          "full_name": "jd-opensource/JoyAI-Image",
-          "short_name": "JoyAI-Image",
-          "name": "jd-opensource/JoyAI-Image",
-          "url": "https://github.com/jd-opensource/JoyAI-Image",
-          "description": "JoyAI-Image is the unified multimodal foundation model for image understanding, text-to-image generation, and instruction-guided image editing.",
-          "stars": 2157,
-          "forks": 165,
-          "pubmed_citations": 0,
-          "weekly_growth": 0,
-          "score": 27.34,
-          "has_paper": true,
-          "has_docker": false,
-          "has_conda": false,
-          "sub_label": "Alignment",
-          "topics": [],
-          "license": "Apache License 2.0",
-          "open_issues": 14,
-          "pushed_at": "2026-08-05T02:56:40Z",
-          "tech_stack": [],
-          "install_commands": [
-            {
-              "type": "pip",
-              "command": "pip install -e"
-            },
-            {
-              "type": "pip",
-              "command": "pip install torch"
-            },
-            {
-              "type": "pip",
-              "command": "pip install git"
-            },
-            {
-              "type": "git",
-              "command": "git clone https://github.com/Dao-AILab/flash-attention.git"
-            }
-          ],
-          "preview_images": [],
-          "badges": {
-            "stars": "https://img.shields.io/github/stars/jd-opensource/JoyAI-Image?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/jd-opensource/JoyAI-Image?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/jd-opensource/JoyAI-Image?style=flat-square",
-            "license": "https://img.shields.io/github/license/jd-opensource/JoyAI-Image?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/jd-opensource/JoyAI-Image?style=flat-square"
-          }
-        },
-        {
-          "rank": 5,
-          "full_name": "2U1/Qwen-VL-Series-Finetune",
-          "short_name": "Qwen-VL-Series-Finetune",
-          "name": "2U1/Qwen-VL-Series-Finetune",
-          "url": "https://github.com/2U1/Qwen-VL-Series-Finetune",
-          "description": "An open-source implementaion for fine-tuning Qwen-VL series by Alibaba Cloud.",
-          "stars": 1968,
-          "forks": 225,
-          "pubmed_citations": 0,
-          "weekly_growth": 0,
-          "score": 27.06,
-          "has_paper": true,
-          "has_docker": true,
-          "has_conda": true,
-          "sub_label": "General",
-          "topics": [
-            "multimodal",
-            "qwen2-5-vl",
-            "qwen2-vl",
-            "qwen3-5",
-            "qwen3-vl",
-            "vision-language",
-            "vision-language-model",
-            "vlm"
-          ],
-          "license": "Apache License 2.0",
-          "open_issues": 57,
-          "pushed_at": "2026-09-09T16:55:32Z",
-          "tech_stack": [],
-          "install_commands": [
-            {
-              "type": "pip",
-              "command": "pip install -r"
-            },
-            {
-              "type": "pip",
-              "command": "pip install qwen-vl-utils"
-            },
-            {
-              "type": "pip",
-              "command": "pip install flash-attn"
-            },
-            {
-              "type": "docker",
-              "command": "docker pull john119/vlm"
-            }
-          ],
-          "preview_images": [],
-          "badges": {
-            "stars": "https://img.shields.io/github/stars/2U1/Qwen-VL-Series-Finetune?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/2U1/Qwen-VL-Series-Finetune?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/2U1/Qwen-VL-Series-Finetune?style=flat-square",
-            "license": "https://img.shields.io/github/license/2U1/Qwen-VL-Series-Finetune?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/2U1/Qwen-VL-Series-Finetune?style=flat-square",
-            "docker": "https://img.shields.io/badge/docker-available-blue?style=flat-square&logo=docker",
-            "conda": "https://img.shields.io/badge/conda-available-green?style=flat-square&logo=anaconda"
-          }
-        },
-        {
-          "rank": 6,
-          "full_name": "EvolvingLMMs-Lab/lmms-engine",
-          "short_name": "lmms-engine",
-          "name": "EvolvingLMMs-Lab/lmms-engine",
-          "url": "https://github.com/EvolvingLMMs-Lab/lmms-engine",
-          "description": "A simple, unified multimodal models training engine. Lean, flexible, and built for hacking at scale.",
-          "stars": 825,
-          "forks": 37,
-          "pubmed_citations": 0,
-          "weekly_growth": 0,
-          "score": 24.42,
-          "has_paper": true,
-          "has_docker": true,
-          "has_conda": false,
-          "sub_label": "Alignment",
-          "topics": [
-            "agi",
-            "large-language-models",
-            "multimodal",
-            "unified-multimodal-models",
-            "video-generation"
-          ],
-          "license": "",
-          "open_issues": 11,
-          "pushed_at": "2026-08-06T06:14:56Z",
-          "tech_stack": [],
-          "install_commands": [
-            {
-              "type": "pip",
-              "command": "pip install -e"
-            },
-            {
-              "type": "pip",
-              "command": "pip install -e"
-            },
-            {
-              "type": "pip",
-              "command": "pip install lmms-engine"
-            },
-            {
-              "type": "git",
-              "command": "git clone https://github.com/EvolvingLMMs-Lab/lmms-engine.git"
-            }
-          ],
-          "preview_images": [
-            "https://github.com/user-attachments/assets/3c727b3d-4710-4f92-af95-c8e29dc6ac3e"
-          ],
-          "badges": {
-            "stars": "https://img.shields.io/github/stars/EvolvingLMMs-Lab/lmms-engine?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/EvolvingLMMs-Lab/lmms-engine?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/EvolvingLMMs-Lab/lmms-engine?style=flat-square",
-            "license": "https://img.shields.io/github/license/EvolvingLMMs-Lab/lmms-engine?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/EvolvingLMMs-Lab/lmms-engine?style=flat-square",
-            "docker": "https://img.shields.io/badge/docker-available-blue?style=flat-square&logo=docker"
-          }
-        },
-        {
           "rank": 7,
           "full_name": "enoche/MMRec",
           "short_name": "MMRec",
           "name": "enoche/MMRec",
           "url": "https://github.com/enoche/MMRec",
           "description": "A Toolbox for MultiModal Recommendation. Integrating 10+ Models...",
-          "stars": 691,
+          "stars": 694,
           "forks": 108,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 23.88,
+          "score": 23.89,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2828,11 +2670,11 @@
           "name": "oncologylab/craftgrn",
           "url": "https://github.com/oncologylab/craftgrn",
           "description": "Combined RNA and ATAC Footprint Training of Gene Regulatory Network",
-          "stars": 420,
+          "stars": 461,
           "forks": 3,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 22.37,
+          "score": 22.65,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2878,11 +2720,11 @@
           "name": "galilai-group/stable-pretraining",
           "url": "https://github.com/galilai-group/stable-pretraining",
           "description": "Reliable, minimal and scalable library for pretraining foundation and world models",
-          "stars": 318,
-          "forks": 66,
+          "stars": 320,
+          "forks": 69,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 21.53,
+          "score": 21.55,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -2905,7 +2747,7 @@
           ],
           "license": "MIT License",
           "open_issues": 28,
-          "pushed_at": "2026-07-16T01:34:01Z",
+          "pushed_at": "2026-09-26T23:07:51Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -2937,9 +2779,9 @@
       ]
     },
     "ProteinAI": {
-      "total_count": 271,
+      "total_count": 270,
       "pipeline_count": 9,
-      "utility_count": 262,
+      "utility_count": 261,
       "top_20_pipelines": [
         {
           "rank": 1,
@@ -3048,8 +2890,8 @@
           "url": "https://github.com/nf-core/proteinfold",
           "description": "Protein 3D structure prediction pipeline",
           "stars": 115,
-          "forks": 75,
-          "pubmed_citations": 9,
+          "forks": 76,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 20.15,
           "has_paper": true,
@@ -3070,8 +2912,8 @@
             "workflow"
           ],
           "license": "MIT License",
-          "open_issues": 99,
-          "pushed_at": "2026-09-11T15:54:49Z",
+          "open_issues": 97,
+          "pushed_at": "2026-09-24T03:14:12Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -3095,11 +2937,11 @@
           "name": "RomeroLab/alphafast",
           "url": "https://github.com/RomeroLab/alphafast",
           "description": "AlphaFast: ultra-high-throughput AlphaFold3 inference with MMSeqs2-GPU",
-          "stars": 167,
+          "stars": 165,
           "forks": 24,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 19.85,
+          "score": 19.82,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
@@ -3140,7 +2982,7 @@
           "description": "OVO, an open-source ecosystem for de novo protein design",
           "stars": 142,
           "forks": 24,
-          "pubmed_citations": 35,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 16.93,
           "has_paper": true,
@@ -3155,7 +2997,7 @@
             "rfdiffusion"
           ],
           "license": "MIT License",
-          "open_issues": 16,
+          "open_issues": 14,
           "pushed_at": "2026-09-18T18:11:53Z",
           "tech_stack": [],
           "install_commands": [],
@@ -3241,8 +3083,8 @@
             "web-streams"
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-          "open_issues": 1,
-          "pushed_at": "2026-09-08T03:52:33Z",
+          "open_issues": 0,
+          "pushed_at": "2026-09-26T16:28:57Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [],
@@ -3347,11 +3189,11 @@
           "name": "K-Dense-AI/scientific-agent-skills",
           "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
           "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 190,000+ scientists worldwide. 165 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-          "stars": 45644,
-          "forks": 4143,
+          "stars": 46736,
+          "forks": 4227,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 36.62,
+          "score": 36.69,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
@@ -3376,8 +3218,8 @@
             "scientific-visualization"
           ],
           "license": "MIT License",
-          "open_issues": 14,
-          "pushed_at": "2026-09-14T09:27:38Z",
+          "open_issues": 17,
+          "pushed_at": "2026-09-21T09:27:50Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -3418,8 +3260,8 @@
           "name": "webpack/webpack",
           "url": "https://github.com/webpack/webpack",
           "description": "A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows for loading parts of the application on demand. Through \"loaders\", modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff.",
-          "stars": 65943,
-          "forks": 9547,
+          "stars": 65957,
+          "forks": 9545,
           "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 33.73,
@@ -3446,8 +3288,8 @@
             "webpack"
           ],
           "license": "MIT License",
-          "open_issues": 129,
-          "pushed_at": "2026-09-20T00:24:24Z",
+          "open_issues": 126,
+          "pushed_at": "2026-09-27T00:26:19Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -3472,7 +3314,7 @@
           "name": "evanw/esbuild",
           "url": "https://github.com/evanw/esbuild",
           "description": "An extremely fast bundler for the web",
-          "stars": 40063,
+          "stars": 40069,
           "forks": 1346,
           "pubmed_citations": 0,
           "weekly_growth": 0,
@@ -3495,7 +3337,7 @@
             "typescript"
           ],
           "license": "MIT License",
-          "open_issues": 622,
+          "open_issues": 621,
           "pushed_at": "2026-08-09T17:20:12Z",
           "tech_stack": [],
           "install_commands": [],
@@ -3518,19 +3360,19 @@
           "name": "google-deepmind/alphafold3",
           "url": "https://github.com/google-deepmind/alphafold3",
           "description": "AlphaFold 3 inference pipeline.",
-          "stars": 8570,
-          "forks": 1365,
-          "pubmed_citations": 123,
+          "stars": 8591,
+          "forks": 1368,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 31.53,
+          "score": 31.54,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
           "sub_label": "Format Conversion",
           "topics": [],
           "license": "Apache License 2.0",
-          "open_issues": 27,
-          "pushed_at": "2026-08-19T15:43:52Z",
+          "open_issues": 31,
+          "pushed_at": "2026-09-21T16:13:35Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -3552,8 +3394,8 @@
           "name": "web-infra-dev/rspack",
           "url": "https://github.com/web-infra-dev/rspack",
           "description": "Fast Rust-based bundler for the web with a modernized webpack API 🦀",
-          "stars": 12911,
-          "forks": 853,
+          "stars": 12924,
+          "forks": 859,
           "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 28.78,
@@ -3579,8 +3421,8 @@
             "webpack"
           ],
           "license": "MIT License",
-          "open_issues": 227,
-          "pushed_at": "2026-09-20T02:18:50Z",
+          "open_issues": 239,
+          "pushed_at": "2026-09-27T02:06:52Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -3603,11 +3445,11 @@
           "name": "privatenumber/tsx",
           "url": "https://github.com/privatenumber/tsx",
           "description": "⚡️ TypeScript Execute | The easiest way to run TypeScript in Node.js",
-          "stars": 12149,
-          "forks": 268,
-          "pubmed_citations": 10,
+          "stars": 12161,
+          "forks": 270,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 28.59,
+          "score": 28.6,
           "has_paper": false,
           "has_docker": false,
           "has_conda": false,
@@ -3623,8 +3465,8 @@
             "watch"
           ],
           "license": "MIT License",
-          "open_issues": 117,
-          "pushed_at": "2026-08-30T00:44:52Z",
+          "open_issues": 114,
+          "pushed_at": "2026-09-25T03:45:36Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -3649,18 +3491,18 @@
           "name": "Biohub/esm",
           "url": "https://github.com/Biohub/esm",
           "description": "",
-          "stars": 2965,
-          "forks": 389,
-          "pubmed_citations": 217,
+          "stars": 2978,
+          "forks": 396,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 28.31,
+          "score": 28.32,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
           "sub_label": "Alignment",
           "topics": [],
           "license": "Other",
-          "open_issues": 68,
+          "open_issues": 74,
           "pushed_at": "2026-09-16T14:23:40Z",
           "tech_stack": [],
           "install_commands": [
@@ -3698,11 +3540,11 @@
           "name": "sokrypton/ColabFold",
           "url": "https://github.com/sokrypton/ColabFold",
           "description": "Making Protein folding accessible to all!",
-          "stars": 2930,
-          "forks": 747,
-          "pubmed_citations": 16,
+          "stars": 2938,
+          "forks": 750,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 28.27,
+          "score": 28.28,
           "has_paper": true,
           "has_docker": true,
           "has_conda": true,
@@ -3714,8 +3556,8 @@
             "structure-prediction"
           ],
           "license": "MIT License",
-          "open_issues": 411,
-          "pushed_at": "2026-09-19T13:39:37Z",
+          "open_issues": 413,
+          "pushed_at": "2026-09-23T17:48:12Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -3755,9 +3597,9 @@
           "name": "google-deepmind/alphafold",
           "url": "https://github.com/google-deepmind/alphafold",
           "description": "Open source code for AlphaFold 2.",
-          "stars": 14860,
-          "forks": 2949,
-          "pubmed_citations": 445,
+          "stars": 14864,
+          "forks": 2951,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 28.22,
           "has_paper": true,
@@ -3790,56 +3632,56 @@
         },
         {
           "rank": 10,
-          "full_name": "jsdelivr/jsdelivr",
-          "short_name": "jsdelivr",
-          "name": "jsdelivr/jsdelivr",
-          "url": "https://github.com/jsdelivr/jsdelivr",
-          "description": "A free, fast, and reliable Open Source CDN for npm, GitHub, Javascript, and ESM",
-          "stars": 6379,
-          "forks": 2119,
+          "full_name": "lucidrains/alphafold3-pytorch",
+          "short_name": "alphafold3-pytorch",
+          "name": "lucidrains/alphafold3-pytorch",
+          "url": "https://github.com/lucidrains/alphafold3-pytorch",
+          "description": "Implementation of Alphafold 3 from Google Deepmind in Pytorch",
+          "stars": 1694,
+          "forks": 231,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 26.63,
-          "has_paper": false,
-          "has_docker": false,
+          "score": 26.6,
+          "has_paper": true,
+          "has_docker": true,
           "has_conda": false,
           "sub_label": "Alignment",
           "topics": [
-            "cdn",
-            "cdn-providers",
-            "distribution",
-            "esm",
-            "esmodules",
-            "http",
-            "infrastructure",
-            "javascript",
-            "jsdelivr",
-            "npm",
-            "npm-cdn",
-            "traffic"
+            "artificial-intelligence",
+            "attention-mechanisms",
+            "deep-learning",
+            "denoising-diffusion",
+            "protein-structure-prediction",
+            "transformers"
           ],
           "license": "MIT License",
-          "open_issues": 33,
-          "pushed_at": "2026-06-27T18:21:13Z",
+          "open_issues": 17,
+          "pushed_at": "2026-08-10T02:16:28Z",
           "tech_stack": [],
-          "install_commands": [],
+          "install_commands": [
+            {
+              "type": "pip",
+              "command": "pip install alphafold3-pytorch"
+            }
+          ],
           "preview_images": [
-            "https://www.jsdelivr.com/icon_256x256.png"
+            "https://raw.githubusercontent.com/lucidrains/alphafold3-pytorch/main/alphafold3.png"
           ],
           "badges": {
-            "stars": "https://img.shields.io/github/stars/jsdelivr/jsdelivr?style=flat-square&logo=github",
-            "forks": "https://img.shields.io/github/forks/jsdelivr/jsdelivr?style=flat-square&logo=github",
-            "issues": "https://img.shields.io/github/issues/jsdelivr/jsdelivr?style=flat-square",
-            "license": "https://img.shields.io/github/license/jsdelivr/jsdelivr?style=flat-square",
-            "last_commit": "https://img.shields.io/github/last-commit/jsdelivr/jsdelivr?style=flat-square"
+            "stars": "https://img.shields.io/github/stars/lucidrains/alphafold3-pytorch?style=flat-square&logo=github",
+            "forks": "https://img.shields.io/github/forks/lucidrains/alphafold3-pytorch?style=flat-square&logo=github",
+            "issues": "https://img.shields.io/github/issues/lucidrains/alphafold3-pytorch?style=flat-square",
+            "license": "https://img.shields.io/github/license/lucidrains/alphafold3-pytorch?style=flat-square",
+            "last_commit": "https://img.shields.io/github/last-commit/lucidrains/alphafold3-pytorch?style=flat-square",
+            "docker": "https://img.shields.io/badge/docker-available-blue?style=flat-square&logo=docker"
           }
         }
       ]
     },
     "AI-Pathology": {
-      "total_count": 250,
+      "total_count": 249,
       "pipeline_count": 3,
-      "utility_count": 247,
+      "utility_count": 246,
       "top_20_pipelines": [
         {
           "rank": 1,
@@ -3897,11 +3739,11 @@
           "name": "scverse/liana",
           "url": "https://github.com/scverse/liana",
           "description": "LIANA+: an all-in-one framework for cell-cell communication",
-          "stars": 316,
+          "stars": 318,
           "forks": 37,
-          "pubmed_citations": 6,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 19.01,
+          "score": 19.02,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -3917,7 +3759,7 @@
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
           "open_issues": 13,
-          "pushed_at": "2026-09-17T21:06:28Z",
+          "pushed_at": "2026-09-24T21:05:15Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -4000,9 +3842,9 @@
           "name": "lmcinnes/umap",
           "url": "https://github.com/lmcinnes/umap",
           "description": "Uniform Manifold Approximation and Projection",
-          "stars": 8259,
+          "stars": 8262,
           "forks": 872,
-          "pubmed_citations": 112,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 31.42,
           "has_paper": true,
@@ -4018,7 +3860,7 @@
           ],
           "license": "BSD 3-Clause \"New\" or \"Revised\" License",
           "open_issues": 525,
-          "pushed_at": "2026-09-15T04:17:22Z",
+          "pushed_at": "2026-09-24T20:08:02Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -4059,11 +3901,11 @@
           "name": "datajuicer/data-juicer",
           "url": "https://github.com/datajuicer/data-juicer",
           "description": "Data processing for and with foundation models!  🍎 🍋 🌽 ➡️ ➡️🍸 🍹 🍷",
-          "stars": 7070,
-          "forks": 426,
+          "stars": 7095,
+          "forks": 429,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 30.95,
+          "score": 30.96,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -4085,8 +3927,8 @@
             "synthetic-data"
           ],
           "license": "Apache License 2.0",
-          "open_issues": 61,
-          "pushed_at": "2026-09-16T10:11:30Z",
+          "open_issues": 67,
+          "pushed_at": "2026-09-22T03:10:18Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -4113,19 +3955,19 @@
           "name": "OpenSenseNova/SenseNova-U1",
           "url": "https://github.com/OpenSenseNova/SenseNova-U1",
           "description": "SenseNova-U series: Native Unified Paradigm with NEO-unify from the First Principles",
-          "stars": 6808,
-          "forks": 532,
+          "stars": 6891,
+          "forks": 534,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 30.83,
+          "score": 30.87,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
           "sub_label": "Alignment",
           "topics": [],
           "license": "Apache License 2.0",
-          "open_issues": 38,
-          "pushed_at": "2026-09-15T08:43:19Z",
+          "open_issues": 40,
+          "pushed_at": "2026-09-24T14:22:28Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -4164,11 +4006,11 @@
           "name": "microsoft/fara",
           "url": "https://github.com/microsoft/fara",
           "description": "Fara1.5 – A family of frontier computer use agent models",
-          "stars": 6184,
-          "forks": 603,
+          "stars": 6197,
+          "forks": 604,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 30.54,
+          "score": 30.55,
           "has_paper": true,
           "has_docker": false,
           "has_conda": false,
@@ -4181,8 +4023,8 @@
             "cua"
           ],
           "license": "MIT License",
-          "open_issues": 41,
-          "pushed_at": "2026-07-22T17:03:30Z",
+          "open_issues": 42,
+          "pushed_at": "2026-09-22T14:45:27Z",
           "tech_stack": [],
           "install_commands": [
             {
@@ -4225,11 +4067,11 @@
           "name": "perixtar/Tech-OA-Interview-Questions",
           "url": "https://github.com/perixtar/Tech-OA-Interview-Questions",
           "description": "Daily updated list of Tech Company OAs and Interview Problems. Save your time from finding them all over the internet.",
-          "stars": 5171,
-          "forks": 358,
+          "stars": 5262,
+          "forks": 366,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 30.0,
+          "score": 30.05,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
@@ -4247,8 +4089,8 @@
             "university"
           ],
           "license": "",
-          "open_issues": 1,
-          "pushed_at": "2026-09-20T02:26:16Z",
+          "open_issues": 0,
+          "pushed_at": "2026-09-27T01:42:17Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [],
@@ -4268,11 +4110,11 @@
           "name": "SimplifyJobs/New-Grad-Positions",
           "url": "https://github.com/SimplifyJobs/New-Grad-Positions",
           "description": "A collection of full time roles in SWE, Quant, and PM for new grads.",
-          "stars": 18030,
-          "forks": 1310,
+          "stars": 18085,
+          "forks": 1311,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 29.79,
+          "score": 29.8,
           "has_paper": false,
           "has_docker": false,
           "has_conda": false,
@@ -4290,8 +4132,8 @@
             "university"
           ],
           "license": "",
-          "open_issues": 31,
-          "pushed_at": "2026-09-20T01:32:06Z",
+          "open_issues": 34,
+          "pushed_at": "2026-09-27T02:01:41Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -4316,11 +4158,11 @@
           "name": "killop/anything_about_game",
           "url": "https://github.com/killop/anything_about_game",
           "description": "A wonderful list of Game Development resources.",
-          "stars": 4104,
-          "forks": 531,
+          "stars": 4134,
+          "forks": 535,
           "pubmed_citations": 0,
           "weekly_growth": 0,
-          "score": 29.29,
+          "score": 29.32,
           "has_paper": true,
           "has_docker": true,
           "has_conda": false,
@@ -4348,7 +4190,7 @@
           ],
           "license": "Apache License 2.0",
           "open_issues": 0,
-          "pushed_at": "2026-09-18T10:25:55Z",
+          "pushed_at": "2026-09-21T02:28:35Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -4370,8 +4212,8 @@
           "name": "NodeBB/NodeBB",
           "url": "https://github.com/NodeBB/NodeBB",
           "description": "Node.js based forum software built for the modern web",
-          "stars": 15222,
-          "forks": 2995,
+          "stars": 15228,
+          "forks": 2999,
           "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 29.28,
@@ -4393,8 +4235,8 @@
             "websockets"
           ],
           "license": "GNU General Public License v3.0",
-          "open_issues": 128,
-          "pushed_at": "2026-09-19T18:42:49Z",
+          "open_issues": 119,
+          "pushed_at": "2026-09-26T18:50:19Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -4420,9 +4262,9 @@
           "name": "lynx-family/lynx",
           "url": "https://github.com/lynx-family/lynx",
           "description": "Empower the Web community and invite more to build across platforms.",
-          "stars": 15127,
-          "forks": 553,
-          "pubmed_citations": 27,
+          "stars": 15134,
+          "forks": 555,
+          "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 29.26,
           "has_paper": false,
@@ -4435,8 +4277,8 @@
             "lynxjs"
           ],
           "license": "Apache License 2.0",
-          "open_issues": 1257,
-          "pushed_at": "2026-09-19T19:01:47Z",
+          "open_issues": 1272,
+          "pushed_at": "2026-09-27T01:55:46Z",
           "tech_stack": [],
           "install_commands": [],
           "preview_images": [
@@ -4457,8 +4299,8 @@
           "name": "josdejong/mathjs",
           "url": "https://github.com/josdejong/mathjs",
           "description": "An extensive math library for JavaScript and Node.js",
-          "stars": 15076,
-          "forks": 1317,
+          "stars": 15079,
+          "forks": 1320,
           "pubmed_citations": 0,
           "weekly_growth": 0,
           "score": 29.25,
@@ -4476,7 +4318,7 @@
             "units"
           ],
           "license": "Apache License 2.0",
-          "open_issues": 212,
+          "open_issues": 216,
           "pushed_at": "2026-09-13T14:21:56Z",
           "tech_stack": [],
           "install_commands": [],
@@ -4518,8 +4360,8 @@
           "preview_images": "[\"https://raw.githubusercontent.com/ebi-gene-expression-group/container-galaxy-sc-tertiary/main/img/seurat-workflow.png\", \"https://quay.io/repository/ebigxa/galaxy-sc-tertiary/status \\\"Docker Repository on Quay\\\"\", \"https://raw.githubusercontent.com/ebi-gene-expression-group/container-galaxy-sc-tertiary/main/img/cell-browser.png\"]",
           "badge_url": "https://img.shields.io/github/stars/ebi-gene-expression-group/container-galaxy-sc-tertiary?style=flat-square&logo=github",
           "stars": 19,
-          "forks": 16,
-          "open_issues": 39,
+          "forks": 17,
+          "open_issues": 40,
           "pushed_at": "2025-06-26T12:00:48Z",
           "weekly_growth": 0,
           "pubmed_citations": 0,
@@ -4530,11 +4372,11 @@
           "score_paper": 0,
           "score_health": 0.32,
           "score_version": "v2-sc-proAI",
-          "inactive_days": 450,
+          "inactive_days": 457,
           "score": 2.87
         },
-        "issues": 39,
-        "inactive_days": 450,
+        "issues": 40,
+        "inactive_days": 457,
         "stars": 19
       },
       {
@@ -4560,7 +4402,7 @@
           "open_issues": 24,
           "pushed_at": "2026-02-16T07:58:08Z",
           "weekly_growth": 0,
-          "pubmed_citations": 1,
+          "pubmed_citations": 0,
           "score_total": 6.9,
           "score_base": 7.8,
           "score_trend": 0,
@@ -4568,11 +4410,11 @@
           "score_paper": 4,
           "score_health": 0.59,
           "score_version": "v2-sc-proAI",
-          "inactive_days": 215,
+          "inactive_days": 222,
           "score": 6.9
         },
         "issues": 24,
-        "inactive_days": 215,
+        "inactive_days": 222,
         "stars": 12
       },
       {
@@ -4594,7 +4436,7 @@
           "preview_images": "[]",
           "badge_url": "https://img.shields.io/github/stars/velocyto-team/velocyto.py?style=flat-square&logo=github",
           "stars": 177,
-          "forks": 80,
+          "forks": 81,
           "open_issues": 238,
           "pushed_at": "2025-10-07T12:56:31Z",
           "weekly_growth": 0,
@@ -4606,11 +4448,11 @@
           "score_paper": 0,
           "score_health": 0.59,
           "score_version": "v2-sc-proAI",
-          "inactive_days": 347,
+          "inactive_days": 354,
           "score": 9.22
         },
         "issues": 238,
-        "inactive_days": 347,
+        "inactive_days": 354,
         "stars": 177
       },
       {
@@ -4644,11 +4486,11 @@
           "score_paper": 0,
           "score_health": 0.59,
           "score_version": "v2-sc-proAI",
-          "inactive_days": 209,
+          "inactive_days": 216,
           "score": 5.14
         },
         "issues": 22,
-        "inactive_days": 209,
+        "inactive_days": 216,
         "stars": 17
       },
       {
@@ -4674,7 +4516,7 @@
           "open_issues": 21,
           "pushed_at": "2025-10-16T18:30:56Z",
           "weekly_growth": 0,
-          "pubmed_citations": 2,
+          "pubmed_citations": 0,
           "score_total": 5.14,
           "score_base": 8.79,
           "score_trend": 0,
@@ -4682,11 +4524,11 @@
           "score_paper": 0,
           "score_health": 0.59,
           "score_version": "v2-sc-proAI",
-          "inactive_days": 338,
+          "inactive_days": 345,
           "score": 5.14
         },
         "issues": 21,
-        "inactive_days": 338,
+        "inactive_days": 345,
         "stars": 17
       }
     ]
@@ -4694,43 +4536,53 @@
   "new_entries": [
     {
       "category": "Multi-omics",
-      "type": "Pipeline",
+      "type": "Utility",
       "repo": {
         "rank": 3,
-        "full_name": "Lotfollahi-lab/nichecompass",
-        "short_name": "nichecompass",
-        "name": "Lotfollahi-lab/nichecompass",
-        "url": "https://github.com/Lotfollahi-lab/nichecompass",
-        "description": "End-to-end analysis of spatial multi-omics data",
-        "stars": 126,
-        "forks": 20,
-        "pubmed_citations": 1,
+        "full_name": "jd-opensource/JoyAI-Image",
+        "short_name": "JoyAI-Image",
+        "name": "jd-opensource/JoyAI-Image",
+        "url": "https://github.com/jd-opensource/JoyAI-Image",
+        "description": "JoyAI-Image is the unified multimodal foundation model for image understanding, text-to-image generation, and instruction-guided image editing.",
+        "stars": 2160,
+        "forks": 165,
+        "pubmed_citations": 0,
         "weekly_growth": 0,
-        "score": 16.62,
+        "score": 27.34,
         "has_paper": true,
         "has_docker": false,
         "has_conda": false,
-        "sub_label": "",
-        "topics": [
-          "deep-learning",
-          "graph-neural-networks",
-          "spatial-omics",
-          "variational-autoencoder"
-        ],
-        "license": "BSD 3-Clause \"New\" or \"Revised\" License",
-        "open_issues": 10,
-        "pushed_at": "2026-09-19T00:44:24Z",
+        "sub_label": "Alignment",
+        "topics": [],
+        "license": "Apache License 2.0",
+        "open_issues": 15,
+        "pushed_at": "2026-08-05T02:56:40Z",
         "tech_stack": [],
-        "install_commands": [],
-        "preview_images": [
-          "https://raw.githubusercontent.com/Lotfollahi-lab/nichecompass/main/docs/_static/nichecompass_logo_readme.png"
+        "install_commands": [
+          {
+            "type": "pip",
+            "command": "pip install -e"
+          },
+          {
+            "type": "pip",
+            "command": "pip install torch"
+          },
+          {
+            "type": "pip",
+            "command": "pip install git"
+          },
+          {
+            "type": "git",
+            "command": "git clone https://github.com/Dao-AILab/flash-attention.git"
+          }
         ],
+        "preview_images": [],
         "badges": {
-          "stars": "https://img.shields.io/github/stars/Lotfollahi-lab/nichecompass?style=flat-square&logo=github",
-          "forks": "https://img.shields.io/github/forks/Lotfollahi-lab/nichecompass?style=flat-square&logo=github",
-          "issues": "https://img.shields.io/github/issues/Lotfollahi-lab/nichecompass?style=flat-square",
-          "license": "https://img.shields.io/github/license/Lotfollahi-lab/nichecompass?style=flat-square",
-          "last_commit": "https://img.shields.io/github/last-commit/Lotfollahi-lab/nichecompass?style=flat-square"
+          "stars": "https://img.shields.io/github/stars/jd-opensource/JoyAI-Image?style=flat-square&logo=github",
+          "forks": "https://img.shields.io/github/forks/jd-opensource/JoyAI-Image?style=flat-square&logo=github",
+          "issues": "https://img.shields.io/github/issues/jd-opensource/JoyAI-Image?style=flat-square",
+          "license": "https://img.shields.io/github/license/jd-opensource/JoyAI-Image?style=flat-square",
+          "last_commit": "https://img.shields.io/github/last-commit/jd-opensource/JoyAI-Image?style=flat-square"
         }
       }
     }
@@ -4909,7 +4761,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Single-cell No.7](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
             "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.7%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.7\"></a>",
-            "repo": "aristoteleo/dynamo-release"
+            "repo": "saeyslab/nichenetr"
           },
           {
             "rank": 8,
@@ -4919,7 +4771,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Single-cell No.8](https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
             "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Single--cell-No.8%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Single-cell No.8\"></a>",
-            "repo": "dwyl/learn-elixir"
+            "repo": "aristoteleo/dynamo-release"
           },
           {
             "rank": 9,
@@ -4963,27 +4815,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Spatial-omics No.2](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
             "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.2%20Pipeline-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.2\"></a>",
-            "repo": "M4i-Imaging-Mass-Spectrometry/thyra"
-          },
-          {
-            "rank": 3,
-            "category": "Spatial-omics",
-            "track": "Pipeline",
-            "color": "bronze",
-            "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.3](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
-            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.3%20Pipeline-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.3\"></a>",
             "repo": "jfnavarro/st_pipeline"
-          },
-          {
-            "rank": 4,
-            "category": "Spatial-omics",
-            "track": "Pipeline",
-            "color": "blue",
-            "badge_url": "https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Spatial-omics No.4](https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
-            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Spatial--omics-No.4%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Spatial-omics No.4\"></a>",
-            "repo": "mckellardw/slide_snake"
           }
         ],
         "utilities": [
@@ -5149,7 +4981,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Pipeline-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.6](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
             "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.6\"></a>",
-            "repo": "linhanwang/Drive-JEPA"
+            "repo": "epigen/scrnaseq_processing_seurat"
           },
           {
             "rank": 7,
@@ -5159,16 +4991,6 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.7%20Pipeline-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.7](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.7%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
             "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.7%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.7\"></a>",
-            "repo": "epigen/scrnaseq_processing_seurat"
-          },
-          {
-            "rank": 8,
-            "category": "Multi-omics",
-            "track": "Pipeline",
-            "color": "blue",
-            "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.8%20Pipeline-blue?style=for-the-badge&logo=github",
-            "markdown": "[![Bio-Rank Multi-omics No.8](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.8%20Pipeline-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
-            "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.8%20Pipeline-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.8\"></a>",
             "repo": "LamineTourelab/MOGONET"
           }
         ],
@@ -5191,7 +5013,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Utility-silver?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.2](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Utility-silver?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
             "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.2%20Utility-silver?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.2\"></a>",
-            "repo": "Mininglamp-AI/Mano-P"
+            "repo": "apache/seatunnel"
           },
           {
             "rank": 3,
@@ -5201,7 +5023,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.3](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
             "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.3%20Utility-bronze?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.3\"></a>",
-            "repo": "apache/seatunnel"
+            "repo": "jd-opensource/JoyAI-Image"
           },
           {
             "rank": 4,
@@ -5211,7 +5033,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.4](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
             "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.4%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.4\"></a>",
-            "repo": "jd-opensource/JoyAI-Image"
+            "repo": "2U1/Qwen-VL-Series-Finetune"
           },
           {
             "rank": 5,
@@ -5221,7 +5043,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.5](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
             "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.5%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.5\"></a>",
-            "repo": "2U1/Qwen-VL-Series-Finetune"
+            "repo": "EvolvingLMMs-Lab/lmms-engine"
           },
           {
             "rank": 6,
@@ -5231,7 +5053,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank Multi-omics No.6](https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
             "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20Multi--omics-No.6%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank Multi-omics No.6\"></a>",
-            "repo": "EvolvingLMMs-Lab/lmms-engine"
+            "repo": "Mininglamp-AI/Mano-P"
           },
           {
             "rank": 7,
@@ -5467,7 +5289,7 @@
             "badge_url": "https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.10%20Utility-blue?style=for-the-badge&logo=github",
             "markdown": "[![Bio-Rank ProteinAI No.10](https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.10%20Utility-blue?style=for-the-badge&logo=github)](https://pf-f.github.io/sc-st-proAI-toolkit/)",
             "html": "<a href=\"https://pf-f.github.io/sc-st-proAI-toolkit/\"><img src=\"https://img.shields.io/badge/Bio--Rank%20ProteinAI-No.10%20Utility-blue?style=for-the-badge&logo=github\" alt=\"Bio-Rank ProteinAI No.10\"></a>",
-            "repo": "jsdelivr/jsdelivr"
+            "repo": "lucidrains/alphafold3-pytorch"
           }
         ]
       },
@@ -5611,10 +5433,10 @@
     "issue_drafts": []
   },
   "summary": {
-    "total_pipelines": 88,
-    "total_utilities": 2570,
-    "with_docker": 525,
-    "with_conda": 451,
-    "paper_linked": 1523
+    "total_pipelines": 84,
+    "total_utilities": 2560,
+    "with_docker": 521,
+    "with_conda": 443,
+    "paper_linked": 1511
   }
 }
